@@ -10,7 +10,6 @@ interface ScheduleWithCruiseDayLookupProps {
   entries: ScheduleEntry[];
   portName: string;
   portSlug?: string;
-  showNotes?: boolean;
   tableTitle?: string;
   ports?: PortOption[];
   selectedPortSlug?: string;
@@ -21,7 +20,6 @@ export function ScheduleWithCruiseDayLookup({
   entries,
   portName,
   portSlug,
-  showNotes = false,
   tableTitle = "Schedule Table",
   ports,
   selectedPortSlug,
@@ -76,7 +74,6 @@ export function ScheduleWithCruiseDayLookup({
         <ScheduleTable
           entries={displayEntries}
           portName={portName}
-          showNotes={showNotes}
           highlightedDate={selectedDate || undefined}
         />
       </section>

@@ -35,7 +35,6 @@ export function ShipsInPortLookup() {
       entries={entries}
       portName={port.name}
       portSlug={port.slug}
-      showNotes
       tableTitle={`Ships in ${port.name}`}
       ports={portsWithData.map((item) => ({ slug: item.slug, name: item.name }))}
       selectedPortSlug={portSlug}

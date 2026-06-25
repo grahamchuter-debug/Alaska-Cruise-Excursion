@@ -158,7 +158,6 @@ export function ShipScheduleMonthPageView({
           entries={entries}
           portName={port.name}
           portSlug={port.slug}
-          showNotes
           tableTitle={`${monthLabel} Schedule Table`}
         />
       </section>
