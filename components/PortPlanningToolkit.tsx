@@ -11,6 +11,7 @@ import {
   getSimilarPorts,
 } from "@/data/port-planning";
 import { hasShipSchedule } from "@/lib/routes";
+import { hasVerifiedScheduleData } from "@/data/schedules";
 import { evaluatePortConfidence, formatConfidenceTitle } from "@/lib/cruise-confidence";
 import { CruiseConfidenceCard } from "@/components/CruiseConfidenceCard";
 import { getThemeStyle } from "@/lib/port-themes";
@@ -230,7 +231,11 @@ export function PortPlanningToolkit({
             <div className="rounded-lg bg-gray-50 px-4 py-3">
               <p className="text-xs font-semibold uppercase text-gray-500">Schedule status</p>
               <p className="mt-1 text-sm font-medium text-gray-900">
-                {hasShipSchedule(port.slug) ? "Hub live · import pending" : "Not yet tracked"}
+                {hasVerifiedScheduleData(port.slug)
+                  ? "Live imported schedule"
+                  : hasShipSchedule(port.slug)
+                    ? "Coming soon — import pending"
+                    : "Not yet tracked"}
               </p>
             </div>
           </div>
@@ -247,8 +252,8 @@ export function PortPlanningToolkit({
               {port.name} ship schedules →
             </Link>
           )}
-          <Link href="/busiest-caribbean-cruise-ports-2027" className="font-medium text-caribbean-700 hover:underline">
-            Compare busiest Caribbean ports →
+          <Link href="/best-alaska-cruise-ports" className="font-medium text-caribbean-700 hover:underline">
+            Compare top Alaska cruise ports →
           </Link>
         </div>
       </section>
@@ -290,7 +295,7 @@ export function PortPlanningToolkit({
           <section>
             <h3 className="section-title text-xl sm:text-2xl mb-1">Cruise Lines Visiting</h3>
             <p className="text-sm text-gray-600 mb-4">
-              Lines that commonly call {port.name} on Caribbean itineraries.
+              Lines that commonly call {port.name} on Alaska itineraries.
             </p>
             <div className="flex flex-wrap gap-2">
               {cruiseLines.map((line) => (

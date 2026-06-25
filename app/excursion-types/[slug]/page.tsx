@@ -15,10 +15,10 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
     const type = getExcursionTypeBySlug(slug);
     if (!type) return {};
     return buildMetadata({
-      title: `${type.name} in the Caribbean`,
+      title: `${type.name} in Alaska`,
       description: type.overview.slice(0, 155) + "...",
       path: `/excursion-types/${slug}`,
-      keywords: [`Caribbean ${type.name.toLowerCase()}`, "shore excursions", type.slug],
+      keywords: [`Alaska ${type.name.toLowerCase()}`, "shore excursions", type.slug],
     });
   });
 }
@@ -45,7 +45,7 @@ export default async function ExcursionTypePage({
           breadcrumbSchema(breadcrumbs),
           faqSchema(type.faqs),
           travelGuideSchema({
-            title: `${type.name} in the Caribbean`,
+            title: `${type.name} in Alaska`,
             description: type.overview,
             path: `/excursion-types/${slug}`,
           }),

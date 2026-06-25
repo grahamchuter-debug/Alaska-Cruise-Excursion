@@ -41,8 +41,8 @@ export function ComparisonPageView({ comp }: { comp: Comparison }) {
 
   const breadcrumbs = [
     { name: "Home", path: "/" },
-    { name: "Cruise Planner", path: "/cruise-planner" },
-    { name: `${comp.portA} vs ${comp.portB}`, path: `/compare/${comp.slug}` },
+    { name: "Alaska Excursion Finder", path: "/alaska-cruise-excursion-planner" },
+    { name: `${comp.portA} vs ${comp.portB}`, path: `/${comp.slug}` },
   ];
 
   return (
@@ -54,7 +54,7 @@ export function ComparisonPageView({ comp }: { comp: Comparison }) {
           travelGuideSchema({
             title: comp.seoTitle,
             description: comp.metaDescription,
-            path: `/compare/${comp.slug}`,
+            path: `/${comp.slug}`,
           }),
         ]}
       />
@@ -192,7 +192,7 @@ export function ComparisonPageView({ comp }: { comp: Comparison }) {
             <section className="mb-12">
               <h2 className="section-title text-2xl sm:text-3xl mb-4">Regional Cruise Planners</h2>
               <p className="text-sm text-gray-600 mb-4">
-                Compare these ports in context with broader Caribbean cluster planning guides.
+                Compare these ports with broader Alaska cruise planning guides.
               </p>
               <div className="flex flex-wrap gap-2">
                 {clusterLinks.map((cluster) => (
@@ -218,7 +218,7 @@ export function ComparisonPageView({ comp }: { comp: Comparison }) {
                 {relatedComparisons.map((related) => (
                   <Link
                     key={related.slug}
-                    href={`/compare/${related.slug}`}
+                    href={`/${related.slug}`}
                     className="rounded-lg border border-caribbean-200 bg-white px-4 py-2 text-sm font-medium text-caribbean-800 hover:border-caribbean-400"
                   >
                     {related.title}

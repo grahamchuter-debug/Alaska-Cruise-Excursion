@@ -7,7 +7,7 @@ export function PortRelatedLinks({ links }: { links: PortRelatedLink[] }) {
 
   return (
     <section className="mb-12">
-      <h2 className="section-title text-2xl sm:text-3xl mb-6">Related Caribbean Ports &amp; Planning</h2>
+      <h2 className="section-title text-2xl sm:text-3xl mb-6">Related Alaska Ports &amp; Planning</h2>
       <div className="grid gap-3 sm:grid-cols-2">
         {links.map((link) =>
           link.external ? (

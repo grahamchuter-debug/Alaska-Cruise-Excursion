@@ -102,7 +102,7 @@ export function ShipPageView({ ship }: { ship: CruiseShip }) {
           </section>
 
           <section className="mb-12">
-            <h2 className="section-title text-2xl sm:text-3xl mb-6">Typical Caribbean Itineraries</h2>
+            <h2 className="section-title text-2xl sm:text-3xl mb-6">Typical Alaska Itineraries</h2>
             <ul className="space-y-3">
               {ship.caribbeanItineraries.map((itinerary) => (
                 <li key={itinerary} className="flex items-start gap-3 text-gray-700">
@@ -114,7 +114,7 @@ export function ShipPageView({ ship }: { ship: CruiseShip }) {
           </section>
 
           <section className="mb-12">
-            <h2 className="section-title text-2xl sm:text-3xl mb-6">Common Caribbean Ports Visited</h2>
+            <h2 className="section-title text-2xl sm:text-3xl mb-6">Common Alaska Ports Visited</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               {ship.commonPortSlugs.map((portSlug) => {
                 const port = getPortBySlug(portSlug);
@@ -177,8 +177,8 @@ export function ShipPageView({ ship }: { ship: CruiseShip }) {
                 <Link href="/ship-schedules" className="text-sm text-caribbean-700 hover:underline">
                   Ship schedules hub →
                 </Link>
-                <Link href="/cruise-planner" className="text-sm text-caribbean-700 hover:underline">
-                  Caribbean cruise planner →
+                <Link href="/alaska-cruise-excursion-planner" className="text-sm text-caribbean-700 hover:underline">
+                  Alaska excursion planner →
                 </Link>
               </div>
             </section>
@@ -220,7 +220,7 @@ export function ShipPageView({ ship }: { ship: CruiseShip }) {
                   {line.name} Shore Excursions Guide
                 </Link>
                 <Link href="/ships" className="btn-secondary text-sm">
-                  All Caribbean Ships
+                  All Alaska Ships
                 </Link>
               </div>
             </section>
@@ -229,12 +229,12 @@ export function ShipPageView({ ship }: { ship: CruiseShip }) {
           <section className="mb-12 rounded-2xl border border-caribbean-200 bg-caribbean-50/40 p-6 sm:p-8">
             <h2 className="section-title text-2xl sm:text-3xl mb-2">Plan and Book This Ship&apos;s Port Days</h2>
             <p className="text-sm text-gray-600 mb-5">
-              Match excursions to your itinerary with the Caribbean Excursion Finder, or open the cruise line shore
+              Match excursions to your itinerary with the Alaska Excursion Finder, or open the cruise line shore
               excursions guide for fleet-wide recommendations.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/caribbean-excursion-finder" className="btn-primary text-sm">
-                Caribbean Excursion Finder
+              <Link href="/alaska-cruise-excursion-planner" className="btn-primary text-sm">
+                Alaska Excursion Finder
               </Link>
               {line && (
                 <Link href={`/${line.pageSlug}`} className="btn-secondary text-sm">

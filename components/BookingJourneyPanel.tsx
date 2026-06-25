@@ -14,7 +14,7 @@ export function BookingJourneyPanel({
   portSlug,
   sectionHint,
   title = "Ready to book your shore excursions?",
-  description = "View recommended excursions with local specialists, open the authority port guide, or check ship schedules before you commit.",
+  description = "Plan with local specialist partners, open the authority port guide, or check ship schedules before you commit.",
   className = "mb-12",
   hidePortGuideLink = false,
 }: BookingJourneyPanelProps) {
@@ -33,8 +33,8 @@ export function BookingJourneyPanel({
         />
       ) : (
         <div className="mt-5 flex flex-wrap gap-3">
-          <Link href="/caribbean-excursion-finder" className="btn-primary text-sm">
-            Caribbean Excursion Finder
+          <Link href="/alaska-cruise-excursion-planner" className="btn-primary text-sm">
+            Alaska Excursion Finder
           </Link>
           <Link href="/ports" className="btn-secondary text-sm">
             View Port Guides

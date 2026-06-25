@@ -478,20 +478,21 @@ export function getAverageTimeInPort(slug: string): string | null {
 
 export function getPortPlanningSnapshot(slug: string): PortPlanningSnapshot | null {
   const port = getPortBySlug(slug);
-  const config = planningConfig[slug];
-  if (!port || !config) return null;
+  if (!port) return null;
 
+  const config = planningConfig[slug];
   const verifiedTime = getAverageTimeInPort(slug);
 
   return {
-    timeInPort: verifiedTime ?? config.snapshot.timeInPort ?? "6-9 hours typical",
+    timeInPort: verifiedTime ?? config?.snapshot.timeInPort ?? "6-9 hours typical",
     bestFor: port.bestFor,
     walkingRequired:
-      config.snapshot.walkingRequired ?? deriveWalkingLabel(port.portInfo.tenderRequired, port.portInfo.walkingDistance),
-    familyFriendly: config.snapshot.familyFriendly ?? "Very Good",
-    privateTourFriendly: config.snapshot.privateTourFriendly ?? "Very Good",
+      config?.snapshot.walkingRequired ??
+      deriveWalkingLabel(port.portInfo.tenderRequired, port.portInfo.walkingDistance),
+    familyFriendly: config?.snapshot.familyFriendly ?? "Very Good",
+    privateTourFriendly: config?.snapshot.privateTourFriendly ?? "Very Good",
     returnToShipConfidence:
-      config.snapshot.returnToShipConfidence ??
+      config?.snapshot.returnToShipConfidence ??
       (port.portInfo.tenderRequired ? "Moderate (tender buffer)" : "High"),
   };
 }
@@ -505,47 +506,59 @@ export function getCruiseLinesForPort(slug: string) {
 }
 
 export function getPortPlanningCards(slug: string): PortPlanningCard[] {
-  const config = planningConfig[slug];
-  const authority = getPortAuthority(slug);
-  if (!config) return [];
+  const port = getPortBySlug(slug);
+  if (!port) return [];
 
-  const fallback = (primary: string | undefined, key: keyof typeof config.cardTeasers) =>
-    config.cardTeasers[key] || primary || "Plan with local operators";
+  const topExcursion = port.bestExcursions[0]?.name ?? "Local operator tours";
 
   return [
     {
-      label: "Beaches",
-      href: "/excursion-types/beaches",
-      guideHref: "/best-caribbean-beach-excursions",
-      teaser: fallback(authority?.bestBeaches[0]?.name, "beaches"),
-      tone: "sand",
+      label: "Whales",
+      href: "/excursion-types/whale-watching",
+      guideHref: "/best-alaska-whale-watching-excursions",
+      teaser: topExcursion,
+      tone: "wildlife",
     },
     {
-      label: "Snorkeling",
-      href: "/excursion-types/snorkeling",
-      guideHref: "/best-caribbean-snorkeling-excursions",
-      teaser: fallback(authority?.snorkelling[0]?.site, "snorkeling"),
-      tone: "reef",
+      label: "Glaciers",
+      href: "/excursion-types/glacier-tours",
+      guideHref: "/best-alaska-glacier-excursions",
+      teaser: port.bestFor,
+      tone: "wildlife",
     },
     {
-      label: "Families",
-      href: "/excursion-types/family-tours",
-      guideHref: "/best-caribbean-family-excursions",
-      teaser: fallback(authority?.bestForFamilies[0], "families"),
+      label: "Bears",
+      href: "/excursion-types/bear-viewing",
+      guideHref: "/best-alaska-bear-viewing-excursions",
+      teaser: "Stream and sanctuary bear viewing",
+      tone: "wildlife",
+    },
+    {
+      label: "Railways",
+      href: "/excursion-types/railway-tours",
+      guideHref: "/best-alaska-shore-excursions",
+      teaser: "White Pass and scenic Alaska rail",
       tone: "family",
     },
     {
       label: "Wildlife",
-      href: "/excursion-types/adventure-tours",
-      guideHref: "/best-caribbean-wildlife-excursions",
-      teaser: config.cardTeasers.wildlife,
+      href: "/excursion-types/wildlife-cruises",
+      guideHref: "/best-alaska-whale-watching-excursions",
+      teaser: "Marine wildlife and fjord cruises",
       tone: "wildlife",
     },
     {
-      label: "Private Tours",
-      href: "/excursion-types/private-tours",
-      guideHref: "/best-caribbean-private-tours",
-      teaser: fallback(authority?.privateTours[0]?.name, "private"),
+      label: "Culture",
+      href: "/excursion-types/native-culture",
+      guideHref: "/best-alaska-shore-excursions",
+      teaser: "Totem parks and native heritage",
+      tone: "family",
+    },
+    {
+      label: "Adventure",
+      href: "/excursion-types/kayaking",
+      guideHref: "/best-alaska-shore-excursions",
+      teaser: "Kayaking, flightseeing, and active port days",
       tone: "private",
     },
   ];
@@ -695,10 +708,10 @@ export function getPortActivityEstimate(slug: string): PortActivityEstimate {
   return (
     portActivityEstimates[slug] ?? {
       activityTier: "Moderate",
-      peakSeason: "November – April",
+      peakSeason: "May – September",
       planningNote:
         schedulePort?.scheduleOverview?.slice(0, 160) ??
-        "Check ship schedules before booking popular excursions on multi-ship port days.",
+        "Book wildlife, glacier, and railway excursions early on peak summer port days.",
     }
   );
 }

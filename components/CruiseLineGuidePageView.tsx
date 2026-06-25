@@ -42,7 +42,7 @@ export function CruiseLineGuidePageView({ line }: { line: CruiseLine }) {
           <CruiseLinePlanningSections line={line} variant="guide" />
 
           <section className="mb-12">
-            <h2 className="section-title text-2xl sm:text-3xl mb-6">Popular Caribbean Itineraries</h2>
+            <h2 className="section-title text-2xl sm:text-3xl mb-6">Popular Alaska Itineraries</h2>
             <div className="space-y-4">
               {line.popularItineraries.map((itinerary) => (
                 <div key={itinerary.name} className="card">
@@ -143,7 +143,7 @@ export function CruiseLineGuidePageView({ line }: { line: CruiseLine }) {
           <section className="mb-12">
             <h2 className="section-title text-2xl sm:text-3xl mb-6">Port Excursion Comparison</h2>
             <p className="text-sm text-gray-600 mb-4">
-              Top {line.name} Caribbean ports ranked by excursion type, transfer time, and passenger ratings.
+              Top {line.name} Alaska ports ranked by excursion type, transfer time, and passenger ratings.
             </p>
             <BestGuideComparisonTable rows={line.comparisonTable} />
           </section>

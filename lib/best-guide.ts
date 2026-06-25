@@ -23,6 +23,6 @@ export function buildBestGuideMetadata(slug: string) {
     title: guide.seoTitle,
     description: guide.metaDescription,
     path: `/${slug}`,
-    keywords: ["Caribbean shore excursions", "best excursions", slug.replace(/-/g, " ")],
+    keywords: ["Alaska shore excursions", "best excursions", slug.replace(/-/g, " ")],
   });
 }

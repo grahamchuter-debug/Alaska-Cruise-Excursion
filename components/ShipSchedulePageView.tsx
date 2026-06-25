@@ -7,12 +7,12 @@ import { getPortBySlug } from "@/data/ports";
 import { excursionTypes } from "@/data/excursion-types";
 import { ScheduleHub } from "@/components/ScheduleHub";
 import { ScheduleMonthLinkGrid } from "@/components/ScheduleMonthLinkGrid";
-import { SpecialistLocalGuide } from "@/components/SpecialistLocalGuide";
+import { SpecialistPartnerCard } from "@/components/SpecialistPartnerCard";
 import { FAQSection } from "@/components/FAQSection";
 import { AuthorityHubLinks } from "@/components/AuthorityHubLinks";
 import { NavCardCta } from "@/components/NavCardCta";
 import { SCHEDULE_PLANNING_TIPS } from "@/data/schedule-content";
-import { getSchedulePageContentForPortYear } from "@/data/schedule-page-content";
+import { getSchedulePageContentForPortYear, getSchedulePageContentForPortHub } from "@/data/schedule-page-content";
 import {
   SchedulePageContentSections,
   SchedulePageIntro,
@@ -20,6 +20,10 @@ import {
 import { hasShipSchedule } from "@/lib/routes";
 import { CruisePortInformationBox } from "@/components/CruisePortInformationBox";
 import { getScheduleIntro } from "@/lib/cruise-port-display";
+
+import { JUNEAU_SCHEDULE_PLANNING_TIPS, JUNEAU_SCHEDULE_INTRO, JUNEAU_MONTH_PLANNING_INTRO } from "@/data/juneau-schedule-planning";
+import { isLiveImportedSchedulePort } from "@/data/schedule-coverage";
+import { ScheduleCoverageBanner } from "@/components/ScheduleCoverageBanner";
 
 import { SchedulePassengerGuide } from "@/components/SchedulePassengerGuide";
 
@@ -32,8 +36,11 @@ export function ShipSchedulePageView({
 }) {
   const schedule = year ? getScheduleForPortYear(port.slug, year) : getScheduleForPort(port.slug);
   const authorityPort = getPortBySlug(port.slug);
-  const planningTips = port.planningTips ?? SCHEDULE_PLANNING_TIPS;
+  const planningTips =
+    port.slug === "juneau" ? [...JUNEAU_SCHEDULE_PLANNING_TIPS] : (port.planningTips ?? SCHEDULE_PLANNING_TIPS);
   const pageContent = year ? getSchedulePageContentForPortYear(port.slug, year) : null;
+  const hubContent = getSchedulePageContentForPortHub(port.slug);
+  const displayContent = pageContent ?? (port.slug === "juneau" ? hubContent : null);
   const faqs = pageContent?.faqs ?? port.faqs ?? [];
 
   const relatedPorts = port.relatedPortSlugs
@@ -43,10 +50,15 @@ export function ShipSchedulePageView({
   const excursions = port.excursionTypeSlugs
     .map((slug) => excursionTypes.find((e) => e.slug === slug))
     .filter(Boolean);
-  const scheduleIntro = pageContent?.intro ?? getScheduleIntro(port.slug) ?? port.intro;
+  const scheduleIntro =
+    port.slug === "juneau"
+      ? JUNEAU_SCHEDULE_INTRO
+      : pageContent?.intro ?? getScheduleIntro(port.slug) ?? port.intro;
 
   return (
     <>
+      <ScheduleCoverageBanner portSlug={port.slug} portName={port.name} variant="compact" />
+
       <CruisePortInformationBox portSlug={port.slug} />
 
       <section className="mb-12">
@@ -58,16 +70,26 @@ export function ShipSchedulePageView({
             schedules may change with weather. Allow extra time when planning excursions.
           </p>
         )}
-        {!port.usesTender && port.slug === "juneau" && year && (
+        {!port.usesTender && port.slug === "juneau" && (
           <p className="mt-4 rounded-lg border border-caribbean-200 bg-caribbean-50 px-4 py-3 text-sm text-caribbean-900">
             <strong>Downtown dock:</strong> Most Juneau ships berth at the downtown cruise terminal — whale
-            tours and Mendenhall Glacier transfers start near the pier.
+            tours, Mendenhall Glacier taxis, and helicopter pickups start near the pier. Plan 45–60 minutes
+            return buffer before all-aboard even on docked calls.
+          </p>
+        )}
+        {!isLiveImportedSchedulePort(port.slug) && (
+          <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+            <strong>Import pending:</strong> Verified ship rows for {port.name} are not published yet. Use the{" "}
+            <Link href="/ship-schedules/juneau" className="font-medium underline">
+              Juneau live schedule
+            </Link>{" "}
+            for multi-ship planning examples while this port imports.
           </p>
         )}
       </section>
 
-      {pageContent && (
-        <SchedulePageContentSections content={pageContent} portName={port.name} />
+      {displayContent && (
+        <SchedulePageContentSections content={displayContent} portName={port.name} />
       )}
 
       {year && (
@@ -128,19 +150,8 @@ export function ShipSchedulePageView({
           </div>
           {authorityPort && (
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Specialist local website</h3>
-              <a
-                href={authorityPort.specialistUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card-gradient group flex h-full flex-col hover:border-caribbean-300"
-              >
-                <span className="font-medium text-gray-900">{authorityPort.specialistName}</span>
-                <span className="block text-sm text-gray-600 mt-1">
-                  Live tour listings, local pricing, and pier pickup details
-                </span>
-                <NavCardCta className="pt-4">Book with {authorityPort.specialistName}</NavCardCta>
-              </a>
+              <h3 className="font-semibold text-gray-900 mb-3">Local specialist partner</h3>
+              <SpecialistPartnerCard portSlug={port.slug} variant="compact" hidePortGuideLink />
             </div>
           )}
         </div>
@@ -198,13 +209,6 @@ export function ShipSchedulePageView({
           </div>
         )}
       </section>
-
-      {authorityPort && (
-        <div className="mb-12">
-          <SpecialistLocalGuide portSlug={port.slug} />
-        </div>
-      )}
-
       {year && (
         <section className="mb-12 rounded-xl border border-gray-200 bg-white p-6">
           <h2 className="section-title text-2xl sm:text-3xl mb-4">Alaska Planning Resources</h2>

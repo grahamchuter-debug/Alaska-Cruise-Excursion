@@ -2,6 +2,11 @@ import Link from "next/link";
 import type { PortExcursionAuthorityRow } from "@/data/types";
 import { getPortBySlug } from "@/data/ports";
 import { evaluateAuthorityRowConfidence } from "@/lib/cruise-confidence";
+import {
+  formatSpecialistDomain,
+  getSpecialistHomeUrl,
+  getSpecialistPartnerCta,
+} from "@/lib/specialist-links";
 import { CruiseConfidenceBadge } from "@/components/CruiseConfidenceBadge";
 
 export function PortExcursionAuthorityTable({ rows }: { rows: PortExcursionAuthorityRow[] }) {
@@ -35,13 +40,14 @@ export function PortExcursionAuthorityTable({ rows }: { rows: PortExcursionAutho
                   {port && (
                     <div className="mt-1">
                       <a
-                        href={port.specialistUrl}
+                        href={getSpecialistHomeUrl(row.portSlug)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-gray-500 hover:text-caribbean-700"
+                        className="text-xs font-medium text-caribbean-700 hover:underline"
                       >
-                        {port.specialistName} →
+                        {getSpecialistPartnerCta(row.portSlug)} →
                       </a>
+                      <p className="text-[10px] text-gray-500">{formatSpecialistDomain(port.specialistUrl)}</p>
                     </div>
                   )}
                 </td>

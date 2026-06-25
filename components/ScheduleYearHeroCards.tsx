@@ -29,11 +29,11 @@ export function ScheduleYearHeroCards() {
             <p className="mt-3 text-lg text-caribbean-50">{content.heroSubtitle}</p>
             <p className="mt-4 text-sm text-caribbean-100">
               {verifiedCount > 0
-                ? `${totalCalls.toLocaleString()} verified ship calls across ${verifiedCount} port${verifiedCount !== 1 ? "s" : ""}`
-                : `${getSchedulePortCount()} ports tracked, imports rolling out by month`}
+                ? `${totalCalls.toLocaleString()} verified ship calls — Juneau only today; more Alaska ports importing`
+                : `${getSchedulePortCount()} port hubs tracked — verified monthly data rolls out port by port`}
             </p>
             <span className="mt-6 inline-flex items-center rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-caribbean-800 group-hover:bg-caribbean-50">
-              Open {year} Caribbean schedules
+              Open {year} Alaska schedules
               <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

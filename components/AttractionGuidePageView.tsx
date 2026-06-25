@@ -6,13 +6,14 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQSection } from "@/components/FAQSection";
 import { JsonLd } from "@/components/JsonLd";
 import { ExcursionCardCTAs } from "@/components/ExcursionCardCTAs";
+import { getSpecialistPartnerCta } from "@/lib/specialist-links";
 import { breadcrumbSchema, faqSchema, travelGuideSchema } from "@/lib/schema";
 
 export function AttractionGuidePageView({ guide }: { guide: AttractionGuidePage }) {
   const port = getPortBySlug(guide.portSlug);
   const breadcrumbs = [
     { name: "Home", path: "/" },
-    { name: "Caribbean Ports", path: "/ports" },
+    { name: "Alaska Ports", path: "/ports" },
     { name: port?.name ?? guide.portSlug, path: `/ports/${guide.portSlug}` },
     { name: guide.title, path: `/${guide.slug}` },
   ];
@@ -98,7 +99,7 @@ export function AttractionGuidePageView({ guide }: { guide: AttractionGuidePage 
                       rel="noopener noreferrer"
                       className="mt-3 inline-flex text-sm font-medium text-caribbean-700 hover:underline"
                     >
-                      View on {port?.specialistName ?? "specialist site"} →
+                      {getSpecialistPartnerCta(guide.portSlug)} →
                     </a>
                   )}
                 </div>

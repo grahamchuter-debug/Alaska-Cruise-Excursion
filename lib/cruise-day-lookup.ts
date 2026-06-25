@@ -102,7 +102,7 @@ export function getDailyScheduleSummary(
   let planningNote = `Review arrival and departure times before booking ${portName ?? "port"} shore excursions.`;
   if (crowdLevel === "Very Busy") {
     planningNote =
-      "Very busy port day. Book reef tours, beach clubs, and top attractions as early as possible and allow extra return time.";
+      "Very busy port day. Book whale watching, glacier tours, and railway excursions as early as possible and allow extra return time.";
   } else if (crowdLevel === "Busy") {
     planningNote =
       "Multiple ships share the port. Morning excursion departures and pre-booked transfers reduce queue time.";
@@ -111,7 +111,7 @@ export function getDailyScheduleSummary(
       "A typical multi-ship day. Independent operators with pier pickup still offer good availability with advance booking.";
   } else {
     planningNote =
-      "A lighter port day. Good conditions for private tours, relaxed beach time, and flexible independent bookings.";
+      "A lighter port day. Good conditions for private tours, scenic walks, and flexible independent bookings.";
   }
 
   return {

@@ -58,7 +58,7 @@ export function getMonthlyScheduleStats(
     `Review arrival and departure times for your ship before booking ${port.name} shore excursions in ${monthName}.`;
 
   if (busiestDay && busiestDay.count >= 3) {
-    planningTip = `${formatDisplayDate(busiestDay.date)} is the busiest day this month with ${busiestDay.count} scheduled ship calls. Book reef tours, beach clubs, and popular attractions early on that date.`;
+    planningTip = `${formatDisplayDate(busiestDay.date)} is the busiest day this month with ${busiestDay.count} scheduled ship calls. Book whale watching, glacier tours, and popular excursions early on that date.`;
   } else if (shipCalls >= 40) {
     planningTip = `${monthName} is a high-volume month at ${port.name}. Compare independent operators that guarantee on-time pier return before choosing your port-day activities.`;
   } else if (port.usesTender) {
@@ -107,7 +107,7 @@ export function getMonthlyScheduleFaqs(
     {
       question: "How early should I book a shore excursion?",
       answer:
-        `Once you confirm your ship's in-port window from this ${monthLabel} schedule, book must-do tours at least one to two weeks ahead on busy call days. Popular snorkel, beach, and wildlife excursions sell out fastest when multiple ships share the port.`,
+        `Once you confirm your ship's in-port window from this ${monthLabel} schedule, book must-do tours at least one to two weeks ahead on busy call days. Popular whale watching, glacier, and wildlife excursions sell out fastest when multiple ships share the port.`,
     },
     {
       question: "How much time should I leave before returning to the ship?",

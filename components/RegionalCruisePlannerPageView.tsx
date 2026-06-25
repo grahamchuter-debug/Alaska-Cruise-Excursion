@@ -16,12 +16,12 @@ import { BestGuideComparisonTable } from "@/components/BestGuideComparisonTable"
 import { SpecialistLocalGuideSection } from "@/components/SpecialistLocalGuide";
 import { AuthorityHubLinks } from "@/components/AuthorityHubLinks";
 import { JsonLd } from "@/components/JsonLd";
+import { ExcursionCardCTAs } from "@/components/ExcursionCardCTAs";
 import { ClusterPageSections } from "@/components/ClusterPageSections";
 import { getTopicCluster } from "@/data/topic-clusters";
 import { breadcrumbSchema, faqSchema, travelGuideSchema } from "@/lib/schema";
 import { ExploreByRegion } from "@/components/ExploreByRegion";
 import { getCaribbeanRegionIdForPlanner } from "@/data/caribbean-regions-map";
-import { ExcursionCardCTAs } from "@/components/ExcursionCardCTAs";
 
 function PortLink({ portSlug }: { portSlug: string }) {
   const port = getPortBySlug(portSlug);
@@ -130,14 +130,7 @@ export function RegionalCruisePlannerPageView({ planner }: { planner: RegionalCr
                           {scheduleCta?.fallbackNote && (
                             <p className="w-full text-xs text-gray-500">{scheduleCta.fallbackNote}</p>
                           )}
-                          <a
-                            href={port.specialistUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn-secondary text-xs"
-                          >
-                            {port.specialistName}
-                          </a>
+                          <ExcursionCardCTAs portSlug={slug} specialistOnly className="mt-2" />
                         </div>
                       </div>
                     );

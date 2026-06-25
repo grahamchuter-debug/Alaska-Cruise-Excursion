@@ -67,7 +67,7 @@ export const cruiseDayPlanActivityLevels: {
   label: string;
   description: string;
 }[] = [
-  { id: "easy", label: "Easy", description: "Minimal walking, beach transfers, calm water" },
+  { id: "easy", label: "Easy", description: "Minimal walking, scenic transfers, calm water" },
   { id: "moderate", label: "Moderate", description: "Boat rides, uneven terrain, or moderate hiking" },
   { id: "active", label: "Active", description: "Waterfall hikes, long transfers, full-day adventure" },
 ];
@@ -306,9 +306,9 @@ function filterRelatedExcursions(
       ? [
           {
             label: "Adventure & Culture",
-            teaser: "Ruins, rainforest routes, and active port-day highlights",
-            excursionTypeHref: "/excursion-types/adventure-tours",
-            guideHref: "/best-caribbean-shore-excursions",
+            teaser: "Flightseeing, kayaking, and active port-day highlights",
+            excursionTypeHref: "/excursion-types/flightseeing",
+            guideHref: "/best-alaska-shore-excursions",
           },
         ]
       : [];

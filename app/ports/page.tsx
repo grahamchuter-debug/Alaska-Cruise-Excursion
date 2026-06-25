@@ -13,11 +13,11 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, travelGuideSchema } from "@/lib/schema";
 
 export const metadata = buildMetadata({
-  title: "Caribbean Cruise Ports Guide",
+  title: "Alaska Cruise Ports Guide",
   description:
-    "Comprehensive guides to Caribbean cruise ports including shore excursion recommendations, port information, and passenger tips for every major destination.",
+    "Comprehensive guides to Alaska cruise ports including shore excursion recommendations, port information, and passenger tips for every major destination.",
   path: "/ports",
-  keywords: ["Caribbean cruise ports", "port guides", "shore excursion ports"],
+  keywords: ["Alaska cruise ports", "port guides", "shore excursion ports"],
 });
 
 export default function PortsPage() {
@@ -30,25 +30,25 @@ export default function PortsPage() {
         data={[
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Caribbean Ports", path: "/ports" },
+            { name: "Alaska Ports", path: "/ports" },
           ]),
           travelGuideSchema({
-            title: "Caribbean Cruise Ports Guide",
-            description: "Comprehensive guides to Caribbean cruise ports and shore excursions.",
+            title: "Alaska Cruise Ports Guide",
+            description: "Comprehensive guides to Alaska cruise ports and shore excursions.",
             path: "/ports",
           }),
         ]}
       />
       <PageHero
-        title="Caribbean Cruise Ports"
-        subtitle="Explore in-depth guides to the Caribbean's most popular cruise ports. Compare excursions, read passenger tips, and connect with local specialists."
+        title="Alaska Cruise Ports"
+        subtitle="Explore in-depth guides to Alaska's most popular cruise ports. Compare excursions, read passenger tips, and connect with local specialists."
       />
       <section className="section-padding">
         <div className="container-wide">
           <Breadcrumbs
             items={[
               { name: "Home", path: "/" },
-              { name: "Caribbean Ports", path: "/ports" },
+              { name: "Alaska Ports", path: "/ports" },
             ]}
           />
 
@@ -58,7 +58,7 @@ export default function PortsPage() {
 
           <section className="mb-12 rounded-xl border border-caribbean-100 bg-caribbean-50/40 p-6">
             <h2 className="font-display text-xl font-bold text-gray-900 mb-2">
-              All {portCount} Caribbean Cruise Ports
+              All {portCount} Alaska Cruise Ports
             </h2>
             <p className="text-gray-700 text-sm mb-4">
               Every port below has an authority guide, specialist local excursion website, related port links, and a Detailed Local Guide section.
@@ -77,7 +77,7 @@ export default function PortsPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="section-title text-2xl mb-6">Browse by Caribbean Region</h2>
+            <h2 className="section-title text-2xl mb-6">Browse by Alaska Region</h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {regionPages.map((region) => (
                 <Link key={region.slug} href={`/${region.slug}`} className="card-gradient group flex h-full flex-col">

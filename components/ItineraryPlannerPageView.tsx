@@ -13,11 +13,11 @@ import { JsonLd } from "@/components/JsonLd";
 import { SpecialistLocalGuideSection } from "@/components/SpecialistLocalGuide";
 import { getRegionalPlannersByParentPlanner } from "@/data/regional-cruise-planners";
 import { ClusterPageSections } from "@/components/ClusterPageSections";
+import { ExcursionCardCTAs } from "@/components/ExcursionCardCTAs";
 import { getTopicCluster } from "@/data/topic-clusters";
 import { breadcrumbSchema, faqSchema, travelGuideSchema } from "@/lib/schema";
 import { ExploreByRegion } from "@/components/ExploreByRegion";
 import { getCaribbeanRegionIdForPlanner } from "@/data/caribbean-regions-map";
-import { ExcursionCardCTAs } from "@/components/ExcursionCardCTAs";
 import { NavCardCta } from "@/components/NavCardCta";
 
 function PortLink({ portSlug }: { portSlug: string }) {
@@ -118,14 +118,7 @@ export function ItineraryPlannerPageView({ planner }: { planner: ItineraryPlanne
                         {scheduleCta?.fallbackNote && (
                           <p className="w-full text-xs text-gray-500">{scheduleCta.fallbackNote}</p>
                         )}
-                        <a
-                          href={port.specialistUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-secondary text-xs"
-                        >
-                          {port.specialistName}
-                        </a>
+                        <ExcursionCardCTAs portSlug={slug} specialistOnly className="mt-2" />
                       </div>
                     </div>
                   );

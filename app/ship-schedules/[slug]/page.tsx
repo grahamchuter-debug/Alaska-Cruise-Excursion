@@ -80,10 +80,10 @@ export default async function ShipSchedulePortPage({
           <Breadcrumbs items={breadcrumbs} />
           <div className="mb-6 flex flex-wrap gap-4">
             <Link href={yearHubPath(2026)} className="btn-secondary text-sm">
-              2026 Caribbean Schedules
+              2026 Alaska Schedules
             </Link>
             <Link href={yearHubPath(2027)} className="btn-secondary text-sm">
-              2027 Caribbean Schedules
+              2027 Alaska Schedules
             </Link>
             <Link href={`/ports/${slug}`} className="btn-secondary text-sm">
               {port.name} Port Guide

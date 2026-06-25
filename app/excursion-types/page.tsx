@@ -8,10 +8,10 @@ import { breadcrumbSchema, travelGuideSchema } from "@/lib/schema";
 import { NavCardCta } from "@/components/NavCardCta";
 
 export const metadata = buildMetadata({
-  title: "Caribbean Shore Excursion Types",
-  description: "Explore Caribbean shore excursion categories: beaches, snorkeling, wildlife, culture, private tours, family tours, catamaran cruises, and adventure tours. Find the best ports for each type.",
+  title: "Alaska Shore Excursion Types",
+  description: "Explore Alaska shore excursion categories: whale watching, glacier tours, bear viewing, railways, flightseeing, wildlife cruises, kayaking, fishing, and native culture. Find the best ports for each type.",
   path: "/excursion-types",
-  keywords: ["excursion types", "Caribbean tours", "shore excursion categories"],
+  keywords: ["excursion types", "Alaska tours", "shore excursion categories"],
 });
 
 export default function ExcursionTypesPage() {
@@ -24,15 +24,15 @@ export default function ExcursionTypesPage() {
             { name: "Excursion Types", path: "/excursion-types" },
           ]),
           travelGuideSchema({
-            title: "Caribbean Shore Excursion Types",
-            description: "Guide to Caribbean shore excursion categories and the best ports for each.",
+            title: "Alaska Shore Excursion Types",
+            description: "Guide to Alaska shore excursion categories and the best ports for each.",
             path: "/excursion-types",
           }),
         ]}
       />
       <PageHero
         title="Excursion Types"
-        subtitle="Find the right shore excursion category for your Caribbean port day. Each guide covers what to expect, best ports, and expert tips."
+        subtitle="Find the right shore excursion category for your Alaska port day. Each guide covers what to expect, best ports, and expert tips."
       />
       <section className="section-padding">
         <div className="container-wide">

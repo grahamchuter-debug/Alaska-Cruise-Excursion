@@ -11,6 +11,8 @@ import {
   SchedulePageIntro,
 } from "@/components/SchedulePageContentSections";
 import { SchedulePassengerGuide } from "@/components/SchedulePassengerGuide";
+import { ScheduleCoverageBanner } from "@/components/ScheduleCoverageBanner";
+import { isLiveImportedSchedulePort } from "@/data/schedule-coverage";
 import { NavCardCta } from "@/components/NavCardCta";
 
 export function ShipScheduleHubView({ port }: { port: ShipSchedulePort }) {
@@ -19,6 +21,8 @@ export function ShipScheduleHubView({ port }: { port: ShipSchedulePort }) {
 
   return (
     <>
+      <ScheduleCoverageBanner portSlug={port.slug} portName={port.name} />
+
       <CruisePortInformationBox portSlug={port.slug} />
 
       {pageContent && <SchedulePageIntro content={pageContent} />}
@@ -29,10 +33,11 @@ export function ShipScheduleHubView({ port }: { port: ShipSchedulePort }) {
           <p className="text-gray-700 leading-relaxed text-lg mb-6 max-w-3xl">{port.intro}</p>
         )}
         {pageContent && (
-          <p className="text-gray-700 leading-relaxed mb-6 max-w-3xl">
-            Open the year that matches your sailing for monthly arrival and departure tables. Compare
-            both years from this hub if you are still choosing between 2026 and 2027 itineraries.
-          </p>
+        <p className="text-gray-700 leading-relaxed mb-6">
+          {isLiveImportedSchedulePort(port.slug)
+            ? "Open the year that matches your sailing for monthly arrival and departure tables with verified ship calls."
+            : "Framework pages are ready for 2026 and 2027 — verified monthly tables will appear here as imports complete."}
+        </p>
         )}
         {port.usesTender && (
           <p className="mb-6 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">

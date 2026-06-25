@@ -36,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/ports", priority: 0.9 },
     { path: "/excursion-types", priority: 0.9 },
     { path: "/alaska-cruise-excursion-planner", priority: 0.95 },
+    { path: "/cruise-day-plan", priority: 0.88 },
     { path: "/plan-my-alaska-cruise", priority: 0.85 },
     { path: "/best-alaska-guides", priority: 0.92 },
     { path: "/alaska-faq", priority: 0.8 },

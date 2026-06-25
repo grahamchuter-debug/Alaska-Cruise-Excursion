@@ -1,4 +1,8 @@
 import type { SchedulePageContent } from "./schedule-page-types";
+import {
+  JUNEAU_SCHEDULE_INTRO,
+  juneauPlanningYourDay,
+} from "./juneau-schedule-planning";
 
 function alaskaHub(
   slug: string,
@@ -11,8 +15,8 @@ function alaskaHub(
     tenderNote ??
     "Most Alaska Inside Passage ports dock at the pier; confirm tender ports (Sitka, Icy Strait) on your ship's daily program.";
   return {
-    intro: `This ${name} schedule hub is your entry point for 2026 and 2027 Alaska cruise ship call data. Compare years before opening monthly tables — knowing how many ships share your pier day helps when booking whale tours, railway seats, or flightseeing slots.`,
-    heroSubtitle: `${name} Alaska cruise schedule hub — compare 2026 and 2027 ship calls and plan shore excursions around arrival and departure windows.`,
+    intro: `This ${name} schedule hub is ready for 2026 and 2027 Alaska cruise ship call data. Verified monthly tables are not published yet — only Juneau has live imports on this site today. We do not show placeholder sailings.`,
+    heroSubtitle: `${name} Alaska cruise schedule hub — framework pages live while verified ship-call imports are in progress.`,
     whyPassengersUse: [
       `${name} is a key Alaska itinerary stop — this hub links to year pages with monthly ship lists as verified imports land.`,
       "Published arrival times frame how much time you have for signature excursions versus downtown exploration.",
@@ -83,12 +87,90 @@ function alaskaHub(
 }
 
 export const scheduleHubContent = {
-  "juneau-hub": alaskaHub(
-    "juneau",
-    "Juneau",
-    ["Whale watching from Auke Bay", "Mendenhall Glacier visits", "Downtown State Street walks"],
-    ["Humpback whale watching", "Mendenhall Glacier tour", "Helicopter glacier landing"],
-  ),
+  "juneau-hub": {
+    intro: JUNEAU_SCHEDULE_INTRO,
+    heroSubtitle:
+      "Juneau cruise ship schedule hub — the only Alaska port with live imported data today. Compare 2026 and 2027 ship calls, then plan whale watching, Mendenhall Glacier, helicopter tours, and Tracy Arm trips around verified arrival windows.",
+    whyPassengersUse: [
+      "Juneau is Alaska's busiest cruise port — live imported schedules show how many ships share your downtown pier day.",
+      "Morning whale-watching boats and helicopter glacier departures sell out fastest when multiple vessels call on the same date.",
+      "Mendenhall Glacier taxis and Tracy Arm day boats need enough time ashore — match tour length to verified departure times.",
+      "Downtown docking keeps transfers short, but gangway queues still build — plan a 45–60 minute return buffer before all-aboard.",
+    ],
+    planningYourDay: juneauPlanningYourDay,
+    faqs: [
+      {
+        question: "Should I use the Juneau 2026 or 2027 schedule for excursion planning?",
+        answer:
+          "Open the year that matches your sailing. Monthly tables list ship names, arrival and departure times, and competing vessels on your pier day — Juneau is the only Alaska port with live imported rows today.",
+      },
+      {
+        question: "How do I plan whale watching around the Juneau schedule?",
+        answer:
+          "Check how many ships call on your date, then book a morning whale-watching departure from downtown or Auke Bay. Multi-ship days fill popular operators by late morning.",
+      },
+      {
+        question: "Can I fit Mendenhall Glacier and whale watching on one Juneau port day?",
+        answer:
+          "Yes on a typical 6–9 hour call if you book efficient tours or taxis. Allow 45–60 minutes round trip to Mendenhall plus 3–4 hours for whale watching — confirm your ship's departure before stacking both.",
+      },
+      {
+        question: "When should I book helicopter glacier tours in Juneau?",
+        answer:
+          "As early as possible on peak summer weeks. Helicopters cancel in low cloud — keep a flexible backup such as whale watching or a downtown walk if weather shifts.",
+      },
+      {
+        question: "Are Juneau arrival and departure times guaranteed?",
+        answer:
+          "No — published schedules are planning guides from verified imports. Weather, pier assignments, and cruise line changes can shift times. Confirm the daily program on your ship before disembarking.",
+      },
+    ],
+    internalLinks: [
+      {
+        label: "Juneau 2027 Schedule",
+        href: "/ship-schedules/juneau/2027",
+        description: "Monthly ship calls for the 2027 Alaska season.",
+      },
+      {
+        label: "Juneau port guide",
+        href: "/ports/juneau",
+        description: "Whale watching, glaciers, and downtown logistics.",
+      },
+      {
+        label: "Alaska Excursion Planner",
+        href: "/alaska-cruise-excursion-planner",
+        description: "Match excursions to your ports and interests.",
+      },
+    ],
+    hubDetails: {
+      popularExcursions: [
+        {
+          name: "Humpback whale watching",
+          description: "Morning departures from downtown or Auke Bay — book early on multi-ship days.",
+          duration: "3–4 hours",
+        },
+        {
+          name: "Mendenhall Glacier visit",
+          description: "Visitor centre and Nugget Falls trail — taxi or tour from the cruise docks.",
+          duration: "2–3 hours",
+        },
+        {
+          name: "Helicopter glacier landing",
+          description: "Icefield flightseeing with short walks on the glacier when weather allows.",
+          duration: "2–3 hours",
+        },
+      ],
+      terminalInfo:
+        "Franklin Street and South Franklin cruise terminals — most ships dock downtown within walking distance of State Street.",
+      tenderVsDock: "Juneau uses downtown docks; no tender boats on standard cruise calls.",
+      typicalTimeInPort: "Usually 6–9 hours — see monthly tables for verified averages on your sailing date.",
+      bestExcursionTiming: [
+        "Morning: whale watching and helicopter departures before clouds build",
+        "Midday: Mendenhall Glacier taxi runs and shorter downtown walks",
+        "Full port day only: Tracy Arm or Endicott Arm fjord cruises",
+      ],
+    },
+  } satisfies SchedulePageContent,
   "skagway-hub": alaskaHub(
     "skagway",
     "Skagway",

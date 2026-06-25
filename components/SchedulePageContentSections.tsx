@@ -20,7 +20,7 @@ export function SchedulePageContentSections({
 
   const planningTitle =
     content.planningTitle ??
-    (portName ? `Planning Your Day In ${portName}` : "Planning Your Caribbean Port Days");
+    (portName ? `Planning Your Day In ${portName}` : "Planning Your Alaska Port Days");
 
   const { planningYourDay } = content;
 

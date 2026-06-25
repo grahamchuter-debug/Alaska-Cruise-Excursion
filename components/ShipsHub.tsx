@@ -104,7 +104,7 @@ export function ShipsHub({
           </div>
         </div>
         <p className="mt-3 text-sm text-gray-500">
-          Showing {filtered.length} of {ships.length} Caribbean ship guides
+          Showing {filtered.length} of {ships.length} Alaska ship guides
         </p>
       </section>
 

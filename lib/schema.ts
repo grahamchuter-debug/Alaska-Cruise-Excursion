@@ -60,8 +60,8 @@ export function travelGuideSchema({
     inLanguage: "en-US",
     about: {
       "@type": "Place",
-      name: "Caribbean",
-      description: "Caribbean cruise ports and shore excursions",
+      name: "Alaska",
+      description: "Alaska cruise ports and shore excursions",
     },
   };
 }

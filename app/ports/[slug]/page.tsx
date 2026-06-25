@@ -67,7 +67,7 @@ export default async function PortPage({ params }: { params: Promise<{ slug: str
 
   const breadcrumbs = [
     { name: "Home", path: "/" },
-    { name: "Caribbean Ports", path: "/ports" },
+    { name: "Alaska Ports", path: "/ports" },
     { name: port.name, path: `/ports/${slug}` },
   ];
 

@@ -1,16 +1,29 @@
 import { getPortBySlug } from "@/data/ports";
 
-const VALID_SPECIALIST_CATEGORY_SLUGS = new Set([
-  "beaches",
-  "snorkeling",
-  "private-tours",
-  "family-tours",
-  "catamaran-cruises",
-  "adventure-tours",
-]);
+/** Alaska cruise ports — specialist outbound links use homepage only unless listed in CONFIRMED_SPECIALIST_DEEP_LINKS. */
+export const ALASKA_PORT_SLUGS = [
+  "juneau",
+  "skagway",
+  "ketchikan",
+  "ward-cove",
+  "icy-strait",
+  "sitka",
+  "haines",
+  "seward",
+  "whittier",
+  "denali",
+] as const;
 
-/** Specialist sites that only expose a homepage (category paths return 404). */
-const SPECIALIST_HOMEPAGE_ONLY_PORTS = new Set([
+export type AlaskaPortSlug = (typeof ALASKA_PORT_SLUGS)[number];
+
+/**
+ * Confirmed specialist deep links only — do not add paths unless verified on the live site.
+ * Format: portSlug → excursionTypeSlug → absolute or root-relative URL.
+ */
+const CONFIRMED_SPECIALIST_DEEP_LINKS: Record<string, Record<string, string>> = {};
+
+const SPECIALIST_HOMEPAGE_ONLY_PORTS = new Set<string>([
+  ...ALASKA_PORT_SLUGS,
   "st-thomas",
   "curacao",
   "costa-maya",
@@ -18,43 +31,29 @@ const SPECIALIST_HOMEPAGE_ONLY_PORTS = new Set([
   "tortola",
 ]);
 
-const GUIDE_HREF_TO_EXCURSION_TYPE: Record<string, string> = {
-  "/best-caribbean-beach-excursions": "beaches",
-  "/best-caribbean-snorkeling-excursions": "snorkeling",
-  "/best-caribbean-family-excursions": "family-tours",
-  "/best-caribbean-private-tours": "private-tours",
-  "/best-caribbean-wildlife-excursions": "adventure-tours",
-  "/best-caribbean-catamaran-excursions": "catamaran-cruises",
+/** Premium outbound CTA copy per Alaska port. */
+const SPECIALIST_PARTNER_CTA: Record<string, string> = {
+  juneau: "Plan Juneau excursions",
+  skagway: "Explore Skagway tours",
+  ketchikan: "Visit the Ketchikan guide",
+  "ward-cove": "Explore Ward Cove tours",
+  "icy-strait": "Plan Icy Strait excursions",
+  sitka: "Explore Sitka tours",
+  haines: "Plan Haines excursions",
+  seward: "Explore Seward tours",
+  whittier: "Plan Whittier excursions",
+  denali: "Visit the Denali guide",
 };
 
-const SECTION_HINT_TO_SLUG: Record<string, string> = {
-  beaches: "beaches",
-  beach: "beaches",
-  snorkelling: "snorkeling",
-  snorkeling: "snorkeling",
-  snorkel: "snorkeling",
-  family: "family-tours",
-  private: "private-tours",
-  wildlife: "adventure-tours",
-  culture: "adventure-tours",
-  adventure: "adventure-tours",
-  catamaran: "catamaran-cruises",
-};
-
-/** Excursion type slugs that map to a specialist category path. */
-const EXCURSION_TYPE_SPECIALIST_ALIASES: Record<string, string> = {
-  wildlife: "adventure-tours",
-  culture: "adventure-tours",
-};
-
-const TYPE_LABEL_PATTERNS: [RegExp, string][] = [
-  [/snorkel/i, "snorkeling"],
-  [/beach|sandbar|orient bay|seven mile|eagle beach|magens|west bay/i, "beaches"],
-  [/catamaran|sail/i, "catamaran-cruises"],
-  [/private|charter|custom/i, "private-tours"],
-  [/family|park|aquaventure|dolphin|chankanaab|atlantis/i, "family-tours"],
-  [/adventure|atv|zip|ruin|culture|sightseeing|wildlife|stingray|falls|raft/i, "adventure-tours"],
-];
+export interface SpecialistPartner {
+  portSlug: string;
+  portName: string;
+  siteName: string;
+  homepageUrl: string;
+  domain: string;
+  ctaLabel: string;
+  bestFor: string;
+}
 
 export interface SpecialistExcursionUrlInput {
   excursionTypeSlug?: string;
@@ -64,52 +63,49 @@ export interface SpecialistExcursionUrlInput {
   text?: string;
 }
 
-function normalizeSlug(value: string): string | undefined {
-  const trimmed = value.trim().toLowerCase();
-  if (VALID_SPECIALIST_CATEGORY_SLUGS.has(trimmed)) return trimmed;
-  return SECTION_HINT_TO_SLUG[trimmed];
+export function isAlaskaPortSlug(slug: string): slug is AlaskaPortSlug {
+  return (ALASKA_PORT_SLUGS as readonly string[]).includes(slug);
 }
 
-function inferFromText(text: string): string | undefined {
-  for (const [pattern, slug] of TYPE_LABEL_PATTERNS) {
-    if (pattern.test(text)) return slug;
+export function formatSpecialistDomain(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
   }
-  return undefined;
 }
 
-export function resolveExcursionTypeSlug(input: SpecialistExcursionUrlInput = {}): string | undefined {
-  if (input.excursionTypeSlug) {
-    const alias = EXCURSION_TYPE_SPECIALIST_ALIASES[input.excursionTypeSlug];
-    if (alias) return alias;
-    const normalized = normalizeSlug(input.excursionTypeSlug);
-    if (normalized) return normalized;
-  }
+function normalizeHomepageUrl(url: string): string {
+  return url.replace(/\/$/, "");
+}
 
-  if (input.guideHref) {
-    const fromGuide = GUIDE_HREF_TO_EXCURSION_TYPE[input.guideHref];
-    if (fromGuide) return fromGuide;
-  }
+export function getSpecialistPartner(portSlug: string): SpecialistPartner | null {
+  const port = getPortBySlug(portSlug);
+  if (!port) return null;
 
-  if (input.sectionHint) {
-    const fromHint = normalizeSlug(input.sectionHint);
-    if (fromHint) return fromHint;
+  return {
+    portSlug,
+    portName: port.name,
+    siteName: port.specialistName,
+    homepageUrl: normalizeHomepageUrl(port.specialistUrl),
+    domain: formatSpecialistDomain(port.specialistUrl),
+    ctaLabel: getSpecialistPartnerCta(portSlug),
+    bestFor: port.bestFor,
+  };
+}
 
-    const fromHintText = inferFromText(input.sectionHint);
-    if (fromHintText) return fromHintText;
-  }
+export function getSpecialistPartnerCta(portSlug: string): string {
+  return SPECIALIST_PARTNER_CTA[portSlug] ?? "Book with the local specialist";
+}
 
-  if (input.excursionType) {
-    const fromLabel = normalizeSlug(input.excursionType);
-    if (fromLabel) return fromLabel;
+export function getSpecialistHomeUrl(portSlug: string): string {
+  const port = getPortBySlug(portSlug);
+  if (!port) return "/ports";
+  return normalizeHomepageUrl(port.specialistUrl);
+}
 
-    const fromLabelText = inferFromText(input.excursionType);
-    if (fromLabelText) return fromLabelText;
-  }
-
-  if (input.text) {
-    return inferFromText(input.text);
-  }
-
+function resolveExcursionTypeSlug(_input: SpecialistExcursionUrlInput = {}): string | undefined {
+  // Alaska outbound uses homepage-only policy; legacy Caribbean resolution removed from live paths.
   return undefined;
 }
 
@@ -120,19 +116,28 @@ export function getSpecialistExcursionUrl(
   const port = getPortBySlug(portSlug);
   if (!port) return "/ports";
 
-  const typeSlug = resolveExcursionTypeSlug(input);
-  if (!typeSlug || SPECIALIST_HOMEPAGE_ONLY_PORTS.has(portSlug)) {
-    return port.specialistUrl;
+  const typeSlug = input.excursionTypeSlug ?? resolveExcursionTypeSlug(input);
+  const confirmed =
+    typeSlug && CONFIRMED_SPECIALIST_DEEP_LINKS[portSlug]?.[typeSlug];
+
+  if (confirmed) {
+    if (confirmed.startsWith("http")) return confirmed;
+    const base = normalizeHomepageUrl(port.specialistUrl);
+    return `${base}${confirmed.startsWith("/") ? confirmed : `/${confirmed}`}`;
   }
 
-  const base = port.specialistUrl.replace(/\/$/, "");
+  if (!typeSlug || SPECIALIST_HOMEPAGE_ONLY_PORTS.has(portSlug)) {
+    return normalizeHomepageUrl(port.specialistUrl);
+  }
+
+  const base = normalizeHomepageUrl(port.specialistUrl);
   return `${base}/${typeSlug}`;
 }
 
-export function excursionTypeSlugFromGuideHref(guideHref: string): string | undefined {
-  return GUIDE_HREF_TO_EXCURSION_TYPE[guideHref];
+export function excursionTypeSlugFromGuideHref(_guideHref: string): string | undefined {
+  return undefined;
 }
 
-export function excursionTypeSlugFromSectionTitle(title: string): string | undefined {
-  return resolveExcursionTypeSlug({ sectionHint: title });
+export function excursionTypeSlugFromSectionTitle(_title: string): string | undefined {
+  return undefined;
 }

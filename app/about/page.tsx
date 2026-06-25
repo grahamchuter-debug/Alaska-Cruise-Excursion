@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SpecialistPartnerCard } from "@/components/SpecialistPartnerCard";
 import { buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 import { ports } from "@/data/ports";
@@ -77,17 +78,14 @@ export default function AboutPage() {
             <p>
               We connect cruise passengers with specialist excursion websites at each Alaska port. These local partners offer curated tours from vetted operators with cruise-passenger-friendly policies.
             </p>
-            <div className="grid gap-3 sm:grid-cols-2 not-prose">
+            <div className="grid gap-4 sm:grid-cols-2 not-prose">
               {ports.map((port) => (
-                <a
+                <SpecialistPartnerCard
                   key={port.slug}
-                  href={port.specialistUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card text-sm hover:border-caribbean-200"
-                >
-                  <span className="font-semibold text-gray-900">{port.specialistName}</span>
-                </a>
+                  portSlug={port.slug}
+                  variant="compact"
+                  hidePortGuideLink
+                />
               ))}
             </div>
 

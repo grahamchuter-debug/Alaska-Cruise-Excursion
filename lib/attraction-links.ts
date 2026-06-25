@@ -1,6 +1,10 @@
 import type { Attraction } from "@/data/types";
 import { getAttractionGuidesByPortSlug } from "@/data/attraction-guides";
-import { getSpecialistExcursionUrl, resolveExcursionTypeSlug } from "@/lib/specialist-links";
+import { getPortBySlug } from "@/data/ports";
+import {
+  getSpecialistHomeUrl,
+  getSpecialistPartnerCta,
+} from "@/lib/specialist-links";
 
 export type AttractionLinkSource = "attraction-guide" | "excursion-type" | "port-section" | "port-guide";
 
@@ -48,7 +52,7 @@ function findAttractionGuideSlug(portSlug: string, attraction: Attraction): stri
 
 /**
  * Resolve a meaningful destination for an attraction card.
- * Priority: attraction guide → specialist excursion category → port guide.
+ * Priority: attraction guide → specialist homepage → port guide.
  */
 export function getAttractionDestination(
   portSlug: string,
@@ -74,19 +78,10 @@ export function getAttractionDestination(
     };
   }
 
-  const excursionTypeSlug = resolveExcursionTypeSlug({
-    text: `${attraction.name} ${attraction.description}`,
-  });
-
-  if (excursionTypeSlug) {
-    const specialistHref = getSpecialistExcursionUrl(portSlug, {
-      excursionTypeSlug,
-      text: attraction.name,
-    });
-
+  if (getPortBySlug(portSlug)) {
     return {
-      href: specialistHref,
-      label: "Browse excursions",
+      href: getSpecialistHomeUrl(portSlug),
+      label: getSpecialistPartnerCta(portSlug),
       external: true,
       source: "excursion-type",
     };

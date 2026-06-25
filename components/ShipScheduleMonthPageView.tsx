@@ -4,7 +4,8 @@ import { ScheduleWithCruiseDayLookup } from "@/components/ScheduleWithCruiseDayL
 import { FAQSection } from "@/components/FAQSection";
 import { AuthorityHubLinks } from "@/components/AuthorityHubLinks";
 import { NavCardCta } from "@/components/NavCardCta";
-import { SpecialistLocalGuide } from "@/components/SpecialistLocalGuide";
+import { SpecialistPartnerCard } from "@/components/SpecialistPartnerCard";
+import { ExcursionCardCTAs } from "@/components/ExcursionCardCTAs";
 import { getPortBySlug } from "@/data/ports";
 import { hasShipSchedule } from "@/lib/routes";
 import { excursionTypes } from "@/data/excursion-types";
@@ -25,6 +26,8 @@ import {
 import { getVerifiedMonthKeysForPort } from "@/data/schedules";
 import { CruisePortInformationBox } from "@/components/CruisePortInformationBox";
 import { getScheduleIntro } from "@/lib/cruise-port-display";
+import { JUNEAU_MONTH_PLANNING_INTRO, juneauPlanningYourDay } from "@/data/juneau-schedule-planning";
+import { ScheduleCoverageBanner } from "@/components/ScheduleCoverageBanner";
 
 function formatDisplayDate(isoDate: string): string {
   const [year, month, day] = isoDate.split("-").map(Number);
@@ -60,10 +63,15 @@ export function ShipScheduleMonthPageView({
   const excursions = port.excursionTypeSlugs
     .map((slug) => excursionTypes.find((type) => type.slug === slug))
     .filter(Boolean);
-  const scheduleIntro = getScheduleIntro(port.slug);
+  const scheduleIntro =
+    port.slug === "juneau"
+      ? JUNEAU_MONTH_PLANNING_INTRO
+      : getScheduleIntro(port.slug);
 
   return (
     <>
+      <ScheduleCoverageBanner portSlug={port.slug} portName={port.name} variant="compact" />
+
       <CruisePortInformationBox portSlug={port.slug} />
 
       <section className="mb-10">
@@ -77,6 +85,12 @@ export function ShipScheduleMonthPageView({
           <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
             <strong>Tender port:</strong> {port.name} uses ship-to-shore tender boats. Allow extra
             return time on {monthLabel} port days.
+          </p>
+        )}
+        {port.slug === "juneau" && (
+          <p className="mt-4 rounded-lg border border-caribbean-200 bg-caribbean-50 px-4 py-3 text-sm text-caribbean-900">
+            <strong>Local transport:</strong> Downtown docks keep whale boats and tour pickups close, but taxis
+            to Mendenhall Glacier queue on busy days — book operators with pier return guarantees when possible.
           </p>
         )}
       </section>
@@ -146,7 +160,7 @@ export function ShipScheduleMonthPageView({
           Full {year} schedule
         </Link>
         <Link href={yearHubPath(year)} className="btn-secondary text-sm">
-          All {year} Caribbean schedules
+          All {year} Alaska schedules
         </Link>
         <Link href={portHubPath(port.slug)} className="btn-secondary text-sm">
           {port.name} schedule hub
@@ -162,26 +176,47 @@ export function ShipScheduleMonthPageView({
         />
       </section>
 
+      {port.slug === "juneau" && (
+        <section className="mb-12 rounded-xl border border-gray-200 bg-white p-6 sm:p-8">
+          <h2 className="section-title text-2xl sm:text-3xl mb-4">Planning Your Juneau Port Day</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">{juneauPlanningYourDay.summary}</p>
+          <ul className="space-y-2 text-sm text-gray-700">
+            {juneauPlanningYourDay.timingConsiderations.map((tip) => (
+              <li key={tip} className="flex items-start gap-2">
+                <span className="mt-1 text-caribbean-600">•</span>
+                {tip}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-sm text-gray-600">
+            <strong>Return-to-ship:</strong> {juneauPlanningYourDay.returnGuidance}
+          </p>
+        </section>
+      )}
+
       <section className="mb-12 rounded-xl border-2 border-caribbean-200 bg-gradient-to-br from-caribbean-50 to-white p-6 sm:p-8">
         <h2 className="section-title text-2xl sm:text-3xl mb-3">Plan Your Excursion</h2>
         <p className="text-gray-700 leading-relaxed mb-6">
-          Once you know your ship arrival and departure time, compare shore excursions for{" "}
-          {port.name}. Start with our authority port guide, then browse specialist local operators
-          with pier-aware pickup and return guarantees.
+          {port.slug === "juneau" ? (
+            <>
+              Match whale watching, Mendenhall Glacier, helicopter tours, or Tracy Arm trips to your{" "}
+              {monthLabel} arrival window. Start with our authority port guide, then browse specialist operators
+              with pier-aware pickup and return guarantees.
+            </>
+          ) : (
+            <>
+              Once you know your ship arrival and departure time, compare shore excursions for {port.name}.
+              Start with our authority port guide, then browse specialist local operators with pier-aware pickup
+              and return guarantees.
+            </>
+          )}
         </p>
         <div className="flex flex-wrap gap-3">
           <Link href={`/ports/${port.slug}`} className="btn-primary text-sm">
             {port.name} port guide &amp; excursions
           </Link>
           {authorityPort && (
-            <a
-              href={authorityPort.specialistUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary text-sm"
-            >
-              {authorityPort.specialistName}
-            </a>
+            <ExcursionCardCTAs portSlug={port.slug} specialistOnly className="inline-flex" />
           )}
           <Link href="/ship-schedules" className="btn-secondary text-sm">
             Ship schedules hub
@@ -195,23 +230,12 @@ export function ShipScheduleMonthPageView({
           <Link href={`/ports/${port.slug}`} className="card-gradient group flex h-full flex-col hover:border-caribbean-300">
             <span className="font-medium text-gray-900">{port.name} authority guide</span>
             <span className="block text-sm text-gray-600 mt-1">
-              Excursions, beaches, port logistics, and passenger tips
+              Excursions, wildlife, port logistics, and passenger tips
             </span>
             <NavCardCta className="pt-4">View {port.name} port guide</NavCardCta>
           </Link>
           {authorityPort && (
-            <a
-              href={authorityPort.specialistUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card-gradient group flex h-full flex-col hover:border-caribbean-300"
-            >
-              <span className="font-medium text-gray-900">{authorityPort.specialistName}</span>
-              <span className="block text-sm text-gray-600 mt-1">
-                Live tour listings, local pricing, and pier pickup details
-              </span>
-              <NavCardCta className="pt-4">Book with {authorityPort.specialistName}</NavCardCta>
-            </a>
+            <SpecialistPartnerCard portSlug={port.slug} variant="compact" hidePortGuideLink />
           )}
         </div>
 
@@ -268,12 +292,6 @@ export function ShipScheduleMonthPageView({
           </div>
         )}
       </section>
-
-      {authorityPort && (
-        <div className="mb-12">
-          <SpecialistLocalGuide portSlug={port.slug} />
-        </div>
-      )}
 
       <FAQSection faqs={faqs} />
 

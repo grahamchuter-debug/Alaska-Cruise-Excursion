@@ -9,7 +9,7 @@ import type {
   ExcursionTypeSpecialistSite,
   PortExcursionCategoryPick,
 } from "@/data/types";
-import { getSpecialistExcursionUrl } from "@/lib/specialist-links";
+import { getSpecialistHomeUrl } from "@/lib/specialist-links";
 
 function groupPicksByPort(
   picks: PortExcursionCategoryPick[],
@@ -34,19 +34,17 @@ function groupPicksByPort(
 
 function specialistSitesForPorts(
   portSlugs: string[],
-  excursionTypeSlug: string,
+  _excursionTypeSlug: string,
 ): ExcursionTypeSpecialistSite[] {
   return portSlugs
     .map((portSlug) => {
       const port = getPortBySlug(portSlug);
       if (!port) return null;
-      const siteUrl = getSpecialistExcursionUrl(portSlug, { excursionTypeSlug });
-      const hostname = port.specialistUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
       return {
         portSlug,
         portName: port.name,
-        siteLabel: hostname,
-        siteUrl,
+        siteLabel: port.specialistName,
+        siteUrl: getSpecialistHomeUrl(portSlug),
       };
     })
     .filter((row): row is ExcursionTypeSpecialistSite => row !== null);
@@ -370,9 +368,61 @@ function buildBookingPathways(
   });
 }
 
+function buildAlaskaBookingPathways(
+  base: ExcursionType,
+  portSlugs: string[],
+): ExcursionTypeLink[] {
+  const links: ExcursionTypeLink[] = [
+    {
+      href: "/alaska-cruise-excursion-planner",
+      label: "Alaska Excursion Finder",
+      description: "Match excursions to your ports and traveller style",
+    },
+    {
+      href: "/best-alaska-shore-excursions",
+      label: "Best Alaska shore excursions",
+      description: "Signature picks across Alaska cruise ports",
+    },
+    ...portSlugs.slice(0, 3).map((portSlug) => portAuthorityLink(portSlug)),
+    {
+      href: `/ship-schedules/${portSlugs[0] ?? "juneau"}`,
+      label: "Check ship schedules",
+      description: "See how many ships share your port day before booking",
+    },
+    { href: "/cruise-day-plan", label: "Alaska cruise day plan", description: "Build a port-day plan for your sailing date" },
+    { href: "/excursion-types", label: "All excursion types" },
+  ];
+
+  const seen = new Set<string>();
+  return links.filter((link) => {
+    if (seen.has(link.href)) return false;
+    seen.add(link.href);
+    return true;
+  });
+}
+
+function buildAlaskaPathwayConfig(base: ExcursionType): PathwayConfig {
+  const picks: PortExcursionCategoryPick[] = base.bestPorts.map((port) => ({
+    portSlug: port.slug,
+    excursionName: base.name,
+    description: port.reason,
+  }));
+
+  return {
+    picks,
+    authoritySectionTitle: `Best Alaska Ports For ${base.name}`,
+    authorityGuideSlug: "best-alaska-shore-excursions",
+    specialistSectionTitle: `${base.name} Specialist Sites`,
+    categoryImageAlt: `${base.name} on an Alaska cruise port day`,
+    extraAuthorityLinks: [
+      { href: "/inside-passage-cruise-ports", label: "Inside Passage cruise ports" },
+      { href: "/gulf-of-alaska-cruise-ports", label: "Gulf of Alaska cruise ports" },
+    ],
+  };
+}
+
 export function enrichExcursionType(base: ExcursionType): ExcursionType {
-  const config = PATHWAY_CONFIG[base.slug];
-  if (!config) return base;
+  const config = PATHWAY_CONFIG[base.slug] ?? buildAlaskaPathwayConfig(base);
 
   const recommendedByPort =
     config.recommendedByPort ?? groupPicksByPort(config.picks);
@@ -391,7 +441,14 @@ export function enrichExcursionType(base: ExcursionType): ExcursionType {
 
   const specialistSites = specialistSitesForPorts(portSlugs.slice(0, 6), base.slug);
 
-  const bookingPathways = buildBookingPathways(base.slug, config, portSlugs);
+  const bookingPathways = PATHWAY_CONFIG[base.slug]
+    ? buildBookingPathways(base.slug, config, portSlugs)
+    : buildAlaskaBookingPathways(base, portSlugs);
+
+  const fallbackImage = {
+    src: "/images/alaska-cruise-hero.png",
+    alt: `${base.name} on Alaska cruise port days`,
+  };
 
   return {
     ...base,
@@ -401,12 +458,9 @@ export function enrichExcursionType(base: ExcursionType): ExcursionType {
     specialistSectionTitle: config.specialistSectionTitle,
     specialistSites,
     bookingPathways,
-    heroImage: base.heroImage ?? config.heroImage ?? HERO_IMAGES[base.slug] ?? {
-      src: "/images/caribbean-cruise-hero.png",
-      alt: `${base.name} in the Caribbean`,
-    },
+    heroImage: base.heroImage ?? config.heroImage ?? HERO_IMAGES[base.slug] ?? fallbackImage,
     categoryImage: base.categoryImage ?? config.heroImage ?? HERO_IMAGES[base.slug] ?? {
-      src: "/images/caribbean-cruise-hero.png",
+      ...fallbackImage,
       alt: config.categoryImageAlt,
     },
   };

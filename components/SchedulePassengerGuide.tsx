@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ExcursionCardCTAs } from "@/components/ExcursionCardCTAs";
 import { AttractionGridCard } from "@/components/AttractionGridCard";
 import { getPortBySlug } from "@/data/ports";
 import { excursionTypes } from "@/data/excursion-types";
@@ -62,7 +63,7 @@ export function SchedulePassengerGuide({
                 </Link>
               )}
               <Link href="/ship-schedules/2027" className="btn-secondary text-sm">
-                All 2027 Caribbean schedules
+                All 2027 Alaska schedules
               </Link>
             </div>
           </section>
@@ -197,14 +198,7 @@ export function SchedulePassengerGuide({
           <Link href="/best-shore-excursion-every-caribbean-port" className="btn-secondary text-sm">
             Best excursion at every port
           </Link>
-          <a
-            href={port.specialistUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary text-sm"
-          >
-            Book at {port.specialistName}
-          </a>
+          <ExcursionCardCTAs portSlug={portSlug} specialistOnly className="inline-flex" />
         </div>
         {excursionTypesForPort.length > 0 && (
           <div className="mt-6">
@@ -248,7 +242,7 @@ export function SchedulePassengerGuide({
               </Link>
             )}
             <Link href="/ship-schedules/2027" className="btn-secondary text-sm">
-              All 2027 Caribbean schedules
+              All 2027 Alaska schedules
             </Link>
           </div>
         </section>

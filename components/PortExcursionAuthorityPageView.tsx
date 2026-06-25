@@ -17,6 +17,10 @@ import { JsonLd } from "@/components/JsonLd";
 import { SpecialistLocalGuideSection } from "@/components/SpecialistLocalGuide";
 import { breadcrumbSchema, faqSchema, travelGuideSchema } from "@/lib/schema";
 import { ExcursionCardCTAs } from "@/components/ExcursionCardCTAs";
+import {
+  getSpecialistHomeUrl,
+  getSpecialistPartnerCta,
+} from "@/lib/specialist-links";
 import { MeetingPointSnapshot } from "@/components/MeetingPointSnapshot";
 import { evaluatePortConfidence } from "@/lib/cruise-confidence";
 import { CruiseConfidenceBadge } from "@/components/CruiseConfidenceBadge";
@@ -180,12 +184,12 @@ export function PortExcursionAuthorityPageView({ page }: { page: PortExcursionAu
                       )}
                       <span className="text-gray-300">·</span>
                       <a
-                        href={port.specialistUrl}
+                        href={getSpecialistHomeUrl(slug)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs text-caribbean-700 hover:underline"
                       >
-                        Specialist
+                        {getSpecialistPartnerCta(slug)}
                       </a>
                     </div>
                   </div>

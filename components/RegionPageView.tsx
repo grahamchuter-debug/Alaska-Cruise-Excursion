@@ -11,6 +11,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, travelGuideSchema } from "@/lib/schema";
 import { AuthorityHubLinks } from "@/components/AuthorityHubLinks";
 import { SpecialistLocalGuideSection } from "@/components/SpecialistLocalGuide";
+import { ExcursionCardCTAs } from "@/components/ExcursionCardCTAs";
 import { NavCardCta } from "@/components/NavCardCta";
 
 export function RegionPageView({ region }: { region: RegionPage }) {
@@ -30,7 +31,7 @@ export function RegionPageView({ region }: { region: RegionPage }) {
 
   const breadcrumbs = [
     { name: "Home", path: "/" },
-    { name: "Caribbean Ports", path: "/ports" },
+    { name: "Alaska Ports", path: "/ports" },
     { name: region.title.replace(" Guide", ""), path: `/${region.slug}` },
   ];
 
@@ -100,14 +101,7 @@ export function RegionPageView({ region }: { region: RegionPage }) {
                             Ship Schedule
                           </Link>
                         )}
-                        <a
-                          href={port.specialistUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-secondary text-xs"
-                        >
-                          {port.specialistName}
-                        </a>
+                        <ExcursionCardCTAs portSlug={port.slug} specialistOnly className="mt-4" />
                       </div>
                     </div>
                   )
@@ -158,7 +152,7 @@ export function RegionPageView({ region }: { region: RegionPage }) {
 
           {relatedRegions.length > 0 && (
             <section className="mb-12">
-              <h2 className="section-title text-2xl sm:text-3xl mb-6">Other Caribbean Regions</h2>
+              <h2 className="section-title text-2xl sm:text-3xl mb-6">Other Alaska Regions</h2>
               <div className="grid gap-3 sm:grid-cols-2">
                 {relatedRegions.map(
                   (r) =>

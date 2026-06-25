@@ -3,7 +3,7 @@ import type { CombinedCruisePlannerInput, CruiseDayPlan } from "@/lib/cruise-day
 import { cruiseDayPlanActivityLevels, cruiseDayPlanInterests } from "@/lib/cruise-day-plan";
 import { CRUISE_CONFIDENCE_DISCLAIMER, CRUISE_CONFIDENCE_LABELS, formatConfidenceTitle } from "@/lib/cruise-confidence";
 import { getPortBySlug } from "@/data/ports";
-import { getSpecialistExcursionUrl } from "@/lib/specialist-links";
+import { getSpecialistExcursionUrl, getSpecialistPartnerCta } from "@/lib/specialist-links";
 import { loadPdfBrandAssets, type PdfBrandAssets } from "@/lib/pdf-brand-assets";
 import { buildExcursionPitch, getPdfPortEditorial } from "@/lib/pdf-port-editorial";
 import { excursionTypeToTheme } from "@/lib/pdf-port-themes";
@@ -96,7 +96,7 @@ function buildCombinedPdfFilename(input: CombinedCruisePlannerInput): string {
   const ship = input.shipName
     ? input.shipName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
     : "planner";
-  return `caribbean-cruise-planner-${ship}-${month}${year}.pdf`;
+  return `alaska-cruise-planner-${ship}-${month}${year}.pdf`;
 }
 
 function getExcursionCtaUrl(plan: CruiseDayPlan): string {
@@ -683,12 +683,13 @@ class PortPlanPdfSections {
   }
 
   addExcursionCta(plan: CruiseDayPlan): void {
+    const ctaLabel = `${getSpecialistPartnerCta(plan.portSlug)} →`;
     this.canvas.addSpacer(2);
     this.canvas.ensureSpace(20);
     if (this.premium) {
       this.canvas.y = drawPremiumCtaBox(
         this.canvas.doc,
-        "View Recommended Excursions →",
+        ctaLabel,
         getExcursionCtaUrl(plan),
         MARGIN,
         this.canvas.y,
@@ -697,7 +698,7 @@ class PortPlanPdfSections {
     } else {
       this.canvas.y = drawPrimaryCta(
         this.canvas.doc,
-        "View Recommended Excursions →",
+        ctaLabel,
         getExcursionCtaUrl(plan),
         MARGIN,
         this.canvas.y,
@@ -1073,7 +1074,7 @@ class CombinedCruisePlannerPdfBuilder {
     doc.setFont(F.body, "italic");
     doc.setFontSize(8);
     doc.setTextColor(...C.gray600);
-    doc.text("A personalised guide to the Caribbean ports on your itinerary.", MARGIN, canvas.y);
+    doc.text("A personalised guide to the Alaska ports on your itinerary.", MARGIN, canvas.y);
     canvas.y += 8;
   }
 

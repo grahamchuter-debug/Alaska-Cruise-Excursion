@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata = buildMetadata({
   title: "Contact Us",
   description:
-    "Contact Caribbean Shore Excursions for cruise planning questions, partnership inquiries, or feedback on our port guides and excursion resources.",
+    "Contact Alaska Cruise Excursion for cruise planning questions, partnership inquiries, or feedback on our port guides and excursion resources.",
   path: "/contact",
   keywords: ["contact", "cruise planning help"],
 });
@@ -16,7 +16,7 @@ export const metadata = buildMetadata({
 const contactOptions = [
   {
     subject: "General cruise planning inquiry",
-    description: "Questions about Caribbean ports, excursions, or itinerary planning.",
+    description: "Questions about Alaska ports, excursions, or itinerary planning.",
   },
   {
     subject: "Port guide feedback",
@@ -24,7 +24,7 @@ const contactOptions = [
   },
   {
     subject: "Partnership inquiry",
-    description: "Interested in joining our Caribbean port specialist network.",
+    description: "Interested in joining our Alaska port specialist network.",
   },
   {
     subject: "Ship schedule information",
@@ -43,7 +43,7 @@ export default function ContactPage() {
       />
       <PageHero
         title="Contact Us"
-        subtitle="Questions about Caribbean cruise planning? We'd love to hear from you."
+        subtitle="Questions about Alaska cruise planning? We'd love to hear from you."
         compact
       />
       <section className="section-padding">

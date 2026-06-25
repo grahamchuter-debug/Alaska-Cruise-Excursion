@@ -9,6 +9,7 @@ import {
 } from "@/data/schedule-analytics";
 import { getAllVerifiedMonthPageParams } from "@/data/schedules";
 import { formatMonthLabel, portHubPath } from "@/lib/schedule-utils";
+import { LIVE_IMPORTED_SCHEDULE_PORTS } from "@/data/schedule-coverage";
 import { NavCardCta } from "@/components/NavCardCta";
 
 export function AlaskaScheduleHubAnalytics() {
@@ -42,8 +43,8 @@ export function AlaskaScheduleHubAnalytics() {
           { label: "Verified calls 2026", value: total2026.toLocaleString() },
           { label: "Verified calls 2027", value: total2027.toLocaleString() },
           {
-            label: "Ports with data",
-            value: String(portTotals.filter((p) => p.hasVerifiedData).length),
+            label: "Ports with live data",
+            value: `${portTotals.filter((p) => p.hasVerifiedData).length} (${LIVE_IMPORTED_SCHEDULE_PORTS.join(", ")})`,
           },
           { label: "Monthly pages", value: String(monthPages.length) },
         ].map((stat) => (
@@ -56,7 +57,11 @@ export function AlaskaScheduleHubAnalytics() {
 
       {busiestPorts.length > 0 && (
         <section className="mb-12">
-          <h2 className="section-title text-2xl sm:text-3xl mb-4">Busiest Alaska Cruise Ports</h2>
+          <h2 className="section-title text-2xl sm:text-3xl mb-4">Busiest Alaska Cruise Ports (live data)</h2>
+          <p className="text-sm text-gray-600 mb-4 max-w-3xl">
+            Rankings reflect verified imports only. Today that is Juneau — additional ports will appear as monthly
+            data is published.
+          </p>
           <div className="overflow-x-auto rounded-xl border border-gray-200">
             <table className="min-w-full divide-y divide-gray-200 text-sm">
               <thead className="bg-gray-50">

@@ -55,10 +55,14 @@ export function ScheduleYearLinks({
               </div>
               <p className={`mt-4 text-gray-600 ${prominent ? "text-sm" : "text-sm"}`}>
                 {shipCalls > 0
-                  ? `${shipCalls} verified ship call${shipCalls !== 1 ? "s" : ""}`
-                  : "Monthly schedule, import in progress"}
+                  ? `${shipCalls.toLocaleString()} verified ship call${shipCalls !== 1 ? "s" : ""}`
+                  : "Coming soon — verified imports not published yet"}
               </p>
-              <NavCardCta className="pt-4">Open {portName} {year} schedule</NavCardCta>
+              <NavCardCta className="pt-4">
+                {shipCalls > 0
+                  ? `Open ${portName} ${year} schedule`
+                  : `View ${portName} ${year} framework`}
+              </NavCardCta>
             </Link>
           );
         })}

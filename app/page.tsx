@@ -6,11 +6,12 @@ import { excursionTypes } from "@/data/excursion-types";
 import { cruiseLines } from "@/data/cruise-lines";
 import { getPortGuideCount } from "@/data/content-inventory";
 import { schedulePorts } from "@/data/schedules";
-import { featuredPortCards, HOMEPAGE_SCHEDULE_SLUGS, getHomepageFaqs } from "@/data/homepage";
+import { featuredPortCards, HOMEPAGE_SCHEDULE_FEATURED, getHomepageFaqs } from "@/data/homepage";
 import { getFeaturedBestAlaskaGuides } from "@/data/best-alaska-guides-hub";
 import { comparisons } from "@/data/comparisons";
 import { AuthorityPortCard } from "@/components/AuthorityPortCard";
 import { SchedulePreviewCard } from "@/components/SchedulePreviewCard";
+import { HomepageScheduleCoverageNote } from "@/components/ScheduleCoverageBanner";
 import { FAQSection } from "@/components/FAQSection";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, faqSchema, travelGuideSchema, websiteSchema } from "@/lib/schema";
@@ -57,9 +58,13 @@ export default function HomePage() {
     bestFor: string;
   }>;
 
-  const homepageSchedules = HOMEPAGE_SCHEDULE_SLUGS.map((slug) =>
-    schedulePorts.find((p) => p.slug === slug),
-  ).filter(Boolean);
+  const homepageSchedules = HOMEPAGE_SCHEDULE_FEATURED.map(({ slug, status }) => {
+    const port = schedulePorts.find((p) => p.slug === slug);
+    return port ? { port, status } : null;
+  }).filter(Boolean) as Array<{
+    port: NonNullable<(typeof schedulePorts)[number]>;
+    status: "live" | "coming-soon";
+  }>;
 
   const homepageFaqs = getHomepageFaqs();
   const featuredBestGuides = getFeaturedBestAlaskaGuides();
@@ -163,16 +168,20 @@ export default function HomePage() {
             <div>
               <h2 className="section-title">Alaska Cruise Ship Schedules</h2>
               <p className="section-subtitle">
-                Browse port calls by port, month, and year — analytics populate as verified data is imported.
+                Juneau is the only port with live imported schedules today. Skagway, Ketchikan, and Seward hubs are
+                ready — verified monthly data is being imported for additional Alaska ports.
               </p>
             </div>
             <Link href="/ship-schedules" className="btn-secondary shrink-0">
               Schedule hub
             </Link>
           </div>
+          <HomepageScheduleCoverageNote />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {homepageSchedules.map(
-              (port) => port && <SchedulePreviewCard key={port.slug} port={port} />,
+              ({ port, status }) => (
+                <SchedulePreviewCard key={port.slug} port={port} status={status} />
+              ),
             )}
           </div>
         </div>

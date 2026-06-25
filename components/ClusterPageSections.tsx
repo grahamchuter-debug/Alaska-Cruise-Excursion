@@ -50,14 +50,7 @@ export function ClusterPageSections({ cluster }: { cluster: TopicClusterData }) 
                   {scheduleCta?.fallbackNote && (
                     <p className="w-full text-xs text-gray-500">{scheduleCta.fallbackNote}</p>
                   )}
-                  <a
-                    href={port.specialistUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-secondary text-xs"
-                  >
-                    {port.specialistName}
-                  </a>
+                  <ExcursionCardCTAs portSlug={slug} specialistOnly className="mt-2" />
                 </div>
               </div>
             );

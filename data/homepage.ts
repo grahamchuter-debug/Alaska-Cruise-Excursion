@@ -18,7 +18,15 @@ export const featuredPortCards: FeaturedPortCard[] = [
   { slug: "denali", description: "Pre/post-cruise land extension — park buses, flightseeing, cruisetours.", bestFor: "Land extension" },
 ];
 
-export const HOMEPAGE_SCHEDULE_SLUGS = ["juneau", "ketchikan", "skagway", "seward"] as const;
+export const HOMEPAGE_SCHEDULE_FEATURED = [
+  { slug: "juneau", status: "live" as const },
+  { slug: "skagway", status: "coming-soon" as const },
+  { slug: "ketchikan", status: "coming-soon" as const },
+  { slug: "seward", status: "coming-soon" as const },
+] as const;
+
+/** @deprecated Use HOMEPAGE_SCHEDULE_FEATURED */
+export const HOMEPAGE_SCHEDULE_SLUGS = HOMEPAGE_SCHEDULE_FEATURED.map((item) => item.slug);
 
 export function getHomepageFaqs() {
   return [
@@ -34,6 +42,11 @@ export function getHomepageFaqs() {
     {
       question: "Is this site bookable?",
       answer: "This is a planning hub — use enquiry CTAs and linked specialist sites when you are ready to book excursions.",
+    },
+    {
+      question: "Which Alaska ports have live ship schedules?",
+      answer:
+        "Juneau is the only port with live imported ship schedules on this site today. Skagway, Ketchikan, Seward, Whittier, Haines, Sitka, Icy Strait, and Ward Cove have schedule hub pages while monthly data is imported and verified — we do not publish placeholder sailings.",
     },
     {
       question: "Does Victoria count as Alaska?",

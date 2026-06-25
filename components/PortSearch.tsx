@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getBestScheduleUrl } from "@/lib/schedule-cta-url";
+import { ExcursionCardCTAs } from "@/components/ExcursionCardCTAs";
 import { getTopExcursionLabel, searchPorts } from "@/lib/port-search";
 import { getPortGuideCount } from "@/data/content-inventory";
 
@@ -96,7 +97,7 @@ export function PortSearch({
     <div
       className={`${className}`}
       role="search"
-      aria-label="Search Caribbean cruise ports"
+      aria-label="Search Alaska cruise ports"
     >
       <div
         className={`relative ${
@@ -160,7 +161,7 @@ export function PortSearch({
             >
               <p className="font-display text-lg font-bold">No ports found</p>
               <p className="mt-2 text-sm opacity-90">
-                Try a port name (Cozumel, Aruba), country (Jamaica), region (Eastern Caribbean), or
+                Try a port name (Juneau, Skagway), region (Inside Passage, Gulf of Alaska), or
                 excursion (snorkeling, Stingray City).
               </p>
             </div>
@@ -211,15 +212,7 @@ export function PortSearch({
                         Ship schedule
                       </Link>
                     )}
-                    <a
-                      href={port.specialistUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center rounded-lg border border-caribbean-200 bg-white px-4 py-2 text-sm font-semibold text-caribbean-700 transition-colors hover:border-caribbean-300 hover:bg-caribbean-50 focus:outline-none focus:ring-2 focus:ring-caribbean-500 focus:ring-offset-2"
-                    >
-                      {port.specialistName}
-                      <span className="sr-only"> (opens in new tab)</span>
-                    </a>
+                    <ExcursionCardCTAs portSlug={port.slug} specialistOnly className="inline-flex" />
                   </div>
                 </article>
               );

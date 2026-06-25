@@ -3,7 +3,7 @@ import type { BestGuidePage } from "@/data/types";
 import { getPortBySlug } from "@/data/ports";
 import { getBestScheduleUrl } from "@/lib/schedule-cta-url";
 import { getRelatedComparisonsForPorts } from "@/lib/best-guide";
-import { BEST_CARIBBEAN_GUIDES_HUB_SLUG } from "@/data/best-caribbean-guides-hub";
+import { BEST_ALASKA_GUIDES_HUB_SLUG } from "@/data/best-alaska-guides-hub";
 import { PageHero } from "@/components/PageHero";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQSection } from "@/components/FAQSection";
@@ -18,7 +18,7 @@ import { NavCardCta } from "@/components/NavCardCta";
 export function BestGuidePageView({ guide }: { guide: BestGuidePage }) {
   const breadcrumbs = [
     { name: "Home", path: "/" },
-    { name: "Best Caribbean Guides", path: `/${BEST_CARIBBEAN_GUIDES_HUB_SLUG}` },
+    { name: "Best Alaska Guides", path: `/${BEST_ALASKA_GUIDES_HUB_SLUG}` },
     { name: guide.title, path: `/${guide.slug}` },
   ];
 
@@ -89,14 +89,11 @@ export function BestGuidePageView({ guide }: { guide: BestGuidePage }) {
                           Ship Schedule
                         </Link>
                       )}
-                      <a
-                        href={port.specialistUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-secondary text-xs"
-                      >
-                        {port.specialistName}
-                      </a>
+                      <ExcursionCardCTAs
+                        portSlug={item.slug}
+                        specialistOnly
+                        className="mt-4"
+                      />
                     </div>
                     {scheduleCta?.fallbackNote && (
                       <p className="mt-2 text-xs text-gray-500">{scheduleCta.fallbackNote}</p>
@@ -110,10 +107,10 @@ export function BestGuidePageView({ guide }: { guide: BestGuidePage }) {
           {guide.additionalPortSections && guide.additionalPortSections.length > 0 && (
             <section className="mb-12">
               <h2 className="section-title text-2xl sm:text-3xl mb-4">
-                Southern Caribbean Snorkel Highlights
+                Additional Alaska Port Highlights
               </h2>
               <p className="text-sm text-gray-600 mb-6">
-                ABC island ports on many Southern Caribbean itineraries — ranked alongside the top six above for reef quality and shore-entry access.
+                More Alaska ports ranked for this excursion type — compare transfer times and signature experiences.
               </p>
               <div className="space-y-6">
                 {guide.additionalPortSections.map((section) => {
@@ -123,7 +120,7 @@ export function BestGuidePageView({ guide }: { guide: BestGuidePage }) {
                   return (
                     <div key={section.slug} className="card-gradient">
                       <p className="text-xs font-semibold uppercase tracking-wide text-caribbean-600">
-                        {port.region} · Also excellent for snorkeling
+                        {port.region} · Also excellent for this activity
                       </p>
                       <h3 className="mt-1 font-display text-lg font-bold text-gray-900">
                         <Link href={`/ports/${section.slug}`} className="hover:text-caribbean-700">
@@ -152,14 +149,11 @@ export function BestGuidePageView({ guide }: { guide: BestGuidePage }) {
                             Ship Schedule
                           </Link>
                         )}
-                        <a
-                          href={port.specialistUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-secondary text-xs"
-                        >
-                          {port.specialistName}
-                        </a>
+                        <ExcursionCardCTAs
+                          portSlug={section.slug}
+                          specialistOnly
+                          className="mt-4"
+                        />
                       </div>
                     </div>
                   );
@@ -324,7 +318,7 @@ export function BestGuidePageView({ guide }: { guide: BestGuidePage }) {
           <section className="mb-12">
             <h2 className="section-title text-2xl sm:text-3xl mb-6">Port Comparison</h2>
             <p className="text-sm text-gray-600 mb-4">
-              Compare transfer times, excursion highlights, and ratings across the top Caribbean ports for this excursion type.
+              Compare transfer times, excursion highlights, and ratings across the top Alaska ports for this excursion type.
             </p>
             <BestGuideComparisonTable rows={guide.comparisonTable} />
           </section>
@@ -339,7 +333,7 @@ export function BestGuidePageView({ guide }: { guide: BestGuidePage }) {
                 {relatedComparisons.map((comparison) => (
                   <Link
                     key={comparison.slug}
-                    href={`/compare/${comparison.slug}`}
+                    href={`/${comparison.slug}`}
                     className="group flex h-full flex-col rounded-lg border border-caribbean-100 bg-white px-4 py-3 hover:border-caribbean-200 hover:shadow-sm transition-all"
                   >
                     <span className="font-medium text-gray-900">
@@ -380,14 +374,14 @@ export function BestGuidePageView({ guide }: { guide: BestGuidePage }) {
           </section>
 
           <section className="mb-12 flex flex-wrap gap-4">
-            <Link href={`/${BEST_CARIBBEAN_GUIDES_HUB_SLUG}`} className="btn-primary text-sm">
-              All Best Caribbean Guides
+            <Link href={`/${BEST_ALASKA_GUIDES_HUB_SLUG}`} className="btn-primary text-sm">
+              All Best Alaska Guides
             </Link>
             <Link href="/ship-schedules" className="btn-secondary text-sm">
               Check Ship Schedules
             </Link>
-            <Link href="/cruise-planner" className="btn-secondary text-sm">
-              Cruise Planner
+            <Link href="/alaska-cruise-excursion-planner" className="btn-secondary text-sm">
+              Alaska Excursion Finder
             </Link>
             {guide.excursionTypeSlug && (
               <Link

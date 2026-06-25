@@ -15,7 +15,7 @@ export function getPdfPortEditorial(portSlug: string): PdfPortEditorial {
     authority?.whyVisit[0] ??
     port?.highlights[0] ??
     port?.tagline ??
-    "A signature Caribbean cruise port day.";
+    "A signature Alaska cruise port day.";
 
   const expertTip =
     port?.passengerTips[0] ??
@@ -24,7 +24,7 @@ export function getPdfPortEditorial(portSlug: string): PdfPortEditorial {
   const topAttraction = port?.topAttractions[0];
   const photoMoment = topAttraction
     ? `${topAttraction.name} — ${topAttraction.description}`
-    : `${port?.name ?? "This port"} offers iconic Caribbean views from pier to shore.`;
+    : `${port?.name ?? "This port"} offers iconic Alaska scenery from pier to shore.`;
 
   return { whySpecial, expertTip, photoMoment };
 }

@@ -63,7 +63,7 @@ export function CruiseDayPlanForm({
           Printable cruise day planner
         </p>
         <h2 className="mt-2 font-display text-2xl font-bold text-gray-900 sm:text-3xl">
-          Build your Caribbean cruise day plan
+          Build your Alaska cruise day plan
         </h2>
         <p className="mt-2 text-sm leading-6 text-gray-600 sm:text-base">
           Choose your port, cruise date, and interests. We&apos;ll assemble excursions, port logistics,

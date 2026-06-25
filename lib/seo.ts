@@ -18,14 +18,14 @@ export function buildMetadata({
   ogImage,
 }: PageSEO): Metadata {
   const url = absoluteUrl(SITE.url, path);
-  const fullTitle = path === "/" ? title : `${title} | ${SITE.name}`;
+  const socialTitle = path === "/" ? title : `${title} | ${SITE.name}`;
   const image = ogImage ?? `${SITE.url}/og-default.jpg`;
 
   return {
-    title: fullTitle,
+    title: path === "/" ? { absolute: title } : title,
     description,
     keywords: [
-      "Caribbean cruise",
+      "Alaska cruise",
       "shore excursions",
       "cruise ports",
       "cruise planning",
@@ -41,13 +41,13 @@ export function buildMetadata({
       locale: "en_US",
       url,
       siteName: SITE.name,
-      title: fullTitle,
+      title: socialTitle,
       description,
       images: [{ url: image, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
-      title: fullTitle,
+      title: socialTitle,
       description,
       images: [image],
     },

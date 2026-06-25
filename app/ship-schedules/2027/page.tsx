@@ -61,11 +61,11 @@ export default function ShipSchedules2027Page() {
             <Link href="/ship-schedules/2026" className="btn-secondary text-sm">
               View 2026 Schedules
             </Link>
-            <Link href="/busiest-caribbean-cruise-ports-2027" className="btn-secondary text-sm">
-              Busiest Ports 2027
+            <Link href="/best-alaska-cruise-ports" className="btn-secondary text-sm">
+              Best Alaska Cruise Ports
             </Link>
-            <Link href="/caribbean-cruise-calendar-2027" className="btn-secondary text-sm">
-              Cruise Calendar 2027
+            <Link href="/ship-schedules/2027" className="btn-secondary text-sm">
+              2027 Ship Schedules
             </Link>
           </div>
           <ShipScheduleMasterYearHub year={YEAR} />

@@ -3,9 +3,9 @@ import type { FAQ } from "./types";
 export const SCHEDULE_PLANNING_TIPS = [
   "Check published arrival and departure times before booking any shore excursion or independent tour.",
   "Leave enough buffer to return to the ship. Most lines require you back 30-60 minutes before departure.",
-  "Some Caribbean ports use tender boats instead of dockside berthing; tender queues add time to your port day.",
+  "Some Alaska ports use tender boats instead of dockside berthing; tender queues add time to your port day.",
   "Private tours and independent operators should confirm pier pickup and return times against your ship schedule.",
-  "Peak call days with multiple ships in port can sell out popular beaches, catamarans, and Stingray-style tours early.",
+  "Peak call days with multiple ships in port can sell out popular wildlife tours, glacier cruises, and railway seats early.",
 ] as const;
 
 export const SCHEDULE_FAQS: FAQ[] = [

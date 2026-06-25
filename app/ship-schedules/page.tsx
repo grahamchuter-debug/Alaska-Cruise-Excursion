@@ -15,7 +15,10 @@ import {
 } from "@/components/SchedulePageContentSections";
 import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/schema";
 import { NavCardCta } from "@/components/NavCardCta";
+import { SchedulePreviewCard } from "@/components/SchedulePreviewCard";
+import { HomepageScheduleCoverageNote } from "@/components/ScheduleCoverageBanner";
 import { AlaskaScheduleHubAnalytics } from "@/components/AlaskaScheduleHubAnalytics";
+import { getScheduleCoverageStatus } from "@/data/schedule-coverage";
 import { portHubPath } from "@/lib/schedule-utils";
 
 const SCHEDULE_PORT_COUNT = getSchedulePortCount();
@@ -23,7 +26,7 @@ const homeContent = getSchedulePageContent("home");
 
 export const metadata = buildMetadata({
   title: "Alaska Cruise Ship Schedules 2026 & 2027",
-  description: `Alaska cruise ship schedule hub for ${SCHEDULE_PORT_COUNT} ports. Browse 2026 and 2027 arrival and departure times for Juneau, Skagway, Ketchikan, Seward, Whittier, and more as verified data is imported.`,
+  description: `Alaska cruise ship schedule hub for ${SCHEDULE_PORT_COUNT} ports. Juneau has live imported schedules today; Skagway, Ketchikan, Seward, and other hubs populate as verified data is imported.`,
   path: "/ship-schedules",
   keywords: [
     "Alaska cruise ship schedule",
@@ -69,6 +72,8 @@ export default function ShipSchedulesPage() {
 
           <SchedulePageContentSections content={homeContent} />
 
+          <HomepageScheduleCoverageNote />
+
           <AlaskaScheduleHubAnalytics />
 
           <section className="mb-14">
@@ -99,22 +104,16 @@ export default function ShipSchedulesPage() {
           <section className="mb-12">
             <h2 className="section-title text-2xl sm:text-3xl mb-4">Browse by Port</h2>
             <p className="text-gray-600 mb-6 max-w-3xl">
-              Prefer to start with a destination? Open a port schedule hub to choose between its 2026
-              and 2027 monthly tables.
+              Juneau has live imported schedules. Other ports show hub pages with import status — verified monthly
+              tables appear as data lands.
             </p>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {schedulePorts.map((port) => (
-                <Link
+                <SchedulePreviewCard
                   key={port.slug}
-                  href={portHubPath(port.slug)}
-                  className="card-gradient group flex h-full flex-col hover:border-caribbean-300"
-                >
-                  <h3 className="font-display text-lg font-bold text-gray-900 group-hover:text-caribbean-700">
-                    {port.name}
-                  </h3>
-                  <p className="text-sm text-gray-500">{port.country}</p>
-                  <NavCardCta className="pt-4">Open {port.name} schedule hub</NavCardCta>
-                </Link>
+                  port={port}
+                  status={getScheduleCoverageStatus(port.slug) === "live" ? "live" : "coming-soon"}
+                />
               ))}
             </div>
           </section>

@@ -4,6 +4,7 @@ import { getPortBySlug } from "@/data/ports";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQSection } from "@/components/FAQSection";
 import { ExcursionCardCTAs } from "@/components/ExcursionCardCTAs";
+import { SpecialistPartnerCard } from "@/components/SpecialistPartnerCard";
 import { ExcursionTypeHero } from "@/components/ExcursionTypeHero";
 import { BookingJourneyPanel } from "@/components/BookingJourneyPanel";
 import { DestinationHeroBand } from "@/components/DestinationHeroBand";
@@ -95,7 +96,7 @@ export function ExcursionTypePageView({
   ];
   const confidenceGroups = groupPortsByConfidence(portSlugs);
   const bestPortsTitle =
-    type.authoritySectionTitle ?? `Best Caribbean Ports For ${type.name}`;
+    type.authoritySectionTitle ?? `Best Alaska Ports For ${type.name}`;
 
   return (
     <>
@@ -300,27 +301,19 @@ export function ExcursionTypePageView({
           {type.specialistSites && type.specialistSites.length > 0 && (
             <section className="mb-12">
               <h2 className="section-title text-2xl sm:text-3xl mb-2">
-                {type.specialistSectionTitle ?? "Local Specialist Booking Sites"}
+                {type.specialistSectionTitle ?? "Local Specialist Partners"}
               </h2>
               <p className="section-subtitle mb-6">
-                Book directly with vetted port specialists — category pages open when available.
+                Book directly with vetted local operators on each port&apos;s dedicated specialist site.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
                 {type.specialistSites.map((site) => (
-                  <div
+                  <SpecialistPartnerCard
                     key={site.portSlug}
-                    className="rounded-xl border border-caribbean-100 bg-white p-5 shadow-sm"
-                  >
-                    <p className="text-xs font-semibold uppercase tracking-wide text-caribbean-600">
-                      {site.portName}
-                    </p>
-                    <p className="mt-1 font-semibold text-gray-900">{site.siteLabel}</p>
-                    <ExcursionCardCTAs
-                      portSlug={site.portSlug}
-                      excursionTypeSlug={type.slug}
-                      className="mt-4"
-                    />
-                  </div>
+                    portSlug={site.portSlug}
+                    variant="compact"
+                    hidePortGuideLink
+                  />
                 ))}
               </div>
             </section>
@@ -405,7 +398,7 @@ export function ExcursionTypePageView({
 
           <BookingJourneyPanel
             title={`Book ${type.name.toLowerCase()} for your cruise`}
-            description="Use the Caribbean Excursion Finder to match ports on your itinerary, or browse all port guides and ship schedules before you book with local specialists."
+            description="Use the Alaska Excursion Finder to match ports on your itinerary, or browse all port guides and ship schedules before you book with local specialists."
           />
 
           <FAQSection faqs={type.faqs} />

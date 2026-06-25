@@ -46,9 +46,9 @@ const schedulePageContent: Record<SchedulePageContentKey, SchedulePageContent> =
   ...scheduleHubContent,
   home: {
     intro:
-      "This is the starting point for Alaska cruise ship schedules across our Inside Passage and Gulf of Alaska ports. Compare 2026 and 2027 sailings, check how many ships share a pier on your port day, and line up shore excursions before you sail — working backward from published arrival and departure times.",
+      "This is the starting point for Alaska cruise ship schedules. Juneau is the only port with live imported ship calls today — browse monthly tables there first. Hub pages for Skagway, Ketchikan, Seward, and other ports are ready while additional monthly data is imported and verified. We never show placeholder sailings.",
     heroSubtitle:
-      "Alaska cruise ship schedules for 2026 and 2027 — plan shore excursions around arrival windows for Juneau, Skagway, Ketchikan, Seward, and more as verified data is imported.",
+      "Alaska cruise ship schedules — Juneau has live imported data today. Additional ports are added as monthly imports are verified.",
     whyPassengersUse: [
       "Match shore excursions to your actual in-port window before you enquire — whale tours, White Pass Railway, and bear viewing all need enough time ashore.",
       "Spot busy pier days when multiple ships share Juneau or Ketchikan so you can book early or choose less crowded alternatives.",
@@ -58,9 +58,9 @@ const schedulePageContent: Record<SchedulePageContentKey, SchedulePageContent> =
     planningYourDay: alaskaPlanning,
     faqs: [
       {
-        question: "How do I find my port's cruise ship schedule on this site?",
+        question: "Which Alaska ports have live schedule data?",
         answer:
-          "Start here, choose 2026 or 2027, then open your destination's port page. Each port has monthly tables with ship names, arrival and departure times, and estimated time in port as verified imports land.",
+          "Juneau is the only port with live imported ship schedules on this site today. Other hub ports (Skagway, Ketchikan, Seward, Whittier, Haines, Sitka, Icy Strait, Ward Cove) show framework pages until verified monthly imports are published.",
       },
       {
         question: "Why check the schedule before booking shore excursions?",
@@ -82,9 +82,9 @@ const schedulePageContent: Record<SchedulePageContentKey, SchedulePageContent> =
       { label: "2026 Alaska Schedules", href: "/ship-schedules/2026", description: "Master hub for 2026 port calls." },
       { label: "2027 Alaska Schedules", href: "/ship-schedules/2027", description: "Master hub for 2027 port calls." },
       { label: "Alaska Excursion Planner", href: "/alaska-cruise-excursion-planner", description: "Match excursions to ports and interests." },
-      { label: "Juneau Schedule Hub", href: "/ship-schedules/juneau", description: "Alaska's busiest cruise port." },
-      { label: "Skagway Schedule Hub", href: "/ship-schedules/skagway", description: "White Pass Railway port planning." },
-      { label: "Seward Schedule Hub", href: "/ship-schedules/seward", description: "Kenai Fjords gateway port." },
+      { label: "Juneau Schedule Hub", href: "/ship-schedules/juneau", description: "Live imported schedule — Alaska's busiest port." },
+      { label: "Skagway Schedule Hub", href: "/ship-schedules/skagway", description: "Coming soon — import pending." },
+      { label: "Seward Schedule Hub", href: "/ship-schedules/seward", description: "Coming soon — import pending." },
     ],
   },
   "year-2026": {
@@ -107,7 +107,7 @@ const schedulePageContent: Record<SchedulePageContentKey, SchedulePageContent> =
       {
         question: "Which Alaska ports have 2026 schedule data?",
         answer:
-          "All hub ports have framework pages for 2026. Verified ship rows appear month by month as imports complete — empty tables mean data is pending, not that sailings are invented.",
+          "Only Juneau has verified imported 2026 ship calls published today. Other hub ports have framework year pages — empty months mean imports are pending, not invented sailings.",
       },
       {
         question: "How should I use the 2026 rankings table?",
@@ -147,7 +147,7 @@ const schedulePageContent: Record<SchedulePageContentKey, SchedulePageContent> =
       {
         question: "Which Alaska ports have 2027 schedule data?",
         answer:
-          "All hub ports have framework pages for 2027. Verified ship rows appear month by month as imports complete — empty tables mean data is pending, not that sailings are invented.",
+          "Only Juneau has verified imported 2027 ship calls published today. Skagway, Ketchikan, Seward, and other hubs will populate month by month as imports complete.",
       },
       {
         question: "How should I use the 2027 rankings table?",

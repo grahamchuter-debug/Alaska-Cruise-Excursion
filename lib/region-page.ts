@@ -8,6 +8,6 @@ export function buildRegionMetadata(slug: string) {
     title: region.title,
     description: region.metaDescription,
     path: `/${slug}`,
-    keywords: ["Caribbean cruise ports", "shore excursions", slug.replace(/-/g, " ")],
+    keywords: ["Alaska cruise ports", "shore excursions", slug.replace(/-/g, " ")],
   });
 }
