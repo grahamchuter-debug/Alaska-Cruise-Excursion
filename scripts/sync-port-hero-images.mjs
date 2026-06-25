@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Download port hero images from specialist shore-excursion sites into public/images/ports/.
+ * Download port hero images from specialist Alaska shore-excursion sites into public/images/ports/.
  * Run: node scripts/sync-port-hero-images.mjs
  */
 import fs from "node:fs";
@@ -10,33 +10,24 @@ import { fileURLToPath } from "node:url";
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = path.join(root, "public", "images", "ports");
 
-/** slug → remote URL (from specialist site hero / best available destination photo) */
+/** slug → remote URL (from specialist site homepage hero) */
 export const PORT_HERO_REMOTE = {
-  "st-thomas": "https://stthomasshoreexcursion.com/images/hero-st-thomas-magens-bay.jpg",
-  cozumel: "https://cozumelcruiseexcursion.com/images/hero-cozumel.png",
-  aruba: "https://arubashoreexcursion.com/images/hero-aruba.png",
-  curacao: "https://curacaocruiseexcursions.com/images/hero-flamingos.png",
-  "grand-cayman": "https://grandcaymanshoreexcursion.com/images/hero-grand-cayman.png",
-  "st-maarten": "https://stmaartenshoreexcursion.com/images/hero-st-maarten.png",
-  nassau: "https://nassaucruiseexcursions.com/images/hero-nassau.png",
-  roatan: "https://roatanexcursionplanner.com/images/hero-roatan.png",
-  "puerto-limon": "https://puertolimonshoreexcursion.com/images/hero-puerto-limon.png",
-  "puerto-plata": "https://puertoplatacruiseexcursion.com/images/hero-puerto-plata.png",
-  tortola: "https://tortolashoreexcursions.com/images/hero-tortola-home.jpg",
-  progreso: "https://progresoshoreexcursion.com/images/hero-progreso.png",
-  "costa-maya":
-    "https://costamayashoreexcursions.com/wp-content/uploads/2020/06/chacchoben-mayan-city-seven-color-lagoon-605x605.jpg",
-  falmouth:
-    "https://www.falmouthshoreexcursions.com/wp-content/uploads/2025/08/Doublefalls-2-900x600.jpg",
-  bonaire: "https://bonairetoursandvacations.com/images/home/hero-3.png",
-  "ocho-rios": "https://ochoriosshoreexcursion.com/images/hero-home.jpg",
-  "montego-bay": "https://montegobayshoreexcursion.com/images/hero-home.jpg",
-  samana: "https://samanashoreexcursion.com/images/whale-watching-samana-bay.png",
-  "la-romana": "https://laromanashoreexcursion.com/images/hero-la-romana.png",
+  juneau: "https://juneaushoreexcursion.com/images/hero-cruise-ship.png",
+  skagway: "https://skagwayshoreexcursions.com/hero-white-pass-railway.png",
+  ketchikan:
+    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80",
+  seward: "https://sewardshoreexcursion.com/images/hero-seward.png",
+  haines: "https://hainesshoreexcursions.com/images/hero-haines.png",
+  whittier: "https://whittiershoreexcursions.com/images/hero-whittier.png",
+  denali: "https://denalishoreexcursions.com/images/hero-denali.png",
+  sitka: "https://sitkashoreexcursion.com/images/hero-sitka-bears.jpg",
+  "ward-cove": "https://wardcoveshoreexcursions.com/images/ward-cove-hero.png",
 };
 
 async function download(slug, url) {
-  const ext = path.extname(new URL(url).pathname) || ".jpg";
+  const parsed = new URL(url);
+  let ext = path.extname(parsed.pathname);
+  if (!ext || ext.length > 5) ext = ".jpg";
   const dest = path.join(outDir, `${slug}${ext}`);
   const res = await fetch(url, { redirect: "follow" });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
