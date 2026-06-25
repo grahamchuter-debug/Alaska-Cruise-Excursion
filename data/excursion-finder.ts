@@ -14,6 +14,8 @@ export type TravellerTypeId =
   | "native-culture"
   | "photography"
   | "fishing"
+  | "flightseeing"
+  | "scenic-cruising"
   | "first-time";
 
 export type FitnessLevel = "easy" | "moderate" | "active";
@@ -45,13 +47,15 @@ export const travellerTypes: TravellerTypeOption[] = [
   { id: "whales", label: "Whale Watcher", shortLabel: "Whales", description: "Humpbacks and marine wildlife tours", icon: "🐋" },
   { id: "bears", label: "Bear Viewer", shortLabel: "Bears", description: "Brown bears at streams and sanctuaries", icon: "🐻" },
   { id: "glaciers", label: "Glacier Explorer", shortLabel: "Glaciers", description: "Fjord cruises and icefield flightseeing", icon: "🏔️" },
-  { id: "eagles", label: "Eagle Watcher", shortLabel: "Eagles", description: "Bald eagles and raptor centres", icon: "🦅" },
-  { id: "dog-sledding", label: "Dog Sledding", shortLabel: "Sled dogs", description: "Husky teams and glacier camps", icon: "🛷" },
   { id: "railways", label: "Railway Fan", shortLabel: "Railways", description: "White Pass and Alaska Railroad", icon: "🚂" },
+  { id: "flightseeing", label: "Flightseeing", shortLabel: "Helicopters", description: "Floatplanes and glacier landings", icon: "✈️" },
+  { id: "dog-sledding", label: "Dog Sledding", shortLabel: "Dog sledding", description: "Husky teams and glacier camps", icon: "🛷" },
   { id: "kayaking", label: "Kayaker", shortLabel: "Kayaking", description: "Paddle protected bays and fjords", icon: "🛶" },
-  { id: "native-culture", label: "Culture", shortLabel: "Culture", description: "Totem parks and native heritage", icon: "🎭" },
-  { id: "photography", label: "Photographer", shortLabel: "Photos", description: "Wildlife and landscape tours", icon: "📷" },
+  { id: "native-culture", label: "Culture", shortLabel: "Native culture", description: "Totem parks and native heritage", icon: "🎭" },
   { id: "fishing", label: "Angler", shortLabel: "Fishing", description: "Salmon and halibut charters", icon: "🎣" },
+  { id: "photography", label: "Photographer", shortLabel: "Photography", description: "Wildlife and landscape tours", icon: "📷" },
+  { id: "scenic-cruising", label: "Scenic Cruiser", shortLabel: "Scenic cruising", description: "Kenai Fjords and sound wildlife cruises", icon: "⛴️" },
+  { id: "eagles", label: "Eagle Watcher", shortLabel: "Eagles", description: "Bald eagles and raptor centres", icon: "🦅" },
   { id: "first-time", label: "First Alaska Cruise", shortLabel: "First visit", description: "Iconic highlights without over-planning", icon: "⚓" },
 ];
 
@@ -112,7 +116,8 @@ export const portDayMistakes: PortDayMistake[] = [
 export const finderFaqs = [
   {
     question: "How does the Alaska Excursion Finder work?",
-    answer: "Select interests, ports, and port time — the finder recommends excursions, specialist sites, and return-to-ship confidence using rules-based logic (not live booking data).",
+    answer:
+      "Choose your interests first — whales, bears, glaciers, railways, and more. The finder recommends the best Alaska ports, excursion types, seasons, authority guides, and local specialist sites for May through September cruises.",
   },
   {
     question: "Can I book excursions here?",

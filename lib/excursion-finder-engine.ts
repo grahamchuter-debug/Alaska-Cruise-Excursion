@@ -24,8 +24,13 @@ import type {
   TimeInPort,
   TravellerTypeId,
 } from "@/data/excursion-finder";
+import {
+  buildInterestInsights,
+  getRecommendedPortsForInterests,
+  type FinderInterestInsight,
+} from "@/data/finder-interest-map";
 
-export type { ReturnConfidence };
+export type { ReturnConfidence, FinderInterestInsight };
 
 export type MatchTier = "Excellent Match" | "Strong Match" | "Good Match" | "Possible Match";
 
@@ -99,7 +104,9 @@ export interface ExcursionFinderResult {
   bestExcursionType: FinderExcursionTypeHighlight | null;
   hiddenGem: FinderHiddenGemHighlight | null;
   portPlans: PortExcursionPlan[];
+  interestInsights: FinderInterestInsight[];
   summaryLine: string;
+  portsAutoRecommended: boolean;
 }
 
 export interface ExcursionFinderInput {
@@ -133,6 +140,8 @@ const travellerTypeLabels: Record<TravellerTypeId, string> = {
   "native-culture": "Culture seekers",
   photography: "Photographers",
   fishing: "Anglers",
+  flightseeing: "Flightseeing passengers",
+  "scenic-cruising": "Scenic cruise fans",
   "first-time": "First-time cruisers",
 };
 
@@ -147,6 +156,8 @@ const excursionTypeKeywords: Record<TravellerTypeId, string[]> = {
   "native-culture": ["totem", "heritage", "culture", "native"],
   photography: ["photo", "scenic", "landscape"],
   fishing: ["fish", "salmon", "halibut"],
+  flightseeing: ["helicopter", "floatplane", "flightsee", "misty fjords"],
+  "scenic-cruising": ["fjord", "kenai", "sound", "wildlife cruise", "marine"],
   "first-time": [],
 };
 
@@ -245,6 +256,8 @@ function getTravellerClusterPick(portSlug: string, travellerTypes: TravellerType
     "native-culture": "Culture seekers",
     photography: "Photographers",
     fishing: "Anglers",
+    flightseeing: "Flightseeing fans",
+    "scenic-cruising": "Scenic cruisers",
     "first-time": "First-time cruisers",
   };
 
@@ -400,7 +413,9 @@ function buildBestForTags(
       (travellerTypes.includes("glaciers") && card.label === "Glaciers") ||
       (travellerTypes.includes("bears") && card.label === "Bears") ||
       (travellerTypes.includes("railways") && card.label === "Railways") ||
-      (travellerTypes.includes("native-culture") && card.label === "Culture")
+      (travellerTypes.includes("native-culture") && card.label === "Culture") ||
+      (travellerTypes.includes("flightseeing") && card.label === "Flightseeing") ||
+      (travellerTypes.includes("scenic-cruising") && card.label === "Wildlife")
     ) {
       tags.add(card.label);
     }
@@ -625,10 +640,22 @@ function buildOverallMatchReasons(
 }
 
 export function generateExcursionFinderPlan(input: ExcursionFinderInput): ExcursionFinderResult | null {
-  const uniquePorts = [...new Set(input.portSlugs)].filter((slug) => getPortBySlug(slug));
-  if (uniquePorts.length === 0 || input.travellerTypes.length === 0) {
+  if (input.travellerTypes.length === 0) {
     return null;
   }
+
+  const portsAutoRecommended = input.portSlugs.length === 0;
+  const resolvedPorts =
+    input.portSlugs.length > 0
+      ? [...new Set(input.portSlugs)]
+      : getRecommendedPortsForInterests(input.travellerTypes, 6);
+
+  const uniquePorts = resolvedPorts.filter((slug) => getPortBySlug(slug));
+  if (uniquePorts.length === 0) {
+    return null;
+  }
+
+  const interestInsights = buildInterestInsights(input.travellerTypes, input.sailingMonth);
 
   const ship = input.shipSlug ? getShipBySlug(input.shipSlug) : undefined;
   const itineraryOrder = ship?.commonPortSlugs ?? [];
@@ -726,8 +753,12 @@ export function generateExcursionFinderPlan(input: ExcursionFinderInput): Excurs
 
   const travellerSummary = input.travellerTypes
     .map((id) => travellerTypeLabels[id])
-    .slice(0, 2)
-    .join(" and ");
+    .slice(0, 3)
+    .join(", ");
+
+  const activitySummary = portsAutoRecommended
+    ? `Activity-led plan for ${travellerSummary} across ${uniquePorts.map((slug) => getPortBySlug(slug)?.name ?? slug).join(", ")}.`
+    : `${matchScore}/100 Alaska Cruise Match for ${uniquePorts.length} port${uniquePorts.length === 1 ? "" : "s"}, optimised for ${travellerSummary}.`;
 
   return {
     matchScore,
@@ -739,7 +770,9 @@ export function generateExcursionFinderPlan(input: ExcursionFinderInput): Excurs
       : null,
     hiddenGem: hiddenGemPlan ? buildHiddenGemHighlight(hiddenGemPlan) : null,
     portPlans,
-    summaryLine: `${matchScore}/100 Alaska Cruise Match for ${uniquePorts.length} port${uniquePorts.length === 1 ? "" : "s"}, optimised for ${travellerSummary}.`,
+    interestInsights,
+    portsAutoRecommended,
+    summaryLine: activitySummary,
   };
 }
 

@@ -497,6 +497,8 @@ const travellerTypeToInterests: Partial<Record<TravellerTypeId, CruiseDayPlanInt
   "native-culture": ["culture"],
   photography: ["wildlife"],
   fishing: ["adventure"],
+  flightseeing: ["adventure", "glaciers"],
+  "scenic-cruising": ["wildlife", "glaciers"],
 };
 
 export function travellerTypesToInterests(travellerTypes: TravellerTypeId[]): CruiseDayPlanInterest[] {

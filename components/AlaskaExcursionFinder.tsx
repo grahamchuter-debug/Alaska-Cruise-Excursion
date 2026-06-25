@@ -33,6 +33,8 @@ import { CombinedCruisePlannerDownloadButton } from "@/components/CombinedCruise
 import { CruiseDayPlanDownloadButton } from "@/components/CruiseDayPlanDownloadButton";
 import { MatchReasonsPanel } from "@/components/MatchReasonsPanel";
 import { HeroBackground } from "@/components/HeroBackground";
+import { FINDER_INTEREST_ORDER } from "@/data/finder-interest-map";
+import { FinderInterestRecommendations } from "@/components/FinderInterestRecommendations";
 import { SCHEDULE_YEARS } from "@/lib/schedule-utils";
 
 type FinderVariant = "home" | "page";
@@ -61,12 +63,20 @@ export function AlaskaExcursionFinder({
     [variant, groupedPorts],
   );
 
+  const interestOptions = useMemo(
+    () =>
+      FINDER_INTEREST_ORDER.map((id) => travellerTypes.find((type) => type.id === id)).filter(
+        (type): type is (typeof travellerTypes)[number] => Boolean(type),
+      ),
+    [],
+  );
+
   const [cruiseLineSlug, setCruiseLineSlug] = useState("");
   const [shipSlug, setShipSlug] = useState("");
   const [sailingMonth, setSailingMonth] = useState("");
   const [sailingYear, setSailingYear] = useState<number | "">("");
   const [selectedPorts, setSelectedPorts] = useState<string[]>(initialPorts);
-  const [selectedTravellers, setSelectedTravellers] = useState<TravellerTypeId[]>(["first-time"]);
+  const [selectedTravellers, setSelectedTravellers] = useState<TravellerTypeId[]>([]);
   const [fitnessLevel, setFitnessLevel] = useState<FitnessLevel>("easy");
   const [timeInPort, setTimeInPort] = useState<TimeInPort>("6-8");
   const [result, setResult] = useState<ExcursionFinderResult | null>(null);
@@ -137,7 +147,7 @@ export function AlaskaExcursionFinder({
     }
   };
 
-  const canGenerate = selectedPorts.length > 0 && selectedTravellers.length > 0;
+  const canGenerate = selectedTravellers.length > 0;
 
   const combinedPlanner = useMemo(() => {
     if (!result) return null;
@@ -178,8 +188,8 @@ export function AlaskaExcursionFinder({
               Alaska Excursion Finder™
             </h2>
             <p className="mt-2 text-sm leading-6 text-gray-600 sm:text-base">
-              Match your ports, traveller style, and time ashore to shore excursions with Alaska Cruise Match
-              scores and return-to-ship confidence.
+              Start with your interests — whales, bears, glaciers, railways, and more. We recommend the best Alaska
+              ports, excursion types, seasons, authority guides, and local specialist sites for your cruise.
             </p>
           </div>
           {variant === "home" && (
@@ -189,40 +199,51 @@ export function AlaskaExcursionFinder({
           )}
         </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          <label className="block">
-            <span className="text-sm font-medium text-gray-700">Cruise line</span>
-            <select
-              value={cruiseLineSlug}
-              onChange={(event) => {
-                itineraryPortsKeyRef.current = null;
-                setCruiseLineSlug(event.target.value);
-                setShipSlug("");
-                setResult(null);
-                setHasGenerated(false);
-              }}
-              className="mt-1.5 w-full rounded-xl border border-caribbean-200 bg-white px-3 py-2.5 text-base text-gray-900 shadow-sm focus:border-caribbean-500 focus:outline-none focus:ring-2 focus:ring-caribbean-200"
-            >
-              <option value="">Select cruise line</option>
-              {finderCruiseLines.map((line) => (
-                <option key={line.slug} value={line.slug}>
-                  {line.name}
-                </option>
-              ))}
-            </select>
-          </label>
+        <div className="mt-6">
+          <p className="text-sm font-semibold text-gray-900">What do you want to do in Alaska?</p>
+          <p className="text-xs text-gray-500">
+            Select one or more interests. We recommend ports, excursion types, seasons, guides, and specialist sites.
+          </p>
+          <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            {interestOptions.map((traveller) => {
+              const active = selectedTravellers.includes(traveller.id);
+              return (
+                <button
+                  key={traveller.id}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() =>
+                    setSelectedTravellers((current) => toggleInList(current, traveller.id))
+                  }
+                  className={`rounded-xl border p-3 text-left transition-all ${
+                    active
+                      ? "border-caribbean-600 bg-white shadow-md ring-2 ring-caribbean-200"
+                      : "border-caribbean-100 bg-white/80 hover:border-caribbean-300"
+                  }`}
+                >
+                  <span className="text-xl" aria-hidden>
+                    {traveller.icon}
+                  </span>
+                  <p className="mt-2 text-sm font-semibold text-gray-900">{traveller.shortLabel}</p>
+                  <p className="mt-1 text-xs leading-5 text-gray-500">{traveller.description}</p>
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <label className="block">
-            <span className="text-sm font-medium text-gray-700">Ship</span>
+            <span className="text-sm font-medium text-gray-700">Sailing month</span>
             <select
-              value={shipSlug}
-              onChange={(event) => setShipSlug(event.target.value)}
+              value={sailingMonth}
+              onChange={(event) => setSailingMonth(event.target.value)}
               className="mt-1.5 w-full rounded-xl border border-caribbean-200 bg-white px-3 py-2.5 text-base text-gray-900 shadow-sm focus:border-caribbean-500 focus:outline-none focus:ring-2 focus:ring-caribbean-200"
             >
-              <option value="">Select ship (optional)</option>
-              {shipsForLine.map((ship) => (
-                <option key={ship.slug} value={ship.slug}>
-                  {ship.name}
+              <option value="">Select month (optional)</option>
+              {sailingMonths.map((month) => (
+                <option key={month} value={month}>
+                  {month}
                 </option>
               ))}
             </select>
@@ -247,22 +268,6 @@ export function AlaskaExcursionFinder({
           </label>
 
           <label className="block">
-            <span className="text-sm font-medium text-gray-700">Sailing month</span>
-            <select
-              value={sailingMonth}
-              onChange={(event) => setSailingMonth(event.target.value)}
-              className="mt-1.5 w-full rounded-xl border border-caribbean-200 bg-white px-3 py-2.5 text-base text-gray-900 shadow-sm focus:border-caribbean-500 focus:outline-none focus:ring-2 focus:ring-caribbean-200"
-            >
-              <option value="">Select month (optional)</option>
-              {sailingMonths.map((month) => (
-                <option key={month} value={month}>
-                  {month}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label className="block">
             <span className="text-sm font-medium text-gray-700">Typical time in port</span>
             <select
               value={timeInPort}
@@ -276,20 +281,86 @@ export function AlaskaExcursionFinder({
               ))}
             </select>
           </label>
+
+          <label className="block">
+            <span className="text-sm font-medium text-gray-700">Cruise line</span>
+            <select
+              value={cruiseLineSlug}
+              onChange={(event) => {
+                itineraryPortsKeyRef.current = null;
+                setCruiseLineSlug(event.target.value);
+                setShipSlug("");
+                setResult(null);
+                setHasGenerated(false);
+              }}
+              className="mt-1.5 w-full rounded-xl border border-caribbean-200 bg-white px-3 py-2.5 text-base text-gray-900 shadow-sm focus:border-caribbean-500 focus:outline-none focus:ring-2 focus:ring-caribbean-200"
+            >
+              <option value="">Select cruise line (optional)</option>
+              {finderCruiseLines.map((line) => (
+                <option key={line.slug} value={line.slug}>
+                  {line.name}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
 
-        <div className="mt-6">
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <label className="block">
+            <span className="text-sm font-medium text-gray-700">Ship</span>
+            <select
+              value={shipSlug}
+              onChange={(event) => setShipSlug(event.target.value)}
+              className="mt-1.5 w-full rounded-xl border border-caribbean-200 bg-white px-3 py-2.5 text-base text-gray-900 shadow-sm focus:border-caribbean-500 focus:outline-none focus:ring-2 focus:ring-caribbean-200"
+            >
+              <option value="">Select ship (optional)</option>
+              {shipsForLine.map((ship) => (
+                <option key={ship.slug} value={ship.slug}>
+                  {ship.name}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <div>
+            <p className="text-sm font-semibold text-gray-900">Fitness level</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {fitnessLevels.map((level) => {
+                const active = fitnessLevel === level.id;
+                return (
+                  <button
+                    key={level.id}
+                    type="button"
+                    aria-pressed={active}
+                    onClick={() => setFitnessLevel(level.id)}
+                    className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
+                      active
+                        ? "border-caribbean-700 bg-caribbean-700 text-white"
+                        : "border-caribbean-200 bg-white text-gray-700 hover:border-caribbean-400"
+                    }`}
+                  >
+                    {level.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 rounded-xl border border-dashed border-caribbean-200 bg-white/70 p-4 sm:p-5">
           <div className="flex items-center justify-between gap-3">
             <div>
-              <p className="text-sm font-semibold text-gray-900">Ports on your itinerary</p>
+              <p className="text-sm font-semibold text-gray-900">Ports on your itinerary (optional)</p>
               <p className="text-xs text-gray-500">
-                {shipSlug || cruiseLineSlug
-                  ? "Ports update when you change ship or cruise line. You can still adjust manually."
-                  : "Select every Alaska port your cruise visits"}
+                {selectedPorts.length === 0
+                  ? "Leave blank and we will recommend the best ports for your interests."
+                  : shipSlug || cruiseLineSlug
+                    ? "Ports update when you change ship or cruise line. You can still adjust manually."
+                    : "Refine which ports appear in your personalised plan."}
               </p>
               {selectedPorts.length > 0 && (
                 <p className="mt-1 text-xs font-medium text-caribbean-700" aria-live="polite">
-                  {selectedPorts.length} port{selectedPorts.length === 1 ? "" : "s"} selected — tap Generate when ready
+                  {selectedPorts.length} port{selectedPorts.length === 1 ? "" : "s"} selected
                 </p>
               )}
             </div>
@@ -355,61 +426,6 @@ export function AlaskaExcursionFinder({
           )}
         </div>
 
-        <div className="mt-6">
-          <p className="text-sm font-semibold text-gray-900">What type of traveller are you?</p>
-          <p className="text-xs text-gray-500">Select one or more. We map these to excursion picks automatically.</p>
-          <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-            {travellerTypes.map((traveller) => {
-              const active = selectedTravellers.includes(traveller.id);
-              return (
-                <button
-                  key={traveller.id}
-                  type="button"
-                  aria-pressed={active}
-                  onClick={() =>
-                    setSelectedTravellers((current) => toggleInList(current, traveller.id))
-                  }
-                  className={`rounded-xl border p-3 text-left transition-all ${
-                    active
-                      ? "border-caribbean-600 bg-white shadow-md ring-2 ring-caribbean-200"
-                      : "border-caribbean-100 bg-white/80 hover:border-caribbean-300"
-                  }`}
-                >
-                  <span className="text-xl" aria-hidden>
-                    {traveller.icon}
-                  </span>
-                  <p className="mt-2 text-sm font-semibold text-gray-900">{traveller.shortLabel}</p>
-                  <p className="mt-1 text-xs leading-5 text-gray-500">{traveller.description}</p>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="mt-6">
-          <p className="text-sm font-semibold text-gray-900">Fitness level</p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {fitnessLevels.map((level) => {
-              const active = fitnessLevel === level.id;
-              return (
-                <button
-                  key={level.id}
-                  type="button"
-                  aria-pressed={active}
-                  onClick={() => setFitnessLevel(level.id)}
-                  className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
-                    active
-                      ? "border-caribbean-700 bg-caribbean-700 text-white"
-                      : "border-caribbean-200 bg-white text-gray-700 hover:border-caribbean-400"
-                  }`}
-                >
-                  {level.label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <button
             type="button"
@@ -420,14 +436,14 @@ export function AlaskaExcursionFinder({
             Generate My Alaska Excursion Plan
           </button>
           {!canGenerate && (
-            <p className="text-sm text-gray-500">Select at least one port and one traveller type.</p>
+            <p className="text-sm text-gray-500">Select at least one interest to generate recommendations.</p>
           )}
         </div>
       </section>
 
       {hasGenerated && !result && (
         <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
-          Add at least one port and traveller type to generate recommendations.
+          Select at least one interest to generate recommendations.
         </div>
       )}
 
@@ -466,6 +482,15 @@ export function AlaskaExcursionFinder({
                 matchLabel={result.matchLabel}
                 reasons={result.overallMatchReasons}
                 className="max-w-3xl"
+              />
+              {result.portsAutoRecommended && (
+                <p className="text-sm text-gray-600">
+                  Ports were recommended from your interests — add specific itinerary ports above to refine this plan.
+                </p>
+              )}
+              <FinderInterestRecommendations
+                insights={result.interestInsights}
+                sailingMonth={sailingMonth || undefined}
               />
               <FinderResultHighlights
                 bestPort={result.bestPort}
@@ -552,6 +577,12 @@ export function AlaskaExcursionFinder({
           </div>
 
           <div className="space-y-6">
+            <div>
+              <h3 className="font-display text-xl font-semibold text-gray-900">Port-by-port excursion plans</h3>
+              <p className="mt-1 text-sm text-gray-600">
+                Detailed picks with return-to-ship confidence for each recommended port.
+              </p>
+            </div>
             {result.portPlans.map((plan) => {
               const dayPlanPdf = featuredFinderPortSlugs.includes(plan.portSlug)
                 ? buildCruiseDayPlanFromFinderContext({

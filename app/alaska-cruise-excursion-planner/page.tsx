@@ -5,6 +5,7 @@ import { PageHero } from "@/components/PageHero";
 import { FAQSection } from "@/components/FAQSection";
 import { JsonLd } from "@/components/JsonLd";
 import { AlaskaExcursionFinderWithRoute } from "@/components/AlaskaExcursionFinderWithRoute";
+import { AlaskaWildlifeSeasonCalendar } from "@/components/AlaskaWildlifeSeasonCalendar";
 import { BookingJourneyPanel } from "@/components/BookingJourneyPanel";
 import { ExcursionCardCTAs } from "@/components/ExcursionCardCTAs";
 import { finderFaqs, getPortComparisonRows, portDayMistakes } from "@/data/excursion-finder";
@@ -12,9 +13,9 @@ import { getPortBySlug } from "@/data/ports";
 import { breadcrumbSchema, faqSchema, travelGuideSchema } from "@/lib/schema";
 
 export const metadata = buildMetadata({
-  title: "Alaska Excursion Finder | Personalised Shore Excursion Plan",
+  title: "Alaska Excursion Finder | Activity-Led Shore Excursion Plan",
   description:
-    "Your personalised Alaska cruise recommendation engine. Match ports, traveller style and time ashore to shore excursions with Cruise Match scores and return-to-ship confidence.",
+    "Activity-led Alaska cruise excursion finder. Choose whales, bears, glaciers, railways, and more — get recommended ports, seasons, authority guides, and specialist sites for May–September cruises.",
   path: "/alaska-cruise-excursion-planner",
   keywords: [
     "Alaska excursion finder",
@@ -49,7 +50,7 @@ export default function AlaskaExcursionPlannerPage() {
 
       <PageHero
         title="Alaska Excursion Finder™"
-        subtitle="Your personalised Alaska cruise recommendation engine. Match ports, traveller style and time ashore to shore excursions with Alaska Cruise Match scores and return-to-ship confidence."
+        subtitle="Activity-led planning for May through September Alaska cruises — choose your interests first, then get recommended ports, excursion types, seasons, authority guides, and local specialist sites."
       />
 
       <section className="section-padding">
@@ -63,15 +64,17 @@ export default function AlaskaExcursionPlannerPage() {
           <div className="mb-12">
             <h2 className="section-title text-2xl sm:text-3xl">How the finder works</h2>
             <p className="mt-4 text-gray-700 leading-relaxed">
-              Choose your traveller type, cruise line, Alaska ports on your itinerary, fitness level and typical time
-              ashore. The finder generates an Alaska Cruise Match summary plus port-by-port plans with excursion picks,
-              best-for tags, port guide links, specialist booking sites and return-to-ship confidence badges.
+              Choose what you want to do — whales, bears, glaciers, railways, flightseeing, and more. Add your sailing
+              month if you know it. Ports are optional: the finder recommends the best Alaska ports for each interest,
+              links to excursion type guides and authority rankings, and surfaces vetted local specialist sites.
             </p>
             <p className="mt-3 text-sm text-gray-500">
               This is a personalised planning tool for cruise passengers, not a live AI booking engine. Always confirm
               excursion duration and all-aboard times with your operator and cruise line.
             </p>
           </div>
+
+          <AlaskaWildlifeSeasonCalendar />
 
           <div className="mb-12">
             <h2 className="section-title text-2xl sm:text-3xl">Compare Alaska Cruise Ports</h2>
@@ -174,7 +177,7 @@ export default function AlaskaExcursionPlannerPage() {
 
           <BookingJourneyPanel
             title="Turn your finder results into bookings"
-            description="After you generate a plan, use the port cards above to view recommended excursions, open port guides, and check ship schedules for each call."
+            description="After you generate a plan, use activity recommendations and port cards to open excursion guides, authority pages, and local specialist sites."
           />
 
           <FAQSection faqs={finderFaqs} title="Alaska Excursion Finder FAQs" />
