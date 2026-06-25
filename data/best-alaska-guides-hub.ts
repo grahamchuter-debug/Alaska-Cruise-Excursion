@@ -3,6 +3,7 @@ import { bestGuides, getBestGuideBySlug } from "@/data/best-guides";
 export const BEST_ALASKA_GUIDES_HUB_SLUG = "best-alaska-guides";
 
 export const featuredBestAlaskaGuideSlugs = [
+  "which-alaska-cruise-port-has-the-best-excursions",
   "best-alaska-shore-excursions",
   "best-alaska-whale-watching-excursions",
   "best-alaska-glacier-excursions",

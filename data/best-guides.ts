@@ -1,4 +1,5 @@
 import type { BestGuidePage } from "./types";
+import { whichAlaskaPortBestExcursionsGuide } from "./which-alaska-port-excursions-guide";
 
 const sharedFaqs = [
   {
@@ -17,6 +18,7 @@ function guide(partial: BestGuidePage): BestGuidePage {
 }
 
 export const bestGuides: BestGuidePage[] = [
+  whichAlaskaPortBestExcursionsGuide,
   guide({
     slug: "best-alaska-shore-excursions",
     seoTitle: "Best Alaska Shore Excursions | Authority Port Rankings",

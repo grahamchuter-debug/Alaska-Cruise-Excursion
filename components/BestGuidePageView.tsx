@@ -8,6 +8,7 @@ import { PageHero } from "@/components/PageHero";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQSection } from "@/components/FAQSection";
 import { BestGuideComparisonTable } from "@/components/BestGuideComparisonTable";
+import { AlaskaPortExcursionMatrixTable } from "@/components/AlaskaPortExcursionMatrixTable";
 import { AuthorityHubLinks } from "@/components/AuthorityHubLinks";
 import { JsonLd } from "@/components/JsonLd";
 import { SpecialistLocalGuideSection } from "@/components/SpecialistLocalGuide";
@@ -61,8 +62,56 @@ export function BestGuidePageView({ guide }: { guide: BestGuidePage }) {
             <p className="text-gray-700 leading-relaxed">{guide.introductionDetail}</p>
           </section>
 
+          {guide.portExcursionMatrix && guide.portExcursionMatrix.length > 0 && (
+            <section className="mb-12">
+              <h2 className="section-title text-2xl sm:text-3xl mb-4">
+                Alaska Port Excursion Comparison
+              </h2>
+              <p className="text-sm text-gray-600 mb-6">
+                Scores reflect excursion depth, cruise-schedule fit, and operator quality from our
+                authority port research. Denali scores apply to pre/post-cruise land tours only.
+              </p>
+              <AlaskaPortExcursionMatrixTable rows={guide.portExcursionMatrix} />
+            </section>
+          )}
+
+          {guide.categoryVerdicts && guide.categoryVerdicts.length > 0 && (
+            <section className="mb-12">
+              <h2 className="section-title text-2xl sm:text-3xl mb-6">Category Verdicts</h2>
+              <p className="text-sm text-gray-600 mb-6">
+                The winning port for each priority — with a runner-up when the choice is close.
+              </p>
+              <div className="space-y-4">
+                {guide.categoryVerdicts.map((item) => (
+                  <div
+                    key={item.category}
+                    className="rounded-xl border border-caribbean-100 bg-white p-5 sm:p-6"
+                  >
+                    <h3 className="font-display text-lg font-bold text-gray-900">{item.category}</h3>
+                    <p className="mt-2 text-sm font-medium text-caribbean-800">
+                      Winner:{" "}
+                      <Link href={`/ports/${item.winnerSlug}`} className="hover:underline">
+                        {item.winnerName}
+                      </Link>
+                      {item.runnerUpName && item.runnerUpSlug && (
+                        <>
+                          {" "}
+                          · Runner-up:{" "}
+                          <Link href={`/ports/${item.runnerUpSlug}`} className="hover:underline">
+                            {item.runnerUpName}
+                          </Link>
+                        </>
+                      )}
+                    </p>
+                    <p className="mt-2 text-sm text-gray-700 leading-relaxed">{item.verdict}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
           <section className="mb-12">
-            <h2 className="section-title text-2xl sm:text-3xl mb-6">Ranked Ports</h2>
+            <h2 className="section-title text-2xl sm:text-3xl mb-6">Every Port at a Glance</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               {guide.topPorts.map((item, index) => {
                 const port = getPortBySlug(item.slug);

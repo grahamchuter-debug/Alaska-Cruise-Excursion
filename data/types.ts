@@ -218,6 +218,44 @@ export interface BestGuideTableRow {
   rating: string;
 }
 
+export type PortExcursionScoreTier =
+  | "Excellent"
+  | "Very Good"
+  | "Good"
+  | "Fair"
+  | "Limited"
+  | "Land only";
+
+export interface PortExcursionCategoryScores {
+  whaleWatching: PortExcursionScoreTier;
+  bearViewing: PortExcursionScoreTier;
+  glaciers: PortExcursionScoreTier;
+  railways: PortExcursionScoreTier;
+  walkability: PortExcursionScoreTier;
+  families: PortExcursionScoreTier;
+  adventure: PortExcursionScoreTier;
+  photography: PortExcursionScoreTier;
+  value: PortExcursionScoreTier;
+  firstTime: PortExcursionScoreTier;
+}
+
+export interface PortExcursionMatrixRow {
+  portSlug: string;
+  portName: string;
+  /** e.g. pre/post-cruise land extension — not a pier call */
+  portNote?: string;
+  scores: PortExcursionCategoryScores;
+}
+
+export interface PortCategoryVerdict {
+  category: string;
+  winnerSlug: string;
+  winnerName: string;
+  verdict: string;
+  runnerUpSlug?: string;
+  runnerUpName?: string;
+}
+
 export interface PassengerRecommendation {
   title: string;
   advice: string;
@@ -287,6 +325,8 @@ export interface BestGuidePage {
   pricingBands?: PricingBand[];
   trustSignals?: TrustSignal[];
   additionalPortSections?: AdditionalPortSection[];
+  portExcursionMatrix?: PortExcursionMatrixRow[];
+  categoryVerdicts?: PortCategoryVerdict[];
 }
 
 export interface PortExcursionAuthorityRow {
