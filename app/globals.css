@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-800 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-20;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .section-eyebrow {
+    @apply text-sm font-medium tracking-wide text-caribbean-700;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-semibold leading-tight text-gray-900 sm:text-4xl lg:text-[2.75rem];
+  }
+
+  .section-subtitle {
+    @apply mt-4 max-w-2xl text-base leading-relaxed text-gray-600 sm:text-lg;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-caribbean-800 px-6 py-3.5 text-sm font-semibold text-white shadow-premium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-caribbean-900 hover:shadow-premium-hover focus:outline-none focus:ring-2 focus:ring-caribbean-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-caribbean-200 bg-white px-6 py-3.5 text-sm font-semibold text-caribbean-800 shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-caribbean-300 hover:bg-caribbean-50/50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-caribbean-500 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply rounded-2xl border border-gray-100/90 bg-white p-6 text-gray-900 shadow-editorial transition-[transform,box-shadow,border-color] duration-300 ease-out;
+  }
+
+  .card-gradient {
+    @apply relative overflow-hidden rounded-2xl border border-caribbean-100/80 bg-white p-6 text-gray-900 shadow-editorial transition-[transform,box-shadow,border-color,background-color] duration-300 ease-out;
+  }
+
+  .nav-card {
+    @apply relative block overflow-hidden rounded-2xl border border-gray-200/90 bg-white p-5 text-gray-900 shadow-editorial transition-[transform,box-shadow,border-color,background-color] duration-300 ease-out sm:p-6;
+  }
+
+  .nav-card::before {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 z-0 h-1 bg-gradient-to-r from-caribbean-600 via-turquoise to-caribbean-400;
+  }
+
+  .nav-card > * {
+    @apply relative z-[1];
+  }
+
+  .nav-card-cta {
+    @apply mt-auto inline-flex w-fit items-center rounded-lg border border-caribbean-200 bg-caribbean-50 px-3.5 py-2 text-sm font-semibold text-caribbean-900 shadow-sm transition-all duration-300 ease-out;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a.group:hover .nav-card-cta,
+    .group:hover .nav-card-cta {
+      @apply -translate-y-0.5 border-caribbean-300 bg-caribbean-100 shadow-md;
+    }
+  }
+
+  .card-gradient::before {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 z-0 h-1 bg-gradient-to-r from-caribbean-500/80 via-turquoise/70 to-caribbean-300/80;
+  }
+
+  .card-gradient > * {
+    @apply relative z-[1];
+  }
+
+  .card-editorial {
+    @apply overflow-hidden rounded-2xl border border-gray-100/90 bg-white text-gray-900 shadow-editorial transition-[transform,box-shadow] duration-300 ease-out;
+  }
+
+  .card-editorial-static {
+    @apply overflow-hidden rounded-2xl border border-gray-100/90 bg-white text-gray-900 shadow-editorial;
+  }
+
+  .info-badge {
+    @apply inline-flex cursor-default items-center rounded-md border border-gray-200/80 bg-gray-50 px-2.5 py-0.5 text-sm font-normal text-gray-700;
+  }
+
+  .info-badge-teal {
+    @apply inline-flex cursor-default items-center rounded-md border border-caribbean-200/70 bg-caribbean-50/70 px-2.5 py-0.5 text-sm font-normal text-caribbean-900;
+  }
+
+  .info-badge-subtle {
+    @apply inline-flex cursor-default items-center rounded-md bg-caribbean-50/80 px-2.5 py-0.5 text-xs font-normal text-caribbean-800;
+  }
+
+  .info-label {
+    @apply inline-flex cursor-default items-center rounded-md border border-gray-200/70 bg-white px-2 py-0.5 text-xs font-normal text-gray-700;
+  }
+
+  .home-hero {
+    @apply relative overflow-hidden text-white pt-12 pb-14 sm:pt-14 sm:pb-16 lg:pt-10 lg:pb-14;
+  }
+
+  .home-hero-heading {
+    @apply font-display text-4xl font-semibold leading-[1.06] sm:text-[2.5rem] lg:text-[2.65rem] max-w-4xl drop-shadow-md;
+  }
+
+  .hero-discovery-strip {
+    @apply relative z-10 -mt-6 border-b border-caribbean-100/90 bg-gradient-to-b from-white via-white to-caribbean-50/40 pb-6 pt-5 sm:-mt-8 sm:pb-7 sm:pt-6;
+  }
+
+  .hero-scroll-cue {
+    @apply pointer-events-none absolute inset-x-0 bottom-0 z-20 flex flex-col items-center;
+  }
+
+  .hero-scroll-cue-fade {
+    @apply h-16 w-full bg-gradient-to-t from-gray-950/55 via-gray-950/20 to-transparent;
+  }
+
+  .hero-scroll-cue-label {
+    @apply -mt-10 mb-3 flex flex-col items-center gap-1.5 text-white/55;
+  }
+
+  .hero-scroll-cue-icon {
+    animation: hero-scroll-bounce 2.4s ease-in-out infinite;
+  }
+
+  .home-hero-next-peek {
+    @apply relative z-10 bg-white;
+  }
+
+  @media (max-height: 820px) and (min-width: 1024px) {
+    .home-hero {
+      @apply pt-10 pb-8 lg:pt-10 lg:pb-8;
+    }
+
+    .home-hero-next-peek {
+      @apply -mt-24 pt-24;
+    }
+
+    .hero-discovery-card {
+      @apply p-4;
+    }
+  }
+
+  .hero-discovery-card {
+    @apply relative flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-white/70 bg-gradient-to-br from-[#fffdf9] via-white to-caribbean-50/50 p-5 text-gray-900 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.45)] transition-[transform,box-shadow,border-color] duration-500 ease-out sm:p-6;
+  }
+
+  .hero-discovery-card::before {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-caribbean-300/70 to-transparent;
+  }
+
+  .hero-discovery-card::after {
+    content: "";
+    @apply pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-tropical-sand/30 blur-2xl;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .hero-discovery-card:hover {
+      @apply -translate-y-1 border-white shadow-[0_28px_60px_-28px_rgba(0,0,0,0.5)];
+    }
+    a.card:hover {
+      @apply -translate-y-0.5 border-caribbean-100 shadow-premium-hover;
+    }
+
+    a.card-gradient:hover {
+      @apply -translate-y-0.5 border-caribbean-200 bg-caribbean-50/40 shadow-premium-hover;
+    }
+
+    a.nav-card:hover {
+      @apply -translate-y-0.5 border-caribbean-200 bg-caribbean-50/40 shadow-premium-hover;
+    }
+
+    a:hover .card-editorial {
+      @apply -translate-y-1 shadow-premium-hover;
+    }
+  }
+
+  .card-feature {
+    @apply relative overflow-hidden rounded-2xl border border-caribbean-100/70 bg-white p-6 shadow-premium sm:p-8;
+  }
+
+  .card-feature::after {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-caribbean-600 via-turquoise to-caribbean-400;
+  }
+
+  .prose-content {
+    @apply prose prose-lg max-w-none prose-headings:font-display prose-headings:font-semibold prose-headings:text-gray-900 prose-a:text-caribbean-700 prose-a:no-underline hover:prose-a:underline;
+  }
+}
+
+@media print {
+  body > header,
+  body > footer {
+    display: none !important;
+  }
+
+  main {
+    flex: none !important;
+  }
+
+  .print\\:hidden {
+    display: none !important;
+  }
+
+  .cruise-day-plan-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cruise-day-plan-document {
+    color: #111827;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+}

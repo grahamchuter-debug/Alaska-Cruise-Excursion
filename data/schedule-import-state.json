@@ -1,0 +1,86 @@
+{
+  "lastRun": "2026-06-20T12:36:39.995Z",
+  "blockedUntil": "2026-06-19T19:32:24.312Z",
+  "ports": {
+    "ocho-rios": {
+      "lastFetch": "2026-06-13T10:56:15.814Z",
+      "lastFetchUrl": "https://www.cruisetimetables.com/visitingochoriosjamaica-nov2026.html",
+      "lastImport": "2026-06-13T10:56:27.896Z",
+      "importEntryCount": 156
+    },
+    "st-thomas": {
+      "lastFetch": "2026-06-13T10:59:27.900Z",
+      "lastFetchUrl": "https://www.cruisetimetables.com/visitingstthomasusvirginislands-dec2027.html",
+      "lastImport": "2026-06-13T10:59:39.973Z",
+      "importEntryCount": 506
+    },
+    "tortola": {
+      "lastFetch": "2026-06-13T11:07:04.682Z",
+      "lastFetchUrl": "https://www.cruisetimetables.com/visitingtortolabritishvirginislands-jan2027.html?offset=71",
+      "lastImport": "2026-06-13T11:11:48.142Z",
+      "importEntryCount": 522
+    },
+    "st-kitts": {
+      "lastImport": "2026-06-13T11:11:48.142Z",
+      "importEntryCount": 59
+    },
+    "cozumel": {
+      "lastFetch": "2026-06-14T07:36:02.433Z",
+      "lastFetchUrl": "https://www.cruisetimetables.com/visitingcozumelmexico-dec2027.html?offset=151",
+      "lastImport": "2026-06-14T07:36:20.704Z",
+      "importEntryCount": 1861
+    },
+    "aruba": {
+      "lastFetch": "2026-06-14T08:01:39.296Z",
+      "lastFetchUrl": "https://www.cruisetimetables.com/visitingoranjestadaruba-dec2027.html?offset=71",
+      "lastImport": "2026-06-14T08:01:39.448Z",
+      "importEntryCount": 510
+    },
+    "grand-cayman": {
+      "lastFetch": "2026-06-15T09:51:23.182Z",
+      "lastFetchUrl": "https://www.cruisetimetables.com/visitinggeorgetowngrandcayman-dec2027.html?offset=51",
+      "lastError": "fetch failed",
+      "lastErrorAt": "2026-06-15T09:47:46.590Z",
+      "lastImport": "2026-06-15T09:51:53.330Z",
+      "importEntryCount": 499
+    },
+    "nassau": {
+      "lastFetch": "2026-06-16T07:08:35.337Z",
+      "lastFetchUrl": "https://www.cruisetimetables.com/visitingnassaubahamas-dec2027.html?offset=121",
+      "lastImport": "2026-06-16T07:09:05.576Z",
+      "importEntryCount": 2301
+    },
+    "roatan": {
+      "lastFetch": "2026-06-16T17:30:37.148Z",
+      "lastFetchUrl": "https://www.cruisetimetables.com/visitingroatanhonduras-dec2027.html?offset=71",
+      "lastImport": "2026-06-16T17:30:39.308Z",
+      "importEntryCount": 787
+    },
+    "st-maarten": {
+      "lastFetch": "2026-06-17T13:25:11.513Z",
+      "lastFetchUrl": "https://www.cruisetimetables.com/visitingphilipsburgstmaarten-dec2027.html?offset=171",
+      "lastImport": "2026-06-17T13:25:13.685Z",
+      "importEntryCount": 728
+    },
+    "puerto-plata": {
+      "lastFetch": "2026-06-19T11:06:23.037Z",
+      "lastFetchUrl": "https://www.cruisetimetables.com/visitingpuertoplataambercovedominicanrepublic-dec2027.html?offset=101",
+      "lastError": "fetch failed",
+      "lastErrorAt": "2026-06-19T10:59:09.497Z",
+      "lastImport": "2026-06-19T11:06:53.166Z",
+      "importEntryCount": 865
+    },
+    "costa-maya": {
+      "lastFetch": "2026-06-20T12:36:10.202Z",
+      "lastFetchUrl": "https://www.cruisetimetables.com/visitingcostamayamexico-dec2027.html?offset=91",
+      "lastImport": "2026-06-20T12:36:12.330Z",
+      "importEntryCount": 821
+    },
+    "puerto-limon": {
+      "lastFetch": "2026-06-20T12:37:16.799Z",
+      "lastFetchUrl": "https://www.cruisetimetables.com/visitingpuertolimoncostarica-dec2027.html?offset=21",
+      "lastImport": "2026-06-20T12:37:18.923Z",
+      "importEntryCount": 107
+    }
+  }
+}

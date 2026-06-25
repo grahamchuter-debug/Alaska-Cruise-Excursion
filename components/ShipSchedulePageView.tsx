@@ -1,0 +1,237 @@
+import Link from "next/link";
+import type { ShipSchedulePort } from "@/data/types";
+import { getScheduleForPort, getScheduleForPortYear } from "@/data/schedules";
+import { ScheduleYearLinks } from "@/components/ScheduleYearLinks";
+import { yearHubPath, type ScheduleYear } from "@/lib/schedule-utils";
+import { getPortBySlug } from "@/data/ports";
+import { excursionTypes } from "@/data/excursion-types";
+import { ScheduleHub } from "@/components/ScheduleHub";
+import { ScheduleMonthLinkGrid } from "@/components/ScheduleMonthLinkGrid";
+import { SpecialistLocalGuide } from "@/components/SpecialistLocalGuide";
+import { FAQSection } from "@/components/FAQSection";
+import { AuthorityHubLinks } from "@/components/AuthorityHubLinks";
+import { NavCardCta } from "@/components/NavCardCta";
+import { SCHEDULE_PLANNING_TIPS } from "@/data/schedule-content";
+import { getSchedulePageContentForPortYear } from "@/data/schedule-page-content";
+import {
+  SchedulePageContentSections,
+  SchedulePageIntro,
+} from "@/components/SchedulePageContentSections";
+import { hasShipSchedule } from "@/lib/routes";
+import { CruisePortInformationBox } from "@/components/CruisePortInformationBox";
+import { getScheduleIntro } from "@/lib/cruise-port-display";
+
+import { SchedulePassengerGuide } from "@/components/SchedulePassengerGuide";
+
+export function ShipSchedulePageView({
+  port,
+  year,
+}: {
+  port: ShipSchedulePort;
+  year?: ScheduleYear;
+}) {
+  const schedule = year ? getScheduleForPortYear(port.slug, year) : getScheduleForPort(port.slug);
+  const authorityPort = getPortBySlug(port.slug);
+  const planningTips = port.planningTips ?? SCHEDULE_PLANNING_TIPS;
+  const pageContent = year ? getSchedulePageContentForPortYear(port.slug, year) : null;
+  const faqs = pageContent?.faqs ?? port.faqs ?? [];
+
+  const relatedPorts = port.relatedPortSlugs
+    .map((slug) => getPortBySlug(slug))
+    .filter(Boolean);
+
+  const excursions = port.excursionTypeSlugs
+    .map((slug) => excursionTypes.find((e) => e.slug === slug))
+    .filter(Boolean);
+  const scheduleIntro = pageContent?.intro ?? getScheduleIntro(port.slug) ?? port.intro;
+
+  return (
+    <>
+      <CruisePortInformationBox portSlug={port.slug} />
+
+      <section className="mb-12">
+        <h2 className="section-title text-2xl sm:text-3xl mb-4">How This Schedule Helps You Plan</h2>
+        <p className="text-gray-700 leading-relaxed text-lg">{scheduleIntro}</p>
+        {port.usesTender && (
+          <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+            <strong>Tender port:</strong> {port.name} uses ship-to-shore tender boats. Published
+            schedules may change with weather. Allow extra time when planning excursions.
+          </p>
+        )}
+        {!port.usesTender && port.slug === "juneau" && year && (
+          <p className="mt-4 rounded-lg border border-caribbean-200 bg-caribbean-50 px-4 py-3 text-sm text-caribbean-900">
+            <strong>Downtown dock:</strong> Most Juneau ships berth at the downtown cruise terminal — whale
+            tours and Mendenhall Glacier transfers start near the pier.
+          </p>
+        )}
+      </section>
+
+      {pageContent && (
+        <SchedulePageContentSections content={pageContent} portName={port.name} />
+      )}
+
+      {year && (
+        <section className="mb-8">
+          <div className="mb-4 flex flex-wrap gap-3">
+            <Link href={yearHubPath(year)} className="text-sm font-medium text-caribbean-700 hover:text-caribbean-800">
+              ← All {year} Alaska schedules
+            </Link>
+          </div>
+          <ScheduleYearLinks portSlug={port.slug} portName={port.name} currentYear={year} />
+        </section>
+      )}
+
+      {year && (
+        <ScheduleMonthLinkGrid portSlug={port.slug} portName={port.name} year={year} />
+      )}
+
+      <ScheduleHub
+        entries={schedule}
+        portName={port.name}
+        portSlug={port.slug}
+        scheduleOverview={port.scheduleOverview}
+        year={year}
+      />
+
+      <SchedulePassengerGuide
+        portSlug={port.slug}
+        year={year}
+        excursionTypeSlugs={port.excursionTypeSlugs}
+      />
+
+      <section className="mb-12">
+        <h2 className="section-title text-2xl sm:text-3xl mb-6">Cruise Planning Tips</h2>
+        <ul className="space-y-3">
+          {planningTips.map((tip) => (
+            <li key={tip} className="flex items-start gap-3 text-gray-700">
+              <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-caribbean-700 text-white text-xs">
+                ✓
+              </span>
+              {tip}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="section-title text-2xl sm:text-3xl mb-6">Related Links</h2>
+        <div className="grid gap-6 sm:grid-cols-2">
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-3">Authority port page</h3>
+            <Link href={`/ports/${port.slug}`} className="card-gradient group flex h-full flex-col hover:border-caribbean-300">
+              <span className="font-medium text-gray-900">{port.name} shore excursions guide</span>
+              <span className="block text-sm text-gray-600 mt-1">
+                Excursions, port logistics, and passenger tips
+              </span>
+              <NavCardCta className="pt-4">View {port.name} port guide</NavCardCta>
+            </Link>
+          </div>
+          {authorityPort && (
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-3">Specialist local website</h3>
+              <a
+                href={authorityPort.specialistUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-gradient group flex h-full flex-col hover:border-caribbean-300"
+              >
+                <span className="font-medium text-gray-900">{authorityPort.specialistName}</span>
+                <span className="block text-sm text-gray-600 mt-1">
+                  Live tour listings, local pricing, and pier pickup details
+                </span>
+                <NavCardCta className="pt-4">Book with {authorityPort.specialistName}</NavCardCta>
+              </a>
+            </div>
+          )}
+        </div>
+
+        {excursions.length > 0 && (
+          <div className="mt-6">
+            <h3 className="font-semibold text-gray-900 mb-3">Excursion types for {port.name}</h3>
+            <div className="flex flex-wrap gap-2">
+              {excursions.map(
+                (type) =>
+                  type && (
+                    <Link
+                      key={type.slug}
+                      href={`/excursion-types/${type.slug}`}
+                      className="rounded-full bg-caribbean-50 px-4 py-2 text-sm font-medium text-caribbean-700 hover:bg-caribbean-100"
+                    >
+                      {type.name}
+                    </Link>
+                  ),
+              )}
+            </div>
+          </div>
+        )}
+
+        {relatedPorts.length > 0 && (
+          <div className="mt-6">
+            <h3 className="font-semibold text-gray-900 mb-3">Nearby cruise ports</h3>
+            <div className="flex flex-wrap gap-2">
+              {relatedPorts.map(
+                (related) =>
+                  related && (
+                    <Link
+                      key={related.slug}
+                      href={`/ports/${related.slug}`}
+                      className="rounded-full bg-white px-3 py-1.5 text-sm font-medium text-gray-700 border border-gray-200 hover:border-caribbean-200"
+                    >
+                      {related.name}
+                    </Link>
+                  ),
+              )}
+              {relatedPorts.map(
+                (related) =>
+                  related &&
+                  hasShipSchedule(related.slug) && (
+                    <Link
+                      key={`sched-${related.slug}`}
+                      href={`/ship-schedules/${related.slug}`}
+                      className="rounded-full bg-caribbean-50 px-3 py-1.5 text-xs font-medium text-caribbean-700 hover:bg-caribbean-100"
+                    >
+                      {related.name} schedule
+                    </Link>
+                  ),
+              )}
+            </div>
+          </div>
+        )}
+      </section>
+
+      {authorityPort && (
+        <div className="mb-12">
+          <SpecialistLocalGuide portSlug={port.slug} />
+        </div>
+      )}
+
+      {year && (
+        <section className="mb-12 rounded-xl border border-gray-200 bg-white p-6">
+          <h2 className="section-title text-2xl sm:text-3xl mb-4">Alaska Planning Resources</h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Link href="/alaska-cruise-excursion-planner" className="card-gradient group flex h-full flex-col hover:border-caribbean-300">
+              <h3 className="font-semibold text-gray-900">Alaska Excursion Planner</h3>
+              <p className="mt-2 text-sm text-gray-600">
+                Match excursions to your port schedule and interests.
+              </p>
+              <NavCardCta className="pt-4">Open excursion planner</NavCardCta>
+            </Link>
+            <Link href="/best-alaska-guides" className="card-gradient group flex h-full flex-col hover:border-caribbean-300">
+              <h3 className="font-semibold text-gray-900">Best Alaska Guides</h3>
+              <p className="mt-2 text-sm text-gray-600">
+                Wildlife, glaciers, railways, and port planning authority guides.
+              </p>
+              <NavCardCta className="pt-4">Browse best guides</NavCardCta>
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {faqs.length > 0 && <FAQSection faqs={faqs} />}
+
+      <div className="mt-10">
+        <AuthorityHubLinks current="schedules" portSlug={port.slug} />
+      </div>
+    </>
+  );
+}

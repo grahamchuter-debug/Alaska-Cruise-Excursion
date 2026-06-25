@@ -1,0 +1,30 @@
+import type { Port } from "@/data/types";
+import { DestinationHeroBand } from "@/components/DestinationHeroBand";
+import { ExcursionCardCTAs } from "@/components/ExcursionCardCTAs";
+
+interface AuthorityPortCardProps {
+  port: Port;
+  description: string;
+  bestFor: string;
+}
+
+export function AuthorityPortCard({ port, description, bestFor }: AuthorityPortCardProps) {
+  return (
+    <article className="card-editorial flex h-full flex-col">
+      <DestinationHeroBand
+        imageTheme={port.imageTheme}
+        imageAlt={port.imageAlt}
+        title={port.name}
+        subtitle={port.country}
+        eyebrow={bestFor}
+        heightClass="h-40 sm:h-44"
+        portSlug={port.slug}
+      />
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <p className="text-xs font-medium text-gray-500">Why we recommend it</p>
+        <p className="mt-2 text-sm leading-relaxed text-gray-700 flex-1">{description}</p>
+        <ExcursionCardCTAs portSlug={port.slug} sectionHint={port.bestFor} className="mt-6" />
+      </div>
+    </article>
+  );
+}

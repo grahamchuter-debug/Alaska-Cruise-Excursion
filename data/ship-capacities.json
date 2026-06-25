@@ -1,0 +1,2585 @@
+{
+  "source": "CruiseMapper",
+  "sourceUrls": [
+    "https://www.cruisemapper.com/wiki/761-cruise-ship-passenger-capacity-ratings",
+    "https://www.cruisemapper.com/ships"
+  ],
+  "updatedAt": "2026-06-12",
+  "shipCount": 429,
+  "ships": [
+    {
+      "name": "(Genting) Global Dream",
+      "min": 4700,
+      "max": 9500,
+      "slug": null
+    },
+    {
+      "name": "(Swan Hellenic) SH Diana",
+      "min": 192,
+      "max": 192,
+      "slug": null
+    },
+    {
+      "name": "(Swan Hellenic) SH Minerva &amp; SH Vega",
+      "min": 152,
+      "max": 152,
+      "slug": null
+    },
+    {
+      "name": "2",
+      "min": 922,
+      "max": 1473,
+      "slug": null
+    },
+    {
+      "name": "3",
+      "min": 922,
+      "max": 1473,
+      "slug": null
+    },
+    {
+      "name": "4",
+      "min": 922,
+      "max": 1473,
+      "slug": null
+    },
+    {
+      "name": "4x MSC WORLD (Europa",
+      "min": 5240,
+      "max": 6774,
+      "slug": null
+    },
+    {
+      "name": "5",
+      "min": 922,
+      "max": 1473,
+      "slug": null
+    },
+    {
+      "name": "6)",
+      "min": 922,
+      "max": 1473,
+      "slug": null
+    },
+    {
+      "name": "Adora Atlantica/Costa",
+      "min": 2652,
+      "max": 2652,
+      "slug": null
+    },
+    {
+      "name": "Adora Flora City",
+      "min": 5246,
+      "max": 5246,
+      "slug": null
+    },
+    {
+      "name": "Adora Magic City",
+      "min": 5232,
+      "max": 5232,
+      "slug": null
+    },
+    {
+      "name": "Adora Mediterranea/Costa",
+      "min": 2537,
+      "max": 2537,
+      "slug": null
+    },
+    {
+      "name": "Adventure Of The Seas",
+      "min": 3382,
+      "max": 4058,
+      "slug": null
+    },
+    {
+      "name": "Aegean Paradise",
+      "min": 648,
+      "max": 720,
+      "slug": null
+    },
+    {
+      "name": "AIDAaura",
+      "min": 1266,
+      "max": 1300,
+      "slug": null
+    },
+    {
+      "name": "AIDAbella",
+      "min": 2050,
+      "max": 2500,
+      "slug": null
+    },
+    {
+      "name": "AIDAblu",
+      "min": 2192,
+      "max": 2500,
+      "slug": null
+    },
+    {
+      "name": "AIDAcosma",
+      "min": 5400,
+      "max": 6600,
+      "slug": null
+    },
+    {
+      "name": "AIDAdiva",
+      "min": 2050,
+      "max": 2500,
+      "slug": null
+    },
+    {
+      "name": "AIDAluna",
+      "min": 2050,
+      "max": 2500,
+      "slug": null
+    },
+    {
+      "name": "AIDAmar",
+      "min": 2194,
+      "max": 2686,
+      "slug": null
+    },
+    {
+      "name": "AIDAmira",
+      "min": 1248,
+      "max": 1498,
+      "slug": null
+    },
+    {
+      "name": "AIDAnova",
+      "min": 5200,
+      "max": 6600,
+      "slug": null
+    },
+    {
+      "name": "AIDAperla",
+      "min": 3286,
+      "max": 3400,
+      "slug": null
+    },
+    {
+      "name": "AIDAprima",
+      "min": 3286,
+      "max": 3400,
+      "slug": null
+    },
+    {
+      "name": "AIDAsol",
+      "min": 2194,
+      "max": 2686,
+      "slug": null
+    },
+    {
+      "name": "AIDAstella",
+      "min": 2194,
+      "max": 2700,
+      "slug": null
+    },
+    {
+      "name": "AIDAvita",
+      "min": 1266,
+      "max": 1582,
+      "slug": null
+    },
+    {
+      "name": "Albatros",
+      "min": 812,
+      "max": 830,
+      "slug": null
+    },
+    {
+      "name": "Allure Of The Seas",
+      "min": 5490,
+      "max": 6314,
+      "slug": null
+    },
+    {
+      "name": "Amadea",
+      "min": 508,
+      "max": 624,
+      "slug": null
+    },
+    {
+      "name": "Ambience",
+      "min": 1596,
+      "max": 1915,
+      "slug": "Ambience-552"
+    },
+    {
+      "name": "Ambition",
+      "min": 1248,
+      "max": 1428,
+      "slug": "Ambition-761"
+    },
+    {
+      "name": "America",
+      "min": 5240,
+      "max": 6774,
+      "slug": null
+    },
+    {
+      "name": "Americana",
+      "min": 108,
+      "max": 138,
+      "slug": null
+    },
+    {
+      "name": "Anthem of the Seas",
+      "min": 4168,
+      "max": 4825,
+      "slug": null
+    },
+    {
+      "name": "Aranui 5",
+      "min": 206,
+      "max": 256,
+      "slug": null
+    },
+    {
+      "name": "Arcadia",
+      "min": 1904,
+      "max": 1904,
+      "slug": null
+    },
+    {
+      "name": "Artania",
+      "min": 1188,
+      "max": 1260,
+      "slug": null
+    },
+    {
+      "name": "Arvia",
+      "min": 5204,
+      "max": 6264,
+      "slug": null
+    },
+    {
+      "name": "Asia",
+      "min": 5240,
+      "max": 6774,
+      "slug": null
+    },
+    {
+      "name": "Asuka 2",
+      "min": 872,
+      "max": 960,
+      "slug": null
+    },
+    {
+      "name": "Atlantic)",
+      "min": 5240,
+      "max": 6774,
+      "slug": null
+    },
+    {
+      "name": "Aurora",
+      "min": 1882,
+      "max": 2258,
+      "slug": null
+    },
+    {
+      "name": "Azamara Journey",
+      "min": 710,
+      "max": 781,
+      "slug": null
+    },
+    {
+      "name": "Azamara Onward",
+      "min": 672,
+      "max": 804,
+      "slug": null
+    },
+    {
+      "name": "Azamara Pursuit",
+      "min": 680,
+      "max": 748,
+      "slug": null
+    },
+    {
+      "name": "Azamara Quest",
+      "min": 710,
+      "max": 781,
+      "slug": null
+    },
+    {
+      "name": "Azura",
+      "min": 3096,
+      "max": 3737,
+      "slug": null
+    },
+    {
+      "name": "Balmoral",
+      "min": 1350,
+      "max": 1420,
+      "slug": null
+    },
+    {
+      "name": "Bolette",
+      "min": 1380,
+      "max": 1656,
+      "slug": null
+    },
+    {
+      "name": "Borealis",
+      "min": 1404,
+      "max": 1685,
+      "slug": null
+    },
+    {
+      "name": "Braemar",
+      "min": 929,
+      "max": 970,
+      "slug": null
+    },
+    {
+      "name": "Brilliance Of The Seas",
+      "min": 2150,
+      "max": 2580,
+      "slug": null
+    },
+    {
+      "name": "Brilliant Lady",
+      "min": 2770,
+      "max": 2860,
+      "slug": null
+    },
+    {
+      "name": "Britannia",
+      "min": 3645,
+      "max": 4406,
+      "slug": null
+    },
+    {
+      "name": "Caledonian Sky",
+      "min": 114,
+      "max": 114,
+      "slug": null
+    },
+    {
+      "name": "Caribbean Princess",
+      "min": 3138,
+      "max": 3766,
+      "slug": null
+    },
+    {
+      "name": "Carnival Breeze",
+      "min": 3690,
+      "max": 4428,
+      "slug": null
+    },
+    {
+      "name": "Carnival Celebration",
+      "min": 5374,
+      "max": 6338,
+      "slug": null
+    },
+    {
+      "name": "Carnival Conquest",
+      "min": 2984,
+      "max": 3581,
+      "slug": null
+    },
+    {
+      "name": "Carnival Dream",
+      "min": 3626,
+      "max": 4533,
+      "slug": null
+    },
+    {
+      "name": "Carnival Festivale",
+      "min": 5374,
+      "max": 6338,
+      "slug": "Carnival-Festivale-2106"
+    },
+    {
+      "name": "Carnival Firenze (Costa)",
+      "min": 4232,
+      "max": 5078,
+      "slug": null
+    },
+    {
+      "name": "Carnival Freedom",
+      "min": 2984,
+      "max": 3581,
+      "slug": null
+    },
+    {
+      "name": "Carnival Glory",
+      "min": 2984,
+      "max": 3581,
+      "slug": null
+    },
+    {
+      "name": "Carnival Horizon",
+      "min": 3930,
+      "max": 4716,
+      "slug": null
+    },
+    {
+      "name": "Carnival Jubilee",
+      "min": 5347,
+      "max": 6631,
+      "slug": null
+    },
+    {
+      "name": "Carnival Legend",
+      "min": 2124,
+      "max": 2549,
+      "slug": null
+    },
+    {
+      "name": "Carnival Liberty",
+      "min": 2978,
+      "max": 3574,
+      "slug": null
+    },
+    {
+      "name": "Carnival Magic",
+      "min": 3690,
+      "max": 4428,
+      "slug": null
+    },
+    {
+      "name": "Carnival Mardi Gras",
+      "min": 5282,
+      "max": 6338,
+      "slug": null
+    },
+    {
+      "name": "Carnival Miracle",
+      "min": 2124,
+      "max": 2549,
+      "slug": null
+    },
+    {
+      "name": "Carnival Panorama",
+      "min": 3930,
+      "max": 4716,
+      "slug": null
+    },
+    {
+      "name": "Carnival Paradise",
+      "min": 2204,
+      "max": 2668,
+      "slug": null
+    },
+    {
+      "name": "Carnival Pride",
+      "min": 2124,
+      "max": 2549,
+      "slug": null
+    },
+    {
+      "name": "Carnival Radiance (Victory)",
+      "min": 2896,
+      "max": 4375,
+      "slug": null
+    },
+    {
+      "name": "Carnival Spirit",
+      "min": 2124,
+      "max": 2549,
+      "slug": null
+    },
+    {
+      "name": "Carnival Splendor",
+      "min": 3016,
+      "max": 3619,
+      "slug": null
+    },
+    {
+      "name": "Carnival Sunrise (Triumph)",
+      "min": 2984,
+      "max": 3730,
+      "slug": null
+    },
+    {
+      "name": "Carnival Sunshine (Destiny)",
+      "min": 3012,
+      "max": 3765,
+      "slug": null
+    },
+    {
+      "name": "Carnival Valor",
+      "min": 2984,
+      "max": 3581,
+      "slug": null
+    },
+    {
+      "name": "Carnival Venezia (Costa)",
+      "min": 4232,
+      "max": 5145,
+      "slug": null
+    },
+    {
+      "name": "Carnival Vista",
+      "min": 3930,
+      "max": 4716,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Apex",
+      "min": 3260,
+      "max": 3521,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Ascent",
+      "min": 3260,
+      "max": 3521,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Beyond",
+      "min": 3276,
+      "max": 3950,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Constellation",
+      "min": 2130,
+      "max": 2556,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Eclipse",
+      "min": 2850,
+      "max": 3420,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Edge",
+      "min": 2918,
+      "max": 3521,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Equinox",
+      "min": 2850,
+      "max": 3420,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Flora",
+      "min": 120,
+      "max": 120,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Infinity",
+      "min": 2170,
+      "max": 2604,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Millennium",
+      "min": 2158,
+      "max": 2590,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Reflection",
+      "min": 3046,
+      "max": 3655,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Silhouette",
+      "min": 2886,
+      "max": 3463,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Solstice",
+      "min": 2850,
+      "max": 3420,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Summit",
+      "min": 2158,
+      "max": 2590,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Xcel",
+      "min": 3260,
+      "max": 3521,
+      "slug": null
+    },
+    {
+      "name": "Celebrity Xpedition",
+      "min": 98,
+      "max": 118,
+      "slug": null
+    },
+    {
+      "name": "Celestyal Crystal",
+      "min": 1200,
+      "max": 1452,
+      "slug": null
+    },
+    {
+      "name": "Celestyal Journey/ex Ryndam",
+      "min": 1258,
+      "max": 1512,
+      "slug": null
+    },
+    {
+      "name": "Celestyal Olympia",
+      "min": 1611,
+      "max": 1664,
+      "slug": null
+    },
+    {
+      "name": "Club Med 2",
+      "min": 372,
+      "max": 386,
+      "slug": null
+    },
+    {
+      "name": "Coral Princess",
+      "min": 2000,
+      "max": 2400,
+      "slug": null
+    },
+    {
+      "name": "Costa Concordia (sank in 2012)",
+      "min": 3000,
+      "max": 3600,
+      "slug": null
+    },
+    {
+      "name": "Costa Deliziosa",
+      "min": 2260,
+      "max": 2712,
+      "slug": null
+    },
+    {
+      "name": "Costa Diadema",
+      "min": 3772,
+      "max": 4526,
+      "slug": null
+    },
+    {
+      "name": "Costa Fascinosa",
+      "min": 3014,
+      "max": 3617,
+      "slug": null
+    },
+    {
+      "name": "Costa Favolosa",
+      "min": 3014,
+      "max": 3617,
+      "slug": null
+    },
+    {
+      "name": "Costa Fortuna",
+      "min": 2698,
+      "max": 3250,
+      "slug": null
+    },
+    {
+      "name": "Costa Luminosa",
+      "min": 2260,
+      "max": 2712,
+      "slug": null
+    },
+    {
+      "name": "Costa Magica",
+      "min": 2698,
+      "max": 3250,
+      "slug": null
+    },
+    {
+      "name": "Costa Pacifica",
+      "min": 3014,
+      "max": 3617,
+      "slug": null
+    },
+    {
+      "name": "Costa Serena",
+      "min": 3014,
+      "max": 3617,
+      "slug": null
+    },
+    {
+      "name": "Costa Smeralda",
+      "min": 5200,
+      "max": 6518,
+      "slug": null
+    },
+    {
+      "name": "Costa Toscana",
+      "min": 5322,
+      "max": 6338,
+      "slug": null
+    },
+    {
+      "name": "Crown Princess",
+      "min": 3062,
+      "max": 3674,
+      "slug": null
+    },
+    {
+      "name": "Crystal Serenity",
+      "min": 1090,
+      "max": 1254,
+      "slug": null
+    },
+    {
+      "name": "Crystal Symphony",
+      "min": 904,
+      "max": 1040,
+      "slug": null
+    },
+    {
+      "name": "Diamond Princess",
+      "min": 2706,
+      "max": 3247,
+      "slug": null
+    },
+    {
+      "name": "Discovery Princess",
+      "min": 3668,
+      "max": 4402,
+      "slug": null
+    },
+    {
+      "name": "Disney Dream",
+      "min": 2500,
+      "max": 3500,
+      "slug": null
+    },
+    {
+      "name": "Disney Fantasy",
+      "min": 2500,
+      "max": 3500,
+      "slug": null
+    },
+    {
+      "name": "Disney Magic",
+      "min": 1754,
+      "max": 2456,
+      "slug": null
+    },
+    {
+      "name": "Disney Treasure",
+      "min": 2476,
+      "max": 3466,
+      "slug": "Disney-Treasure-2188"
+    },
+    {
+      "name": "Disney Wish",
+      "min": 2476,
+      "max": 3466,
+      "slug": null
+    },
+    {
+      "name": "Disney Wonder",
+      "min": 1754,
+      "max": 2456,
+      "slug": null
+    },
+    {
+      "name": "Emerald Azzurra",
+      "min": 50,
+      "max": 100,
+      "slug": null
+    },
+    {
+      "name": "Emerald Princess",
+      "min": 3066,
+      "max": 3679,
+      "slug": null
+    },
+    {
+      "name": "Emerald Sakara",
+      "min": 50,
+      "max": 100,
+      "slug": null
+    },
+    {
+      "name": "Empress Of The Seas",
+      "min": 1592,
+      "max": 1910,
+      "slug": null
+    },
+    {
+      "name": "Enchanted Princess",
+      "min": 3668,
+      "max": 4402,
+      "slug": null
+    },
+    {
+      "name": "Enchantment Of The Seas",
+      "min": 2288,
+      "max": 2746,
+      "slug": null
+    },
+    {
+      "name": "Explora I",
+      "min": 922,
+      "max": 1473,
+      "slug": "MSC-Explora-1-2014"
+    },
+    {
+      "name": "Explora II",
+      "min": 922,
+      "max": 1473,
+      "slug": "MSC-Explora-2-2015"
+    },
+    {
+      "name": "Explora III",
+      "min": 922,
+      "max": 1473,
+      "slug": "MSC-Explora-3-2101"
+    },
+    {
+      "name": "Explora IV",
+      "min": 922,
+      "max": 1473,
+      "slug": "MSC-Explora-4-2104"
+    },
+    {
+      "name": "Explorer Of The Seas",
+      "min": 3282,
+      "max": 3938,
+      "slug": null
+    },
+    {
+      "name": "Four Seasons 1",
+      "min": 180,
+      "max": 180,
+      "slug": "Four-Seasons-1-2239"
+    },
+    {
+      "name": "Freedom Of The Seas",
+      "min": 3784,
+      "max": 4541,
+      "slug": null
+    },
+    {
+      "name": "Galapagos Legend",
+      "min": 100,
+      "max": 110,
+      "slug": null
+    },
+    {
+      "name": "Golden Iris",
+      "min": 800,
+      "max": 959,
+      "slug": null
+    },
+    {
+      "name": "Grand Princess",
+      "min": 2602,
+      "max": 3122,
+      "slug": null
+    },
+    {
+      "name": "Grandeur Of The Seas",
+      "min": 1994,
+      "max": 2393,
+      "slug": null
+    },
+    {
+      "name": "Greg Mortimer",
+      "min": 120,
+      "max": 160,
+      "slug": null
+    },
+    {
+      "name": "Hanseatic Inspiration",
+      "min": 199,
+      "max": 230,
+      "slug": null
+    },
+    {
+      "name": "Hanseatic Nature",
+      "min": 199,
+      "max": 230,
+      "slug": null
+    },
+    {
+      "name": "Hanseatic Spirit",
+      "min": 199,
+      "max": 230,
+      "slug": null
+    },
+    {
+      "name": "Harmony Of The Seas",
+      "min": 5475,
+      "max": 6314,
+      "slug": null
+    },
+    {
+      "name": "Hebridean Sky",
+      "min": 114,
+      "max": 120,
+      "slug": null
+    },
+    {
+      "name": "Hero Of The Seas",
+      "min": 5610,
+      "max": 7600,
+      "slug": "Hero-Of-The-Seas-2333"
+    },
+    {
+      "name": "Icon Of The Seas",
+      "min": 5610,
+      "max": 7600,
+      "slug": null
+    },
+    {
+      "name": "Independence Of The Seas",
+      "min": 3630,
+      "max": 4356,
+      "slug": null
+    },
+    {
+      "name": "Iona",
+      "min": 5204,
+      "max": 6264,
+      "slug": null
+    },
+    {
+      "name": "Island Princess",
+      "min": 2214,
+      "max": 2657,
+      "slug": null
+    },
+    {
+      "name": "Island Sky",
+      "min": 108,
+      "max": 118,
+      "slug": null
+    },
+    {
+      "name": "Jewel Of The Seas",
+      "min": 2144,
+      "max": 2573,
+      "slug": null
+    },
+    {
+      "name": "Knyaz Vladimir",
+      "min": 720,
+      "max": 770,
+      "slug": null
+    },
+    {
+      "name": "L'Austral",
+      "min": 224,
+      "max": 264,
+      "slug": null
+    },
+    {
+      "name": "Le Boreal",
+      "min": 224,
+      "max": 264,
+      "slug": null
+    },
+    {
+      "name": "Le Bougainville",
+      "min": 92,
+      "max": 184,
+      "slug": null
+    },
+    {
+      "name": "Le Champlain",
+      "min": 92,
+      "max": 184,
+      "slug": null
+    },
+    {
+      "name": "Le Commandant Charcot (icebreaker)",
+      "min": 123,
+      "max": 245,
+      "slug": null
+    },
+    {
+      "name": "Le Dumont d'Urville",
+      "min": 92,
+      "max": 184,
+      "slug": null
+    },
+    {
+      "name": "Le Laperouse",
+      "min": 92,
+      "max": 184,
+      "slug": null
+    },
+    {
+      "name": "Le Lyrial",
+      "min": 224,
+      "max": 264,
+      "slug": null
+    },
+    {
+      "name": "Le Paul Gauguin",
+      "min": 160,
+      "max": 352,
+      "slug": null
+    },
+    {
+      "name": "Le Ponant",
+      "min": 64,
+      "max": 67,
+      "slug": null
+    },
+    {
+      "name": "Le Soleal",
+      "min": 224,
+      "max": 264,
+      "slug": null
+    },
+    {
+      "name": "Legend Of The Seas",
+      "min": 5610,
+      "max": 7600,
+      "slug": null
+    },
+    {
+      "name": "Leisure World",
+      "min": 580,
+      "max": 850,
+      "slug": null
+    },
+    {
+      "name": "Liberty Of The Seas",
+      "min": 3630,
+      "max": 4356,
+      "slug": null
+    },
+    {
+      "name": "Libra)",
+      "min": 998,
+      "max": 998,
+      "slug": null
+    },
+    {
+      "name": "Magellan Explorer",
+      "min": 100,
+      "max": 100,
+      "slug": null
+    },
+    {
+      "name": "Majestic Princess",
+      "min": 3560,
+      "max": 4272,
+      "slug": null
+    },
+    {
+      "name": "Majesty Of The Seas",
+      "min": 2386,
+      "max": 2863,
+      "slug": null
+    },
+    {
+      "name": "Marella Celebration",
+      "min": 1262,
+      "max": 1350,
+      "slug": null
+    },
+    {
+      "name": "Marella Discovery",
+      "min": 1830,
+      "max": 2074,
+      "slug": null
+    },
+    {
+      "name": "Marella Discovery 2",
+      "min": 1832,
+      "max": 2198,
+      "slug": null
+    },
+    {
+      "name": "Marella Dream",
+      "min": 1533,
+      "max": 1773,
+      "slug": null
+    },
+    {
+      "name": "Marella Explorer",
+      "min": 1924,
+      "max": 2681,
+      "slug": null
+    },
+    {
+      "name": "Marella Explorer 2",
+      "min": 1814,
+      "max": 2177,
+      "slug": null
+    },
+    {
+      "name": "Marella Voyager",
+      "min": 1912,
+      "max": 2669,
+      "slug": null
+    },
+    {
+      "name": "Margaritaville At Sea Beachcomber",
+      "min": 2688,
+      "max": 3226,
+      "slug": "Margaritaville-At-Sea-Beachcomber-2011"
+    },
+    {
+      "name": "Margaritaville At Sea Islander",
+      "min": 2688,
+      "max": 3226,
+      "slug": "Margaritaville-At-Sea-Islander-2010"
+    },
+    {
+      "name": "Mariner Of The Seas",
+      "min": 3334,
+      "max": 4001,
+      "slug": null
+    },
+    {
+      "name": "Mars",
+      "min": 928,
+      "max": 928,
+      "slug": null
+    },
+    {
+      "name": "Mein Schiff 1",
+      "min": 2534,
+      "max": 2894,
+      "slug": null
+    },
+    {
+      "name": "Mein Schiff 2",
+      "min": 2534,
+      "max": 2894,
+      "slug": null
+    },
+    {
+      "name": "Mein Schiff 3",
+      "min": 2506,
+      "max": 2700,
+      "slug": null
+    },
+    {
+      "name": "Mein Schiff 4",
+      "min": 2506,
+      "max": 2700,
+      "slug": null
+    },
+    {
+      "name": "Mein Schiff 5",
+      "min": 2534,
+      "max": 2700,
+      "slug": null
+    },
+    {
+      "name": "Mein Schiff 6",
+      "min": 2534,
+      "max": 2700,
+      "slug": null
+    },
+    {
+      "name": "Mein Schiff 7",
+      "min": 2534,
+      "max": 2894,
+      "slug": null
+    },
+    {
+      "name": "Mein Schiff 8/Relax",
+      "min": 4100,
+      "max": 4100,
+      "slug": null
+    },
+    {
+      "name": "Mein Schiff 9/Flow",
+      "min": 4100,
+      "max": 4100,
+      "slug": null
+    },
+    {
+      "name": "Mira",
+      "min": 998,
+      "max": 998,
+      "slug": null
+    },
+    {
+      "name": "MS Adriana",
+      "min": 308,
+      "max": 350,
+      "slug": null
+    },
+    {
+      "name": "MS Berlin",
+      "min": 412,
+      "max": 420,
+      "slug": null
+    },
+    {
+      "name": "MS Birka Stockholm",
+      "min": 1800,
+      "max": 2000,
+      "slug": null
+    },
+    {
+      "name": "MS Deutschland",
+      "min": 520,
+      "max": 636,
+      "slug": null
+    },
+    {
+      "name": "ms Eurodam",
+      "min": 2104,
+      "max": 2525,
+      "slug": null
+    },
+    {
+      "name": "ms Europa",
+      "min": 408,
+      "max": 408,
+      "slug": null
+    },
+    {
+      "name": "ms Europa 2",
+      "min": 251,
+      "max": 516,
+      "slug": null
+    },
+    {
+      "name": "MS Finnmarken",
+      "min": 1000,
+      "max": 1000,
+      "slug": null
+    },
+    {
+      "name": "MS Fram",
+      "min": 320,
+      "max": 320,
+      "slug": null
+    },
+    {
+      "name": "MS Fridtjof Nansen",
+      "min": 530,
+      "max": 600,
+      "slug": null
+    },
+    {
+      "name": "MS Hamburg",
+      "min": 394,
+      "max": 420,
+      "slug": null
+    },
+    {
+      "name": "MS Kong Harald",
+      "min": 622,
+      "max": 622,
+      "slug": null
+    },
+    {
+      "name": "ms Koningsdam",
+      "min": 2650,
+      "max": 3194,
+      "slug": null
+    },
+    {
+      "name": "MS Lofoten",
+      "min": 340,
+      "max": 340,
+      "slug": null
+    },
+    {
+      "name": "MS Midnatsol",
+      "min": 1000,
+      "max": 1000,
+      "slug": null
+    },
+    {
+      "name": "ms Nieuw Amsterdam",
+      "min": 2106,
+      "max": 2527,
+      "slug": null
+    },
+    {
+      "name": "ms Nieuw Rotterdam",
+      "min": 2668,
+      "max": 3210,
+      "slug": null
+    },
+    {
+      "name": "ms Nieuw Statendam",
+      "min": 2650,
+      "max": 3194,
+      "slug": null
+    },
+    {
+      "name": "ms Noordam",
+      "min": 1972,
+      "max": 2366,
+      "slug": null
+    },
+    {
+      "name": "MS Nordkapp",
+      "min": 622,
+      "max": 622,
+      "slug": null
+    },
+    {
+      "name": "MS Nordlys",
+      "min": 622,
+      "max": 622,
+      "slug": null
+    },
+    {
+      "name": "MS Nordnorge",
+      "min": 622,
+      "max": 622,
+      "slug": null
+    },
+    {
+      "name": "MS Nordstjernen",
+      "min": 300,
+      "max": 300,
+      "slug": null
+    },
+    {
+      "name": "ms Oosterdam",
+      "min": 2024,
+      "max": 2429,
+      "slug": null
+    },
+    {
+      "name": "MS Polarlys",
+      "min": 619,
+      "max": 619,
+      "slug": null
+    },
+    {
+      "name": "ms Prinsendam",
+      "min": 838,
+      "max": 1006,
+      "slug": null
+    },
+    {
+      "name": "MS Richard With",
+      "min": 622,
+      "max": 622,
+      "slug": null
+    },
+    {
+      "name": "MS Roald Amundsen",
+      "min": 530,
+      "max": 600,
+      "slug": null
+    },
+    {
+      "name": "MS Serenissima",
+      "min": 110,
+      "max": 118,
+      "slug": null
+    },
+    {
+      "name": "MS Spitsbergen",
+      "min": 320,
+      "max": 320,
+      "slug": null
+    },
+    {
+      "name": "ms The World",
+      "min": 150,
+      "max": 200,
+      "slug": null
+    },
+    {
+      "name": "MS Trollfjord",
+      "min": 822,
+      "max": 822,
+      "slug": null
+    },
+    {
+      "name": "MS Vesteralen",
+      "min": 510,
+      "max": 510,
+      "slug": null
+    },
+    {
+      "name": "ms Volendam",
+      "min": 1432,
+      "max": 1718,
+      "slug": null
+    },
+    {
+      "name": "ms Westerdam",
+      "min": 1968,
+      "max": 2362,
+      "slug": null
+    },
+    {
+      "name": "ms Zaandam",
+      "min": 1432,
+      "max": 1718,
+      "slug": null
+    },
+    {
+      "name": "ms Zuiderdam",
+      "min": 1970,
+      "max": 2364,
+      "slug": null
+    },
+    {
+      "name": "MSC Armonia",
+      "min": 1950,
+      "max": 2340,
+      "slug": null
+    },
+    {
+      "name": "MSC Bellissima",
+      "min": 4488,
+      "max": 5386,
+      "slug": null
+    },
+    {
+      "name": "MSC Divina",
+      "min": 3502,
+      "max": 4202,
+      "slug": null
+    },
+    {
+      "name": "MSC Euribia",
+      "min": 4828,
+      "max": 6327,
+      "slug": null
+    },
+    {
+      "name": "MSC Explora 1",
+      "min": 922,
+      "max": 1473,
+      "slug": null
+    },
+    {
+      "name": "MSC Explora 2",
+      "min": 922,
+      "max": 1473,
+      "slug": null
+    },
+    {
+      "name": "MSC Explora 3",
+      "min": 922,
+      "max": 1473,
+      "slug": null
+    },
+    {
+      "name": "MSC Explora 4",
+      "min": 922,
+      "max": 1473,
+      "slug": null
+    },
+    {
+      "name": "MSC Explora 5",
+      "min": 922,
+      "max": 1473,
+      "slug": null
+    },
+    {
+      "name": "MSC Explora 6",
+      "min": 922,
+      "max": 1473,
+      "slug": null
+    },
+    {
+      "name": "MSC Explora fleet (1",
+      "min": 922,
+      "max": 1473,
+      "slug": null
+    },
+    {
+      "name": "MSC Fantasia",
+      "min": 3274,
+      "max": 3929,
+      "slug": null
+    },
+    {
+      "name": "MSC Grandiosa",
+      "min": 4888,
+      "max": 6334,
+      "slug": null
+    },
+    {
+      "name": "MSC Lirica",
+      "min": 1984,
+      "max": 2548,
+      "slug": null
+    },
+    {
+      "name": "MSC Magnifica",
+      "min": 2506,
+      "max": 3007,
+      "slug": null
+    },
+    {
+      "name": "MSC Meraviglia",
+      "min": 4488,
+      "max": 5386,
+      "slug": null
+    },
+    {
+      "name": "MSC Musica",
+      "min": 2550,
+      "max": 3060,
+      "slug": null
+    },
+    {
+      "name": "MSC Opera",
+      "min": 2142,
+      "max": 2570,
+      "slug": null
+    },
+    {
+      "name": "MSC Orchestra",
+      "min": 2550,
+      "max": 3060,
+      "slug": null
+    },
+    {
+      "name": "MSC Poesia",
+      "min": 2550,
+      "max": 3060,
+      "slug": null
+    },
+    {
+      "name": "MSC Preziosa",
+      "min": 3502,
+      "max": 4378,
+      "slug": null
+    },
+    {
+      "name": "MSC Seascape",
+      "min": 4540,
+      "max": 5632,
+      "slug": null
+    },
+    {
+      "name": "MSC Seashore",
+      "min": 4560,
+      "max": 5877,
+      "slug": null
+    },
+    {
+      "name": "MSC Seaside",
+      "min": 4134,
+      "max": 4961,
+      "slug": null
+    },
+    {
+      "name": "MSC Seaview",
+      "min": 4134,
+      "max": 4961,
+      "slug": null
+    },
+    {
+      "name": "MSC Sinfonia",
+      "min": 1950,
+      "max": 2340,
+      "slug": null
+    },
+    {
+      "name": "MSC Splendida",
+      "min": 3274,
+      "max": 3929,
+      "slug": null
+    },
+    {
+      "name": "MSC Virtuosa",
+      "min": 4888,
+      "max": 6334,
+      "slug": null
+    },
+    {
+      "name": "mv Aegean Odyssey",
+      "min": 378,
+      "max": 396,
+      "slug": null
+    },
+    {
+      "name": "MV Glory Sea",
+      "min": 838,
+      "max": 838,
+      "slug": null
+    },
+    {
+      "name": "MV Hondius",
+      "min": 180,
+      "max": 196,
+      "slug": null
+    },
+    {
+      "name": "MV Ortelius",
+      "min": 100,
+      "max": 116,
+      "slug": null
+    },
+    {
+      "name": "MV Plancius",
+      "min": 106,
+      "max": 116,
+      "slug": null
+    },
+    {
+      "name": "MV Reef Endeavour",
+      "min": 140,
+      "max": 150,
+      "slug": null
+    },
+    {
+      "name": "MV Sea Spirit",
+      "min": 60,
+      "max": 120,
+      "slug": null
+    },
+    {
+      "name": "MV Stella Australis",
+      "min": 100,
+      "max": 210,
+      "slug": null
+    },
+    {
+      "name": "MV Ventus Australis",
+      "min": 100,
+      "max": 210,
+      "slug": null
+    },
+    {
+      "name": "National Geographic Endeavour",
+      "min": 96,
+      "max": 112,
+      "slug": null
+    },
+    {
+      "name": "National Geographic Endeavour II",
+      "min": 96,
+      "max": 96,
+      "slug": null
+    },
+    {
+      "name": "National Geographic Explorer",
+      "min": 148,
+      "max": 162,
+      "slug": null
+    },
+    {
+      "name": "National Geographic Islander",
+      "min": 48,
+      "max": 50,
+      "slug": null
+    },
+    {
+      "name": "National Geographic Orion",
+      "min": 102,
+      "max": 106,
+      "slug": null
+    },
+    {
+      "name": "National Geographic Quest",
+      "min": 50,
+      "max": 100,
+      "slug": null
+    },
+    {
+      "name": "National Geographic Sea Bird",
+      "min": 62,
+      "max": 70,
+      "slug": null
+    },
+    {
+      "name": "National Geographic Sea Lion",
+      "min": 62,
+      "max": 70,
+      "slug": null
+    },
+    {
+      "name": "National Geographic Venture",
+      "min": 50,
+      "max": 100,
+      "slug": null
+    },
+    {
+      "name": "Navigator Of The Seas",
+      "min": 3272,
+      "max": 3926,
+      "slug": null
+    },
+    {
+      "name": "Neptune",
+      "min": 928,
+      "max": 928,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Aqua",
+      "min": 3571,
+      "max": 4224,
+      "slug": "Norwegian-Aqua-2218"
+    },
+    {
+      "name": "Norwegian Aura",
+      "min": 3840,
+      "max": 4714,
+      "slug": "Norwegian-Aura-2220"
+    },
+    {
+      "name": "Norwegian Bliss",
+      "min": 4004,
+      "max": 4903,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Breakaway",
+      "min": 3957,
+      "max": 4819,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Dawn",
+      "min": 2340,
+      "max": 2808,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Encore",
+      "min": 4266,
+      "max": 5218,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Epic",
+      "min": 4228,
+      "max": 5074,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Escape",
+      "min": 4266,
+      "max": 5218,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Gem",
+      "min": 2394,
+      "max": 2873,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Getaway",
+      "min": 3957,
+      "max": 4819,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Jade",
+      "min": 2402,
+      "max": 2882,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Jewel",
+      "min": 2388,
+      "max": 2866,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Joy",
+      "min": 3850,
+      "max": 4620,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Luna",
+      "min": 3571,
+      "max": 4224,
+      "slug": "Norwegian-Luna-2219"
+    },
+    {
+      "name": "Norwegian Pearl",
+      "min": 2394,
+      "max": 2873,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Prima",
+      "min": 3215,
+      "max": 3950,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Sky",
+      "min": 2004,
+      "max": 2405,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Spirit",
+      "min": 2012,
+      "max": 2414,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Star",
+      "min": 2344,
+      "max": 2813,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Sun",
+      "min": 1936,
+      "max": 2323,
+      "slug": null
+    },
+    {
+      "name": "Norwegian Viva",
+      "min": 3215,
+      "max": 3950,
+      "slug": null
+    },
+    {
+      "name": "Oasis Of The Seas",
+      "min": 5484,
+      "max": 6307,
+      "slug": null
+    },
+    {
+      "name": "Ocean Adventurer",
+      "min": 118,
+      "max": 132,
+      "slug": null
+    },
+    {
+      "name": "Ocean Atlantic",
+      "min": 132,
+      "max": 198,
+      "slug": null
+    },
+    {
+      "name": "Ocean Diamond",
+      "min": 113,
+      "max": 251,
+      "slug": null
+    },
+    {
+      "name": "Ocean Dream",
+      "min": 1340,
+      "max": 1422,
+      "slug": null
+    },
+    {
+      "name": "Ocean Endeavour",
+      "min": 300,
+      "max": 450,
+      "slug": null
+    },
+    {
+      "name": "Ocean Majesty",
+      "min": 548,
+      "max": 621,
+      "slug": null
+    },
+    {
+      "name": "Ocean Nova",
+      "min": 68,
+      "max": 78,
+      "slug": null
+    },
+    {
+      "name": "Oceania Allura",
+      "min": 1218,
+      "max": 1469,
+      "slug": null
+    },
+    {
+      "name": "Oceania Insignia",
+      "min": 698,
+      "max": 803,
+      "slug": null
+    },
+    {
+      "name": "Oceania Marina",
+      "min": 1258,
+      "max": 1447,
+      "slug": null
+    },
+    {
+      "name": "Oceania Nautica",
+      "min": 698,
+      "max": 803,
+      "slug": null
+    },
+    {
+      "name": "Oceania Regatta",
+      "min": 698,
+      "max": 803,
+      "slug": null
+    },
+    {
+      "name": "Oceania Riviera",
+      "min": 1258,
+      "max": 1447,
+      "slug": null
+    },
+    {
+      "name": "Oceania Sirena",
+      "min": 698,
+      "max": 803,
+      "slug": null
+    },
+    {
+      "name": "Oceania Vista",
+      "min": 1218,
+      "max": 1469,
+      "slug": null
+    },
+    {
+      "name": "Odyssey Of The Seas",
+      "min": 3844,
+      "max": 4805,
+      "slug": null
+    },
+    {
+      "name": "Orion",
+      "min": 928,
+      "max": 928,
+      "slug": null
+    },
+    {
+      "name": "Ovation Of The Seas",
+      "min": 4162,
+      "max": 4819,
+      "slug": null
+    },
+    {
+      "name": "Pacific Adventure",
+      "min": 2632,
+      "max": 3158,
+      "slug": null
+    },
+    {
+      "name": "Pacific Encounter",
+      "min": 2596,
+      "max": 3115,
+      "slug": null
+    },
+    {
+      "name": "Pacific Explorer",
+      "min": 1996,
+      "max": 2395,
+      "slug": null
+    },
+    {
+      "name": "Pacific Venus",
+      "min": 680,
+      "max": 720,
+      "slug": null
+    },
+    {
+      "name": "Paul Gauguin",
+      "min": 320,
+      "max": 352,
+      "slug": null
+    },
+    {
+      "name": "Pearl Mist",
+      "min": 210,
+      "max": 216,
+      "slug": null
+    },
+    {
+      "name": "Polaris)",
+      "min": 378,
+      "max": 378,
+      "slug": null
+    },
+    {
+      "name": "Pride of America",
+      "min": 2192,
+      "max": 2630,
+      "slug": null
+    },
+    {
+      "name": "PS Waverley",
+      "min": 925,
+      "max": 925,
+      "slug": "PS-Waverley-1732"
+    },
+    {
+      "name": "Quantum Of The Seas",
+      "min": 4162,
+      "max": 4819,
+      "slug": null
+    },
+    {
+      "name": "Quark Ultramarine",
+      "min": 199,
+      "max": 199,
+      "slug": null
+    },
+    {
+      "name": "Queen Anne",
+      "min": 2996,
+      "max": 3353,
+      "slug": null
+    },
+    {
+      "name": "Queen Elizabeth",
+      "min": 2077,
+      "max": 2503,
+      "slug": null
+    },
+    {
+      "name": "Queen Mary 2",
+      "min": 2726,
+      "max": 3271,
+      "slug": null
+    },
+    {
+      "name": "Queen Victoria",
+      "min": 2074,
+      "max": 2489,
+      "slug": null
+    },
+    {
+      "name": "Radiance Of The Seas",
+      "min": 2122,
+      "max": 2546,
+      "slug": null
+    },
+    {
+      "name": "Regal Princess",
+      "min": 3560,
+      "max": 4272,
+      "slug": null
+    },
+    {
+      "name": "Resilient Lady",
+      "min": 2770,
+      "max": 2860,
+      "slug": null
+    },
+    {
+      "name": "Rhapsody Of The Seas",
+      "min": 2026,
+      "max": 2431,
+      "slug": null
+    },
+    {
+      "name": "RMS St Helena",
+      "min": 128,
+      "max": 156,
+      "slug": null
+    },
+    {
+      "name": "Royal Clipper",
+      "min": 224,
+      "max": 224,
+      "slug": null
+    },
+    {
+      "name": "Royal Princess",
+      "min": 3560,
+      "max": 4272,
+      "slug": null
+    },
+    {
+      "name": "Ruby Princess",
+      "min": 3060,
+      "max": 3672,
+      "slug": null
+    },
+    {
+      "name": "Sapphire Princess",
+      "min": 2678,
+      "max": 3214,
+      "slug": null
+    },
+    {
+      "name": "Saturn",
+      "min": 928,
+      "max": 928,
+      "slug": null
+    },
+    {
+      "name": "Scarlet Lady",
+      "min": 2770,
+      "max": 2860,
+      "slug": null
+    },
+    {
+      "name": "Scenic Eclipse",
+      "min": 228,
+      "max": 228,
+      "slug": "Scenic-Eclipse-1239"
+    },
+    {
+      "name": "Scenic Eclipse 1",
+      "min": 114,
+      "max": 228,
+      "slug": null
+    },
+    {
+      "name": "Scenic Eclipse 2",
+      "min": 114,
+      "max": 228,
+      "slug": null
+    },
+    {
+      "name": "Sea",
+      "min": 928,
+      "max": 928,
+      "slug": null
+    },
+    {
+      "name": "Seabourn Encore",
+      "min": 532,
+      "max": 638,
+      "slug": null
+    },
+    {
+      "name": "Seabourn Odyssey",
+      "min": 450,
+      "max": 540,
+      "slug": null
+    },
+    {
+      "name": "Seabourn Ovation",
+      "min": 532,
+      "max": 638,
+      "slug": null
+    },
+    {
+      "name": "Seabourn Pursuit",
+      "min": 264,
+      "max": 317,
+      "slug": null
+    },
+    {
+      "name": "Seabourn Quest",
+      "min": 450,
+      "max": 540,
+      "slug": null
+    },
+    {
+      "name": "Seabourn Sojourn",
+      "min": 450,
+      "max": 540,
+      "slug": null
+    },
+    {
+      "name": "Seabourn Venture",
+      "min": 264,
+      "max": 317,
+      "slug": null
+    },
+    {
+      "name": "SeaDream I",
+      "min": 94,
+      "max": 112,
+      "slug": null
+    },
+    {
+      "name": "SeaDream II",
+      "min": 94,
+      "max": 112,
+      "slug": null
+    },
+    {
+      "name": "Serenade Of The Seas",
+      "min": 2150,
+      "max": 2580,
+      "slug": null
+    },
+    {
+      "name": "Seven Seas Explorer",
+      "min": 754,
+      "max": 829,
+      "slug": null
+    },
+    {
+      "name": "Seven Seas Grandeur",
+      "min": 754,
+      "max": 829,
+      "slug": null
+    },
+    {
+      "name": "Seven Seas Mariner",
+      "min": 708,
+      "max": 779,
+      "slug": null
+    },
+    {
+      "name": "Seven Seas Navigator",
+      "min": 506,
+      "max": 557,
+      "slug": null
+    },
+    {
+      "name": "Seven Seas Prestige",
+      "min": 822,
+      "max": 822,
+      "slug": "Seven-Seas-Prestige-2240"
+    },
+    {
+      "name": "Seven Seas Splendor",
+      "min": 754,
+      "max": 829,
+      "slug": null
+    },
+    {
+      "name": "Seven Seas Voyager",
+      "min": 706,
+      "max": 777,
+      "slug": null
+    },
+    {
+      "name": "Silver Cloud",
+      "min": 252,
+      "max": 302,
+      "slug": null
+    },
+    {
+      "name": "Silver Discoverer",
+      "min": 128,
+      "max": 154,
+      "slug": null
+    },
+    {
+      "name": "Silver Endeavour (Crystal Endeavor)",
+      "min": 100,
+      "max": 200,
+      "slug": null
+    },
+    {
+      "name": "Silver Explorer",
+      "min": 144,
+      "max": 173,
+      "slug": null
+    },
+    {
+      "name": "Silver Galapagos",
+      "min": 100,
+      "max": 120,
+      "slug": null
+    },
+    {
+      "name": "Silver Moon",
+      "min": 576,
+      "max": 691,
+      "slug": null
+    },
+    {
+      "name": "Silver Muse",
+      "min": 576,
+      "max": 691,
+      "slug": null
+    },
+    {
+      "name": "Silver Nova",
+      "min": 364,
+      "max": 728,
+      "slug": null
+    },
+    {
+      "name": "Silver Ray",
+      "min": 364,
+      "max": 728,
+      "slug": null
+    },
+    {
+      "name": "Silver Shadow",
+      "min": 388,
+      "max": 466,
+      "slug": null
+    },
+    {
+      "name": "Silver Spirit",
+      "min": 540,
+      "max": 648,
+      "slug": null
+    },
+    {
+      "name": "Silver Whisper",
+      "min": 388,
+      "max": 466,
+      "slug": null
+    },
+    {
+      "name": "Silver Wind",
+      "min": 296,
+      "max": 355,
+      "slug": null
+    },
+    {
+      "name": "Sky",
+      "min": 928,
+      "max": 928,
+      "slug": null
+    },
+    {
+      "name": "Sky Princess",
+      "min": 3668,
+      "max": 4402,
+      "slug": null
+    },
+    {
+      "name": "Spectrum Of The Seas",
+      "min": 4246,
+      "max": 4819,
+      "slug": null
+    },
+    {
+      "name": "Spirit of Adventure",
+      "min": 999,
+      "max": 999,
+      "slug": null
+    },
+    {
+      "name": "Spirit Of Discovery",
+      "min": 999,
+      "max": 999,
+      "slug": null
+    },
+    {
+      "name": "Star",
+      "min": 928,
+      "max": 928,
+      "slug": null
+    },
+    {
+      "name": "Star Breeze",
+      "min": 212,
+      "max": 254,
+      "slug": null
+    },
+    {
+      "name": "Star Clipper",
+      "min": 170,
+      "max": 170,
+      "slug": null
+    },
+    {
+      "name": "Star Flyer",
+      "min": 170,
+      "max": 170,
+      "slug": null
+    },
+    {
+      "name": "Star Legend",
+      "min": 212,
+      "max": 254,
+      "slug": null
+    },
+    {
+      "name": "Star Of The Seas",
+      "min": 5610,
+      "max": 7600,
+      "slug": "Star-Of-The-Seas-2112"
+    },
+    {
+      "name": "Star Pisces",
+      "min": 1552,
+      "max": 1900,
+      "slug": null
+    },
+    {
+      "name": "Star Pride",
+      "min": 212,
+      "max": 254,
+      "slug": null
+    },
+    {
+      "name": "Star Princess (2025)",
+      "min": 4320,
+      "max": 5189,
+      "slug": null
+    },
+    {
+      "name": "Sun",
+      "min": 928,
+      "max": 928,
+      "slug": null
+    },
+    {
+      "name": "Sun Princess (2024)",
+      "min": 4320,
+      "max": 5189,
+      "slug": null
+    },
+    {
+      "name": "SuperStar Aquarius",
+      "min": 1750,
+      "max": 2150,
+      "slug": null
+    },
+    {
+      "name": "SuperStar Gemini",
+      "min": 1750,
+      "max": 2150,
+      "slug": null
+    },
+    {
+      "name": "SuperStar Libra",
+      "min": 1480,
+      "max": 1500,
+      "slug": null
+    },
+    {
+      "name": "SuperStar Virgo",
+      "min": 1974,
+      "max": 2800,
+      "slug": null
+    },
+    {
+      "name": "Symphony Of The Seas",
+      "min": 5518,
+      "max": 6370,
+      "slug": null
+    },
+    {
+      "name": "Utopia Of The Seas",
+      "min": 5668,
+      "max": 7958,
+      "slug": null
+    },
+    {
+      "name": "Valiant Lady",
+      "min": 2770,
+      "max": 2860,
+      "slug": null
+    },
+    {
+      "name": "Vela",
+      "min": 928,
+      "max": 928,
+      "slug": null
+    },
+    {
+      "name": "Ventura",
+      "min": 3106,
+      "max": 3727,
+      "slug": null
+    },
+    {
+      "name": "Venus)",
+      "min": 928,
+      "max": 928,
+      "slug": null
+    },
+    {
+      "name": "Vidanta Elegant",
+      "min": 298,
+      "max": 298,
+      "slug": null
+    },
+    {
+      "name": "Viking Eldir",
+      "min": 190,
+      "max": 190,
+      "slug": "Viking-Eldir-2285"
+    },
+    {
+      "name": "Viking EXPEDITIONS (Octantis",
+      "min": 378,
+      "max": 378,
+      "slug": null
+    },
+    {
+      "name": "Viking Hemming",
+      "min": 106,
+      "max": 106,
+      "slug": "Viking-Hemming-941"
+    },
+    {
+      "name": "Viking OCEAN (Jupiter",
+      "min": 928,
+      "max": 928,
+      "slug": null
+    },
+    {
+      "name": "Viking OCEAN (Vesta",
+      "min": 998,
+      "max": 998,
+      "slug": null
+    },
+    {
+      "name": "Vision Of The Seas",
+      "min": 2036,
+      "max": 2443,
+      "slug": null
+    },
+    {
+      "name": "Voyager Of The Seas",
+      "min": 3282,
+      "max": 3938,
+      "slug": null
+    },
+    {
+      "name": "Wind Spirit",
+      "min": 148,
+      "max": 178,
+      "slug": null
+    },
+    {
+      "name": "Wind Star",
+      "min": 148,
+      "max": 178,
+      "slug": null
+    },
+    {
+      "name": "Wind Surf",
+      "min": 312,
+      "max": 374,
+      "slug": null
+    },
+    {
+      "name": "Wonder Of The Seas",
+      "min": 5734,
+      "max": 6988,
+      "slug": null
+    },
+    {
+      "name": "World Adventurer",
+      "min": 196,
+      "max": 200,
+      "slug": null
+    },
+    {
+      "name": "World Discoverer",
+      "min": 196,
+      "max": 200,
+      "slug": null
+    },
+    {
+      "name": "World Explorer",
+      "min": 86,
+      "max": 176,
+      "slug": null
+    },
+    {
+      "name": "World Navigator",
+      "min": 196,
+      "max": 200,
+      "slug": null
+    },
+    {
+      "name": "World Seeker",
+      "min": 196,
+      "max": 200,
+      "slug": null
+    },
+    {
+      "name": "World Traveller",
+      "min": 196,
+      "max": 200,
+      "slug": null
+    },
+    {
+      "name": "World Voyager",
+      "min": 196,
+      "max": 200,
+      "slug": null
+    }
+  ]
+}
