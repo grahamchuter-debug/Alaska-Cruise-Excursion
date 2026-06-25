@@ -71,12 +71,7 @@ export function generateMetadata({
         title: getMonthlySeoTitle(port.name, monthKey, slug),
         description: getMonthlyMetaDescription(port.name, monthKey, entries.length, slug),
         path: portMonthPath(slug, monthKey),
-        keywords: [
-          `${port.name} ship schedule ${formatMonthLabel(monthKey)}`,
-          `${port.name} cruise schedule ${formatMonthLabel(monthKey)}`,
-          "ships in port",
-          "cruise arrival times",
-        ],
+        keywords: getScheduleMetadataKeywords(slug, port.name, Number(monthKey.split("-")[0])),
       });
     }
 
@@ -88,7 +83,7 @@ export function generateMetadata({
     const callNote =
       shipCalls > 0
         ? `${shipCalls} verified ship calls listed.`
-        : "Monthly schedule with placeholders until import completes.";
+        : "Schedule coming soon — verified rows import in progress. No placeholder sailings shown.";
 
     const baseTitle = port.seoTitle?.includes(String(year))
       ? port.seoTitle.replace(/\s2026\s&\s2027/, ` ${year}`)

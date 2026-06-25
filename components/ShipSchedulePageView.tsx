@@ -1,6 +1,10 @@
 import Link from "next/link";
 import type { ShipSchedulePort } from "@/data/types";
-import { getScheduleForPort, getScheduleForPortYear } from "@/data/schedules";
+import {
+  getScheduleForPort,
+  getScheduleForPortYear,
+  hasVerifiedScheduleDataForYear,
+} from "@/data/schedules";
 import { ScheduleYearLinks } from "@/components/ScheduleYearLinks";
 import { yearHubPath, type ScheduleYear } from "@/lib/schedule-utils";
 import { getPortBySlug } from "@/data/ports";
@@ -15,15 +19,21 @@ import { SCHEDULE_PLANNING_TIPS } from "@/data/schedule-content";
 import { getSchedulePageContentForPortYear, getSchedulePageContentForPortHub } from "@/data/schedule-page-content";
 import {
   SchedulePageContentSections,
-  SchedulePageIntro,
 } from "@/components/SchedulePageContentSections";
 import { hasShipSchedule } from "@/lib/routes";
 import { CruisePortInformationBox } from "@/components/CruisePortInformationBox";
 import { getScheduleIntro } from "@/lib/cruise-port-display";
 
-import { JUNEAU_SCHEDULE_PLANNING_TIPS, JUNEAU_SCHEDULE_INTRO, JUNEAU_MONTH_PLANNING_INTRO } from "@/data/juneau-schedule-planning";
+import { JUNEAU_SCHEDULE_PLANNING_TIPS, JUNEAU_SCHEDULE_INTRO } from "@/data/juneau-schedule-planning";
 import { isLiveImportedSchedulePort } from "@/data/schedule-coverage";
 import { ScheduleCoverageBanner } from "@/components/ScheduleCoverageBanner";
+import { ScheduleComingSoonPanel } from "@/components/ScheduleComingSoonPanel";
+import {
+  ScheduleArrivalPlanningHeader,
+  ScheduleJuneauPlanningSections,
+  ScheduleVerifiedCallCount,
+} from "@/components/ScheduleJuneauPlanningSections";
+import { getVerifiedCallCount } from "@/lib/schedule-import-audit";
 
 import { SchedulePassengerGuide } from "@/components/SchedulePassengerGuide";
 
@@ -55,11 +65,24 @@ export function ShipSchedulePageView({
       ? JUNEAU_SCHEDULE_INTRO
       : pageContent?.intro ?? getScheduleIntro(port.slug) ?? port.intro;
 
+  const hasYearData = year ? hasVerifiedScheduleDataForYear(port.slug, year) : isLiveImportedSchedulePort(port.slug);
+  const verifiedCalls = year ? getVerifiedCallCount(port.slug, year) : getVerifiedCallCount(port.slug);
+
   return (
     <>
       <ScheduleCoverageBanner portSlug={port.slug} portName={port.name} variant="compact" />
 
       <CruisePortInformationBox portSlug={port.slug} />
+
+      {port.slug === "juneau" && hasYearData && <ScheduleArrivalPlanningHeader />}
+
+      {isLiveImportedSchedulePort(port.slug) && hasYearData && (
+        <ScheduleVerifiedCallCount
+          totalCalls={verifiedCalls}
+          year={year}
+          portName={port.name}
+        />
+      )}
 
       <section className="mb-12">
         <h2 className="section-title text-2xl sm:text-3xl mb-4">How This Schedule Helps You Plan</h2>
@@ -79,20 +102,26 @@ export function ShipSchedulePageView({
         )}
         {!isLiveImportedSchedulePort(port.slug) && (
           <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-            <strong>Import pending:</strong> Verified ship rows for {port.name} are not published yet. Use the{" "}
-            <Link href="/ship-schedules/juneau" className="font-medium underline">
-              Juneau live schedule
-            </Link>{" "}
-            for multi-ship planning examples while this port imports.
+            <strong>Schedule coming soon:</strong> Verified ship rows for {port.name} are not published yet. We
+            do not show placeholder sailings — use the planning links below while imports complete.
           </p>
         )}
       </section>
 
-      {displayContent && (
+      {year && !hasYearData && (
+        <ScheduleComingSoonPanel
+          portSlug={port.slug}
+          portName={port.name}
+          variant="year"
+          year={year}
+        />
+      )}
+
+      {displayContent && hasYearData && (
         <SchedulePageContentSections content={displayContent} portName={port.name} />
       )}
 
-      {year && (
+      {year && hasYearData && (
         <section className="mb-8">
           <div className="mb-4 flex flex-wrap gap-3">
             <Link href={yearHubPath(year)} className="text-sm font-medium text-caribbean-700 hover:text-caribbean-800">
@@ -103,10 +132,11 @@ export function ShipSchedulePageView({
         </section>
       )}
 
-      {year && (
+      {year && hasYearData && (
         <ScheduleMonthLinkGrid portSlug={port.slug} portName={port.name} year={year} />
       )}
 
+      {hasYearData && (
       <ScheduleHub
         entries={schedule}
         portName={port.name}
@@ -114,13 +144,24 @@ export function ShipSchedulePageView({
         scheduleOverview={port.scheduleOverview}
         year={year}
       />
+      )}
 
+      {hasYearData && (
       <SchedulePassengerGuide
         portSlug={port.slug}
         year={year}
         excursionTypeSlugs={port.excursionTypeSlugs}
       />
+      )}
 
+      {port.slug === "juneau" && hasYearData && (
+        <ScheduleJuneauPlanningSections
+          contextLabel={year ? `${year} sailing` : undefined}
+          showSpecialistCard={false}
+        />
+      )}
+
+      {hasYearData && (
       <section className="mb-12">
         <h2 className="section-title text-2xl sm:text-3xl mb-6">Cruise Planning Tips</h2>
         <ul className="space-y-3">
@@ -134,6 +175,7 @@ export function ShipSchedulePageView({
           ))}
         </ul>
       </section>
+      )}
 
       <section className="mb-12">
         <h2 className="section-title text-2xl sm:text-3xl mb-6">Related Links</h2>

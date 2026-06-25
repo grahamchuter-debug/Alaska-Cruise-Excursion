@@ -195,8 +195,8 @@ export function SchedulePassengerGuide({
           <Link href={`/ports/${portSlug}`} className="btn-primary text-sm">
             Compare excursions in port guide
           </Link>
-          <Link href="/best-shore-excursion-every-caribbean-port" className="btn-secondary text-sm">
-            Best excursion at every port
+          <Link href="/best-alaska-shore-excursions" className="btn-secondary text-sm">
+            Best Alaska shore excursions
           </Link>
           <ExcursionCardCTAs portSlug={portSlug} specialistOnly className="inline-flex" />
         </div>

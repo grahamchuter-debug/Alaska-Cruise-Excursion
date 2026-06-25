@@ -107,6 +107,15 @@ export function augmentMetadataDescription(
 }
 
 const SCHEDULE_METADATA_KEYWORDS: Record<string, string[]> = {
+  juneau: [
+    "juneau cruise ship schedule",
+    "juneau alaska cruise ship schedule",
+    "juneau cruise port schedule",
+    "ships in port juneau",
+    "juneau ships in port",
+    "juneau cruise arrival times",
+    "juneau alaska cruise schedule",
+  ],
   "st-maarten": [
     "st maarten cruise ship schedule",
     "sint maarten cruise ship schedule",
@@ -124,7 +133,11 @@ export function getScheduleMetadataKeywords(
   const portSpecific = SCHEDULE_METADATA_KEYWORDS[slug];
   if (portSpecific) {
     const yearKeywords = year
-      ? [`sxm cruise ship schedule ${year}`, `${portName} cruise schedule ${year}`]
+      ? [
+          `${portName.toLowerCase()} cruise ship schedule ${year}`,
+          `${portName} cruise schedule ${year}`,
+          `ships in port ${portName.toLowerCase()} ${year}`,
+        ]
       : [`${portName} cruise schedule 2026`, `${portName} cruise schedule 2027`];
     return [...portSpecific, ...yearKeywords, "ships in port", "cruise arrival times"];
   }

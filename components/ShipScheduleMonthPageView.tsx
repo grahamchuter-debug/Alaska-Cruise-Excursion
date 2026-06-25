@@ -26,8 +26,13 @@ import {
 import { getVerifiedMonthKeysForPort } from "@/data/schedules";
 import { CruisePortInformationBox } from "@/components/CruisePortInformationBox";
 import { getScheduleIntro } from "@/lib/cruise-port-display";
-import { JUNEAU_MONTH_PLANNING_INTRO, juneauPlanningYourDay } from "@/data/juneau-schedule-planning";
+import { JUNEAU_MONTH_PLANNING_INTRO } from "@/data/juneau-schedule-planning";
 import { ScheduleCoverageBanner } from "@/components/ScheduleCoverageBanner";
+import {
+  ScheduleArrivalPlanningHeader,
+  ScheduleJuneauPlanningSections,
+  ScheduleVerifiedCallCount,
+} from "@/components/ScheduleJuneauPlanningSections";
 
 function formatDisplayDate(isoDate: string): string {
   const [year, month, day] = isoDate.split("-").map(Number);
@@ -73,6 +78,12 @@ export function ShipScheduleMonthPageView({
       <ScheduleCoverageBanner portSlug={port.slug} portName={port.name} variant="compact" />
 
       <CruisePortInformationBox portSlug={port.slug} />
+
+      {port.slug === "juneau" && <ScheduleArrivalPlanningHeader />}
+
+      {port.slug === "juneau" && (
+        <ScheduleVerifiedCallCount totalCalls={entries.length} year={year} portName={port.name} />
+      )}
 
       <section className="mb-10">
         <h2 className="section-title text-2xl sm:text-3xl mb-4">{monthLabel} Schedule Overview</h2>
@@ -177,21 +188,7 @@ export function ShipScheduleMonthPageView({
       </section>
 
       {port.slug === "juneau" && (
-        <section className="mb-12 rounded-xl border border-gray-200 bg-white p-6 sm:p-8">
-          <h2 className="section-title text-2xl sm:text-3xl mb-4">Planning Your Juneau Port Day</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">{juneauPlanningYourDay.summary}</p>
-          <ul className="space-y-2 text-sm text-gray-700">
-            {juneauPlanningYourDay.timingConsiderations.map((tip) => (
-              <li key={tip} className="flex items-start gap-2">
-                <span className="mt-1 text-caribbean-600">•</span>
-                {tip}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-4 text-sm text-gray-600">
-            <strong>Return-to-ship:</strong> {juneauPlanningYourDay.returnGuidance}
-          </p>
-        </section>
+        <ScheduleJuneauPlanningSections contextLabel={monthLabel} showSpecialistCard={false} />
       )}
 
       <section className="mb-12 rounded-xl border-2 border-caribbean-200 bg-gradient-to-br from-caribbean-50 to-white p-6 sm:p-8">

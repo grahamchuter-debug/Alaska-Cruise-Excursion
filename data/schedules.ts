@@ -59,6 +59,11 @@ export const schedulePorts: ShipSchedulePort[] = [
     "Alaska's busiest cruise port with downtown docking.",
     ["skagway", "ketchikan", "icy-strait"],
     ["whale-watching", "glacier-tours", "flightseeing", "dog-sledding"],
+    {
+      seoTitle: "Juneau Cruise Ship Schedule 2026 & 2027 | Ships in Port Alaska",
+      metaDescription:
+        "Juneau Alaska cruise ship schedule with verified 2026 and 2027 port calls. See ships in port by month, plan whale watching and glacier excursions around arrival and departure times.",
+    },
   ),
   scheduleMeta(
     "skagway",

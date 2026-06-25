@@ -42,6 +42,23 @@ export const juneauPlanningYourDay: PlanningYourDayContent = {
     "Juneau uses downtown docks, but still plan to be at the gangway 45–60 minutes before all-aboard. Independent taxis and ride-shares can queue on peak summer days — operators with pier return guarantees reduce missed-ship risk.",
 };
 
+export const JUNEAU_ARRIVAL_INTRO =
+  "Start with your ship's arrival and departure on the monthly table below, then pick one anchor experience — whale watching, Mendenhall Glacier, helicopter flightseeing, or a Tracy Arm day boat — that fits your in-port window. Downtown docking keeps transfers short, but popular operators still sell out on multi-ship summer days.";
+
+export const JUNEAU_WHALE_TIMING = [
+  "Book morning departures (typically 8–10 a.m.) — humpbacks are active early and boats return with time for a second activity.",
+  "Multi-ship days in May through September fill Auke Bay and downtown whale boats by late morning — check how many vessels call on your date first.",
+  "Allow 3–4 hours for a quality whale-watching tour plus gangway buffer; avoid stacking Tracy Arm on the same day.",
+  "Rain rarely cancels whale tours — dress in layers and keep a flexible backup if helicopters cancel for weather.",
+] as const;
+
+export const JUNEAU_GLACIER_TIMING = [
+  "Mendenhall Glacier suits any call length — taxi or tour from downtown; allow 2–3 hours including visitor centre and Nugget Falls.",
+  "Helicopter glacier landings need clearer midday weather — book early but expect possible weather holds in low cloud.",
+  "Tracy Arm and Endicott Arm day boats need a full port day (often 8+ hours ashore) — skip if your departure is before mid-afternoon.",
+  "Morning Mendenhall visits pair well with afternoon whale watching on long port days; reverse order if your ship arrives late.",
+] as const;
+
 export const JUNEAU_SCHEDULE_INTRO =
   "Juneau is Alaska's busiest cruise port and the only destination on this site with live imported ship schedules today. Use monthly tables to see competing vessels on your pier day, then book whale watching, Mendenhall Glacier visits, helicopter tours, or Tracy Arm trips around verified arrival and departure windows.";
 

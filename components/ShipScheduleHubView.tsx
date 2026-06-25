@@ -12,12 +12,21 @@ import {
 } from "@/components/SchedulePageContentSections";
 import { SchedulePassengerGuide } from "@/components/SchedulePassengerGuide";
 import { ScheduleCoverageBanner } from "@/components/ScheduleCoverageBanner";
+import { ScheduleComingSoonPanel } from "@/components/ScheduleComingSoonPanel";
+import {
+  ScheduleArrivalPlanningHeader,
+  ScheduleJuneauPlanningSections,
+  ScheduleVerifiedCallCount,
+} from "@/components/ScheduleJuneauPlanningSections";
 import { isLiveImportedSchedulePort } from "@/data/schedule-coverage";
+import { getVerifiedCallCount } from "@/lib/schedule-import-audit";
 import { NavCardCta } from "@/components/NavCardCta";
 
 export function ShipScheduleHubView({ port }: { port: ShipSchedulePort }) {
   const pageContent = getSchedulePageContentForPortHub(port.slug);
   const faqs = pageContent?.faqs ?? port.faqs ?? [];
+  const hasLiveData = isLiveImportedSchedulePort(port.slug);
+  const verifiedCalls = getVerifiedCallCount(port.slug);
 
   return (
     <>
@@ -25,31 +34,41 @@ export function ShipScheduleHubView({ port }: { port: ShipSchedulePort }) {
 
       <CruisePortInformationBox portSlug={port.slug} />
 
+      {port.slug === "juneau" && <ScheduleArrivalPlanningHeader />}
+
+      {hasLiveData && (
+        <ScheduleVerifiedCallCount totalCalls={verifiedCalls} portName={port.name} />
+      )}
+
       {pageContent && <SchedulePageIntro content={pageContent} />}
 
-      <section className="mb-12">
-        <h2 className="section-title text-2xl sm:text-3xl mb-4">Choose a Schedule Year</h2>
-        {!pageContent && (
-          <p className="text-gray-700 leading-relaxed text-lg mb-6 max-w-3xl">{port.intro}</p>
-        )}
-        {pageContent && (
-        <p className="text-gray-700 leading-relaxed mb-6">
-          {isLiveImportedSchedulePort(port.slug)
-            ? "Open the year that matches your sailing for monthly arrival and departure tables with verified ship calls."
-            : "Framework pages are ready for 2026 and 2027 — verified monthly tables will appear here as imports complete."}
-        </p>
-        )}
-        {port.usesTender && (
-          <p className="mb-6 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-            <strong>Tender port:</strong> {port.name} uses ship-to-shore tender boats. Published
-            schedules may change with weather. Allow extra time when planning excursions.
-          </p>
-        )}
-        <ScheduleYearLinks portSlug={port.slug} portName={port.name} prominent />
-      </section>
+      {!hasLiveData && (
+        <ScheduleComingSoonPanel portSlug={port.slug} portName={port.name} variant="hub" />
+      )}
 
-      {pageContent && (
+      {hasLiveData && (
+        <section className="mb-12">
+          <h2 className="section-title text-2xl sm:text-3xl mb-4">Choose a Schedule Year</h2>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Open the year that matches your sailing for monthly arrival and departure tables with verified
+            ship calls.
+          </p>
+          {port.usesTender && (
+            <p className="mb-6 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+              <strong>Tender port:</strong> {port.name} uses ship-to-shore tender boats. Published
+              schedules may change with weather. Allow extra time when planning excursions.
+            </p>
+          )}
+          <ScheduleYearLinks portSlug={port.slug} portName={port.name} prominent />
+        </section>
+      )}
+
+      {pageContent && hasLiveData && (
         <SchedulePageContentSections content={pageContent} portName={port.name} />
+      )}
+
+      {port.slug === "juneau" && hasLiveData && (
+        <ScheduleJuneauPlanningSections showSpecialistCard={false} />
       )}
 
       <section className="mb-12 rounded-xl border border-gray-200 bg-caribbean-50/40 p-6">

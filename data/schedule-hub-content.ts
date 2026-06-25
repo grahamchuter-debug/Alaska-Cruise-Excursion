@@ -127,14 +127,35 @@ export const scheduleHubContent = {
     ],
     internalLinks: [
       {
+        label: "Juneau 2026 Schedule",
+        href: "/ship-schedules/juneau/2026",
+        description: "Verified monthly ship calls for the 2026 Alaska season.",
+      },
+      {
         label: "Juneau 2027 Schedule",
         href: "/ship-schedules/juneau/2027",
-        description: "Monthly ship calls for the 2027 Alaska season.",
+        description: "Verified monthly ship calls for the 2027 Alaska season.",
       },
       {
         label: "Juneau port guide",
         href: "/ports/juneau",
         description: "Whale watching, glaciers, and downtown logistics.",
+      },
+      {
+        label: "Juneau Shore Excursions",
+        href: "https://juneaushoreexcursions.com",
+        description: "Live tour listings, pier pickup, and operator pricing.",
+        external: true,
+      },
+      {
+        label: "Whale watching excursions",
+        href: "/excursion-types/whale-watching",
+        description: "How to book and time whale tours from cruise ships.",
+      },
+      {
+        label: "Glacier excursions",
+        href: "/excursion-types/glacier-tours",
+        description: "Mendenhall, helicopters, and fjord day boats.",
       },
       {
         label: "Alaska Excursion Planner",
