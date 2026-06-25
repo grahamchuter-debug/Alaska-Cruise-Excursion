@@ -46,10 +46,29 @@ export function excursionTypeImageTheme(type: string): PortImageTheme {
   const lower = type.toLowerCase();
   if (/beach|sand|club/.test(lower)) return "beach";
   if (/snorkel|reef|dive/.test(lower)) return "snorkel";
-  if (/rainforest|falls|hike|zip|adventure|nature/.test(lower)) return "rainforest";
-  if (/fort|history|culture|ruin/.test(lower)) return "fortress";
-  if (/wildlife|turtle|stingray|dolphin/.test(lower)) return "wildlife";
-  if (/catamaran|sail|boat|cruise/.test(lower)) return "catamaran";
+  if (/rainforest|falls|hike|zip|adventure|nature|kayak/.test(lower)) return "rainforest";
+  if (/fort|history|culture|ruin|native|rail|train/.test(lower)) return "fortress";
+  if (/wildlife|turtle|stingray|dolphin|whale|bear|fish/.test(lower)) return "wildlife";
+  if (/catamaran|sail|boat|cruise|fjord/.test(lower)) return "catamaran";
   if (/town|shopping|city/.test(lower)) return "town";
-  return "beach";
+  if (/glacier|flight|photo|helicopter|ice|sled/.test(lower)) return "viewpoint";
+  return "wildlife";
+}
+
+/** Visual theme per Alaska excursion type slug for homepage and cards. */
+export function alaskaExcursionTypeTheme(slug: string): PortImageTheme {
+  const map: Record<string, PortImageTheme> = {
+    "whale-watching": "wildlife",
+    "bear-viewing": "wildlife",
+    "glacier-tours": "viewpoint",
+    flightseeing: "viewpoint",
+    "railway-tours": "fortress",
+    kayaking: "rainforest",
+    "dog-sledding": "viewpoint",
+    fishing: "catamaran",
+    "wildlife-cruises": "catamaran",
+    photography: "viewpoint",
+    "native-culture": "fortress",
+  };
+  return map[slug] ?? excursionTypeImageTheme(slug);
 }

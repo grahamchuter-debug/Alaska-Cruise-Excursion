@@ -2,11 +2,15 @@ import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 import { getPortBySlug } from "@/data/ports";
-import { excursionTypes } from "@/data/excursion-types";
 import { cruiseLines } from "@/data/cruise-lines";
 import { getPortGuideCount } from "@/data/content-inventory";
 import { schedulePorts } from "@/data/schedules";
-import { featuredPortCards, HOMEPAGE_SCHEDULE_FEATURED, getHomepageFaqs } from "@/data/homepage";
+import {
+  featuredPortCards,
+  HOMEPAGE_EXCURSION_TYPES,
+  HOMEPAGE_SCHEDULE_FEATURED,
+  getHomepageFaqs,
+} from "@/data/homepage";
 import { getFeaturedBestAlaskaGuides } from "@/data/best-alaska-guides-hub";
 import { comparisons } from "@/data/comparisons";
 import { AuthorityPortCard } from "@/components/AuthorityPortCard";
@@ -18,9 +22,11 @@ import { breadcrumbSchema, faqSchema, travelGuideSchema, websiteSchema } from "@
 import { AlaskaExcursionFinder } from "@/components/AlaskaExcursionFinder";
 import { HeroBackground } from "@/components/HeroBackground";
 import { TrustBadgeStrip } from "@/components/TrustBadge";
-import { NavCardIcon, excursionTypeNavIcon } from "@/components/NavCardIcon";
+import { NavCardIcon } from "@/components/NavCardIcon";
 import { NavCardCta } from "@/components/NavCardCta";
+import { HomepageExcursionTypeCard } from "@/components/HomepageExcursionTypeCard";
 import { ships } from "@/data/ships";
+import { getEnrichedExcursionType } from "@/lib/excursion-type-pathways";
 
 export const metadata = buildMetadata({
   title: "Alaska Cruise Excursions & Port Planning | Ship Schedules & Shore Tours",
@@ -36,16 +42,17 @@ export const metadata = buildMetadata({
   ],
 });
 
-const activityIcons: Record<string, string> = {
-  "whale-watching": "🐋",
-  "bear-viewing": "🐻",
-  "glacier-tours": "🏔️",
-  "railway-tours": "🚂",
-  "dog-sledding": "🛷",
-  "flightseeing": "✈️",
-};
-
 export default function HomePage() {
+  const homepageActivities = HOMEPAGE_EXCURSION_TYPES.map((item) => {
+    const type = getEnrichedExcursionType(item.slug);
+    return type ? { ...item, type } : null;
+  }).filter(Boolean) as Array<{
+    slug: string;
+    label: string;
+    heroPortSlug: string;
+    type: NonNullable<ReturnType<typeof getEnrichedExcursionType>>;
+  }>;
+
   const featuredPorts = featuredPortCards
     .map((card) => {
       const port = getPortBySlug(card.slug);
@@ -68,7 +75,6 @@ export default function HomePage() {
 
   const homepageFaqs = getHomepageFaqs();
   const featuredBestGuides = getFeaturedBestAlaskaGuides();
-  const featuredActivities = excursionTypes.slice(0, 8);
 
   return (
     <>
@@ -85,21 +91,22 @@ export default function HomePage() {
         ]}
       />
 
+      {/* 1. Hero */}
       <section className="home-hero">
         <HeroBackground />
         <div className="container-wide relative z-10 px-4 sm:px-6 lg:px-8">
           <p className="section-eyebrow mb-2 text-caribbean-100 drop-shadow-sm">Alaska cruise planning authority</p>
           <h1 className="home-hero-heading">Alaska Cruise Excursions &amp; Port Planning</h1>
           <p className="mt-3 max-w-2xl text-base leading-snug text-white/90 sm:text-[1.0625rem] drop-shadow-sm">
-            Choose the best Alaska shore excursions, wildlife experiences, glacier trips, and rail journeys — then plan
-            around your ship schedule with confidence.
+            Start with what you want to do — whales, bears, glaciers, railways — then match excursions to your ship
+            schedule and book with vetted local specialists.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <Link href="/alaska-cruise-excursion-planner" className="btn-primary">
-              Alaska Excursion Finder
+            <Link href="/excursion-types" className="btn-primary">
+              Browse activities
             </Link>
-            <Link href="/plan-my-alaska-cruise" className="btn-secondary border-white/30 text-white hover:bg-white/10">
-              Plan my cruise
+            <Link href="/alaska-cruise-excursion-planner" className="btn-secondary border-white/30 text-white hover:bg-white/10">
+              Alaska Excursion Finder
             </Link>
           </div>
           <div className="mt-4">
@@ -108,65 +115,57 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 2. Find by excursion type */}
       <section className="section-padding bg-white border-b border-caribbean-100">
         <div className="container-wide">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
             <div>
               <p className="section-eyebrow">Activity-led planning</p>
               <h2 className="section-title mt-1">Find by Excursion Type</h2>
-              <p className="section-subtitle">Start with what you want to do — whales, bears, glaciers, railways, and more.</p>
+              <p className="section-subtitle">
+                Choose the experience first — wildlife, glaciers, railways, culture — then compare the best Alaska ports
+                for that activity.
+              </p>
             </div>
             <Link href="/excursion-types" className="btn-secondary shrink-0">
               All activities
             </Link>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredActivities.map((type) => (
-              <Link
-                key={type.slug}
-                href={`/excursion-types/${type.slug}`}
-                className="group rounded-2xl border border-caribbean-100 bg-card-gradient p-5 shadow-premium transition-shadow hover:shadow-premium-hover"
-              >
-                <span className="text-2xl" aria-hidden="true">
-                  {activityIcons[type.slug] ?? "🏔️"}
-                </span>
-                <h3 className="mt-3 font-display text-lg font-semibold text-caribbean-900 group-hover:text-caribbean-700">
-                  {type.name}
-                </h3>
-                <p className="mt-1 text-sm text-gray-600 line-clamp-2">{type.tagline}</p>
-                <NavCardCta className="mt-4">Explore</NavCardCta>
-              </Link>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {homepageActivities.map(({ slug, label, heroPortSlug, type }) => (
+              <HomepageExcursionTypeCard
+                key={slug}
+                type={type}
+                label={label}
+                heroPortSlug={heroPortSlug}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-caribbean-50">
-        <div className="container-wide">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
-            <div>
-              <h2 className="section-title">Find by Port</h2>
-              <p className="section-subtitle">
-                {getPortGuideCount()} Alaska port authority guides with dock notes and specialist links.
-              </p>
-            </div>
-            <Link href="/ports" className="btn-secondary shrink-0">
-              All ports
-            </Link>
+      {/* 3. Alaska Cruise Excursion Finder / Planner */}
+      <section className="section-padding bg-caribbean-50 border-b border-caribbean-100">
+        <div className="container-wide max-w-6xl">
+          <div className="mb-8 max-w-3xl">
+            <p className="section-eyebrow">Personalised matching</p>
+            <h2 className="section-title mt-1">Alaska Cruise Excursion Finder</h2>
+            <p className="section-subtitle">
+              Select interests — whales, bears, glaciers, eagles, railways — and get port, month, and specialist
+              recommendations matched to your cruise.
+            </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredPorts.slice(0, 8).map(({ port, description, bestFor }) => (
-              <AuthorityPortCard key={port.slug} port={port} description={description} bestFor={bestFor} />
-            ))}
-          </div>
+          <AlaskaExcursionFinder variant="home" />
         </div>
       </section>
 
+      {/* 4. Ship schedules */}
       <section className="section-padding bg-white border-b border-caribbean-100">
         <div className="container-wide">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
             <div>
-              <h2 className="section-title">Alaska Cruise Ship Schedules</h2>
+              <p className="section-eyebrow">Plan around your ship</p>
+              <h2 className="section-title mt-1">Alaska Cruise Ship Schedules</h2>
               <p className="section-subtitle">
                 Juneau is the only port with live imported schedules today. Skagway, Ketchikan, and Seward hubs are
                 ready — verified monthly data is being imported for additional Alaska ports.
@@ -178,29 +177,68 @@ export default function HomePage() {
           </div>
           <HomepageScheduleCoverageNote />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {homepageSchedules.map(
-              ({ port, status }) => (
-                <SchedulePreviewCard key={port.slug} port={port} status={status} />
-              ),
-            )}
+            {homepageSchedules.map(({ port, status }) => (
+              <SchedulePreviewCard key={port.slug} port={port} status={status} />
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-caribbean-50">
+      {/* 5. Find by port */}
+      <section className="section-padding bg-caribbean-50 border-b border-caribbean-100">
         <div className="container-wide">
-          <h2 className="section-title">Best Alaska Shore Excursions</h2>
-          <p className="section-subtitle mb-8">Authority-ranked guides for wildlife, glaciers, and port planning.</p>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+            <div>
+              <p className="section-eyebrow">Port authority guides</p>
+              <h2 className="section-title mt-1">Find by Port</h2>
+              <p className="section-subtitle">
+                {getPortGuideCount()} Alaska port guides with dock notes, excursion picks, and links to vetted local
+                specialist operators.
+              </p>
+            </div>
+            <Link href="/ports" className="btn-secondary shrink-0">
+              All ports
+            </Link>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {featuredPorts.slice(0, 8).map(({ port, description, bestFor }) => (
+              <AuthorityPortCard
+                key={port.slug}
+                port={port}
+                description={description}
+                bestFor={bestFor}
+                specialistVariant="partner-card"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Best Alaska shore excursions */}
+      <section className="section-padding bg-white border-b border-caribbean-100">
+        <div className="container-wide">
+          <div className="mb-8">
+            <p className="section-eyebrow">Authority rankings</p>
+            <h2 className="section-title mt-1">Best Alaska Shore Excursions</h2>
+            <p className="section-subtitle">Ranked guides for wildlife, glaciers, railways, and port planning.</p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {featuredBestGuides.slice(0, 6).map((guide) => (
               <Link
                 key={guide.slug}
                 href={`/${guide.slug}`}
-                className="rounded-2xl border border-caribbean-100 bg-white p-6 shadow-premium hover:shadow-premium-hover transition-shadow"
+                className="card-editorial group flex h-full flex-col overflow-hidden hover:shadow-premium-hover transition-shadow"
               >
-                <h3 className="font-display text-xl font-semibold text-caribbean-900">{guide.title}</h3>
-                <p className="mt-2 text-sm text-gray-600 line-clamp-3">{guide.heroSubtitle}</p>
-                <NavCardCta className="mt-4">Read guide</NavCardCta>
+                <div className="border-b border-caribbean-100 bg-gradient-to-br from-caribbean-50 to-white px-6 py-5">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-caribbean-600">Best guide</p>
+                  <h3 className="mt-1 font-display text-xl font-semibold text-caribbean-900 group-hover:text-caribbean-700">
+                    {guide.title}
+                  </h3>
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="text-sm text-gray-600 line-clamp-3 flex-1">{guide.heroSubtitle}</p>
+                  <NavCardCta className="mt-4">Read guide</NavCardCta>
+                </div>
               </Link>
             ))}
           </div>
@@ -212,50 +250,58 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-padding bg-white border-b border-caribbean-100">
-        <div className="container-wide max-w-6xl">
-          <h2 className="section-title">Alaska Cruise Excursion Finder</h2>
-          <p className="section-subtitle mb-8">
-            Select interests — whales, bears, glaciers, eagles, railways — and get port, month, and specialist
-            recommendations.
-          </p>
-          <AlaskaExcursionFinder variant="home" />
-        </div>
-      </section>
-
-      <section className="section-padding bg-caribbean-50">
+      {/* 7. Cruise lines / ships */}
+      <section className="section-padding bg-caribbean-50 border-b border-caribbean-100">
         <div className="container-wide">
-          <h2 className="section-title">Cruise Lines &amp; Ships</h2>
-          <p className="section-subtitle mb-8">Plan by operator — Princess, Holland America, Royal Caribbean, and more.</p>
+          <div className="mb-8">
+            <p className="section-eyebrow">Operator planning</p>
+            <h2 className="section-title mt-1">Cruise Lines &amp; Ships</h2>
+            <p className="section-subtitle">
+              Plan by operator — Princess, Holland America, Royal Caribbean, and featured Alaska ships.
+            </p>
+          </div>
           <div className="grid gap-6 lg:grid-cols-2">
             <div>
               <h3 className="text-lg font-semibold text-caribbean-800 mb-4">Cruise lines</h3>
-              <ul className="space-y-2">
+              <div className="grid gap-4 sm:grid-cols-2">
                 {cruiseLines.map((line) => (
-                  <li key={line.slug}>
-                    <Link href={`/alaska-cruise-lines/${line.slug}`} className="text-caribbean-700 hover:underline font-medium">
+                  <Link
+                    key={line.slug}
+                    href={`/alaska-cruise-lines/${line.slug}`}
+                    className="card-gradient group flex h-full flex-col p-5 hover:border-caribbean-300"
+                  >
+                    <NavCardIcon icon="cruise-line" variant="hero" className="mb-3" />
+                    <h4 className="font-display font-semibold text-gray-900 group-hover:text-caribbean-700">
                       {line.name}
-                    </Link>
-                    <span className="text-sm text-gray-500 ml-2">{line.tagline}</span>
-                  </li>
+                    </h4>
+                    <p className="mt-1 text-sm text-gray-600 line-clamp-2 flex-1">{line.tagline}</p>
+                    <NavCardCta className="mt-4">View line guide</NavCardCta>
+                  </Link>
                 ))}
-              </ul>
-              <Link href="/alaska-cruise-lines" className="btn-secondary text-sm mt-4 inline-flex">
+              </div>
+              <Link href="/alaska-cruise-lines" className="btn-secondary text-sm mt-5 inline-flex">
                 All cruise lines
               </Link>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-caribbean-800 mb-4">Featured ships</h3>
-              <ul className="space-y-2">
+              <div className="grid gap-4 sm:grid-cols-2">
                 {ships.map((ship) => (
-                  <li key={ship.slug}>
-                    <Link href={`/alaska-cruise-ships/${ship.slug}`} className="text-caribbean-700 hover:underline font-medium">
+                  <Link
+                    key={ship.slug}
+                    href={`/alaska-cruise-ships/${ship.slug}`}
+                    className="card-gradient group flex h-full flex-col p-5 hover:border-caribbean-300"
+                  >
+                    <NavCardIcon icon="route" variant="hero" className="mb-3" />
+                    <h4 className="font-display font-semibold text-gray-900 group-hover:text-caribbean-700">
                       {ship.name}
-                    </Link>
-                  </li>
+                    </h4>
+                    <p className="mt-1 text-sm text-gray-600 line-clamp-2 flex-1">{ship.tagline}</p>
+                    <NavCardCta className="mt-4">View ship guide</NavCardCta>
+                  </Link>
                 ))}
-              </ul>
-              <Link href="/alaska-cruise-ships" className="btn-secondary text-sm mt-4 inline-flex">
+              </div>
+              <Link href="/alaska-cruise-ships" className="btn-secondary text-sm mt-5 inline-flex">
                 All ships
               </Link>
             </div>
@@ -263,28 +309,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
+      {/* 8. Planning guides and comparisons */}
+      <section className="section-padding bg-white border-b border-caribbean-100">
         <div className="container-wide">
-          <h2 className="section-title">Regional Guides &amp; Comparisons</h2>
-          <p className="section-subtitle mb-8">Head-to-head port decisions and land-extension planning.</p>
+          <div className="mb-8">
+            <p className="section-eyebrow">Decision support</p>
+            <h2 className="section-title mt-1">Planning Guides &amp; Comparisons</h2>
+            <p className="section-subtitle">Head-to-head port decisions, seasonality, and land-extension planning.</p>
+          </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {comparisons.map((comp) => (
               <Link
                 key={comp.slug}
                 href={`/${comp.slug}`}
-                className="rounded-2xl border border-caribbean-100 p-5 hover:border-caribbean-300 transition-colors"
+                className="card-editorial group flex h-full flex-col p-5 hover:shadow-premium-hover transition-shadow"
               >
-                <h3 className="font-semibold text-caribbean-900">{comp.portA} vs {comp.portB}</h3>
-                <p className="mt-2 text-sm text-gray-600 line-clamp-2">{comp.summary}</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-caribbean-600">Port comparison</p>
+                <h3 className="mt-1 font-display text-lg font-semibold text-gray-900 group-hover:text-caribbean-700">
+                  {comp.portA} vs {comp.portB}
+                </h3>
+                <p className="mt-2 text-sm text-gray-600 line-clamp-2 flex-1">{comp.summary}</p>
+                <NavCardCta className="mt-4">Compare ports</NavCardCta>
               </Link>
             ))}
-            <Link href="/alaska-cruise-with-denali" className="rounded-2xl border border-caribbean-100 p-5 hover:border-caribbean-300">
-              <h3 className="font-semibold text-caribbean-900">Alaska Cruise with Denali</h3>
-              <p className="mt-2 text-sm text-gray-600">Land extension and cruisetour planning.</p>
+            <Link
+              href="/alaska-cruise-with-denali"
+              className="card-editorial group flex h-full flex-col p-5 hover:shadow-premium-hover transition-shadow"
+            >
+              <p className="text-xs font-semibold uppercase tracking-wide text-caribbean-600">Land extension</p>
+              <h3 className="mt-1 font-display text-lg font-semibold text-gray-900 group-hover:text-caribbean-700">
+                Alaska Cruise with Denali
+              </h3>
+              <p className="mt-2 text-sm text-gray-600 flex-1">Land extension and cruisetour planning.</p>
+              <NavCardCta className="mt-4">Read guide</NavCardCta>
             </Link>
-            <Link href="/best-time-to-cruise-alaska" className="rounded-2xl border border-caribbean-100 p-5 hover:border-caribbean-300">
-              <h3 className="font-semibold text-caribbean-900">Best Time to Cruise Alaska</h3>
-              <p className="mt-2 text-sm text-gray-600">Seasonality for whales, bears, and weather.</p>
+            <Link
+              href="/best-time-to-cruise-alaska"
+              className="card-editorial group flex h-full flex-col p-5 hover:shadow-premium-hover transition-shadow"
+            >
+              <p className="text-xs font-semibold uppercase tracking-wide text-caribbean-600">Seasonality</p>
+              <h3 className="mt-1 font-display text-lg font-semibold text-gray-900 group-hover:text-caribbean-700">
+                Best Time to Cruise Alaska
+              </h3>
+              <p className="mt-2 text-sm text-gray-600 flex-1">Seasonality for whales, bears, and weather.</p>
+              <NavCardCta className="mt-4">Read guide</NavCardCta>
             </Link>
           </div>
         </div>

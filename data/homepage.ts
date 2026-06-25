@@ -25,6 +25,21 @@ export const HOMEPAGE_SCHEDULE_FEATURED = [
   { slug: "seward", status: "coming-soon" as const },
 ] as const;
 
+/** Activity-led homepage excursion grid — labels are display copy; slugs are canonical URLs. */
+export const HOMEPAGE_EXCURSION_TYPES = [
+  { slug: "whale-watching", label: "Whale Watching", heroPortSlug: "juneau" },
+  { slug: "bear-viewing", label: "Bear Viewing", heroPortSlug: "ketchikan" },
+  { slug: "glacier-tours", label: "Glacier Adventures", heroPortSlug: "seward" },
+  { slug: "flightseeing", label: "Flightseeing", heroPortSlug: "denali" },
+  { slug: "railway-tours", label: "Scenic Railways", heroPortSlug: "skagway" },
+  { slug: "kayaking", label: "Kayaking", heroPortSlug: "ketchikan" },
+  { slug: "dog-sledding", label: "Dog Sledding", heroPortSlug: "skagway" },
+  { slug: "fishing", label: "Fishing", heroPortSlug: "ketchikan" },
+  { slug: "wildlife-cruises", label: "Wildlife", heroPortSlug: "seward" },
+  { slug: "photography", label: "Photography", heroPortSlug: "haines" },
+  { slug: "native-culture", label: "Native Culture", heroPortSlug: "sitka" },
+] as const;
+
 /** @deprecated Use HOMEPAGE_SCHEDULE_FEATURED */
 export const HOMEPAGE_SCHEDULE_SLUGS = HOMEPAGE_SCHEDULE_FEATURED.map((item) => item.slug);
 
