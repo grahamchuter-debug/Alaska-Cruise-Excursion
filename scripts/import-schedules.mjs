@@ -94,14 +94,26 @@ function inferCruiseLine(ship) {
   }
   if (/^Azamara\b/i.test(s)) return "Azamara";
   if (/^Holland America|^Nieuw Statendam|^Koningsdam/i.test(s)) return "Holland America Line";
+  if (
+    /^(Nieuw Amsterdam|Eurodam|Westerdam|Zaandam|Noordam|Oosterdam|Volendam|Rotterdam|Koningsdam|Zuiderdam|Nieuw Statendam)\b/i.test(
+      s,
+    )
+  ) {
+    return "Holland America Line";
+  }
   if (/^Viking\b/i.test(s)) return "Viking Ocean Cruises";
   if (/^Seabourn\b/i.test(s)) return "Seabourn";
   if (/^Oceania\b/i.test(s)) return "Oceania Cruises";
-  if (/^Regent\b/i.test(s)) return "Regent Seven Seas";
+  if (/^Regent\b|^Seven Seas\b/i.test(s)) return "Regent Seven Seas";
+  if (/\bSeven Seas\b/i.test(s)) return "Regent Seven Seas";
   if (/^Marella\b/i.test(s)) return "Marella Cruises";
   if (/^Silver\b/i.test(s)) return "Silversea";
-  if (/^Wind Star|^Star Pride/i.test(s)) return "Windstar Cruises";
-  return "Verify with cruise line";
+  if (/^Wind Star|^Star Pride|^Star Legend|^Star Seeker/i.test(s)) return "Windstar Cruises";
+  if (/^Crystal\b/i.test(s)) return "Crystal Cruises";
+  if (/^Explora\b/i.test(s)) return "Explora Journeys";
+  if (/^Brilliant Lady|^Resilient Lady|^Valiant Lady|^Scarlet Lady/i.test(s)) return "Virgin Voyages";
+  if (/^Queen (Mary|Elizabeth|Victoria)\b/i.test(s)) return "Cunard";
+  return null;
 }
 
 function formatTime(hhmm) {
@@ -215,7 +227,7 @@ function parseTableEntries(text, url, config) {
     entries.push({
       date: isoDate,
       ship,
-      cruiseLine: inferCruiseLine(ship),
+      cruiseLine: inferCruiseLine(ship) ?? "Unknown",
       arrival,
       departure,
       timeInPort: calcTimeInPort(arrival, departure),
@@ -247,7 +259,7 @@ function parseEntriesFromText(text, config) {
     entries.push({
       date: call.isoDate,
       ship,
-      cruiseLine: inferCruiseLine(ship),
+      cruiseLine: inferCruiseLine(ship) ?? "Unknown",
       arrival: call.arrival,
       departure: call.departure,
       ...(call.timeInPort ? { timeInPort: call.timeInPort } : {}),

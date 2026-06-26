@@ -139,7 +139,6 @@ export function ShipScheduleMasterYearHub({ year }: { year: ScheduleYear }) {
                 <tr>
                   <th className="px-4 py-3 text-left font-semibold text-gray-900">Rank</th>
                   <th className="px-4 py-3 text-left font-semibold text-gray-900">Port</th>
-                  <th className="px-4 py-3 text-left font-semibold text-gray-900">Region</th>
                   <th className="px-4 py-3 text-left font-semibold text-gray-900">Verified calls</th>
                   <th className="px-4 py-3 text-left font-semibold text-gray-900">Schedule</th>
                 </tr>
@@ -149,7 +148,6 @@ export function ShipScheduleMasterYearHub({ year }: { year: ScheduleYear }) {
                   <tr key={stats.slug}>
                     <td className="px-4 py-3 text-gray-700">{index + 1}</td>
                     <td className="px-4 py-3 font-medium text-gray-900">{stats.name}</td>
-                    <td className="px-4 py-3 text-gray-600">{stats.region}</td>
                     <td className="px-4 py-3 text-gray-700">{stats.shipCalls.toLocaleString()}</td>
                     <td className="px-4 py-3">
                       <Link

@@ -131,11 +131,13 @@ export function getMostFrequentShips(year?: number, limit = 10): ShipSummary[] {
 
 export function getMostFrequentCruiseLines(year?: number, limit = 10): CruiseLineSummary[] {
   const counts = new Map<string, { cruiseLine: string; count: number; ports: Set<string> }>();
+  const hiddenLines = new Set(["Verify with cruise line", "Unknown"]);
 
   for (const port of schedulePorts) {
     const entries = year ? getScheduleForPortYear(port.slug, year) : getScheduleForPort(port.slug);
     for (const entry of verifiedEntries(entries)) {
       const line = entry.cruiseLine || "Unknown";
+      if (hiddenLines.has(line)) continue;
       const existing = counts.get(line);
       if (existing) {
         existing.count += 1;

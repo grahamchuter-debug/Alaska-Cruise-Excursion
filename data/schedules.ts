@@ -1,3 +1,4 @@
+import { resolveCruiseLine } from "@/lib/infer-cruise-line";
 import type { ScheduleEntry, ShipSchedulePort } from "./types";
 import { getPassengerCapacityLabel } from "@/lib/ship-capacities";
 import {
@@ -142,9 +143,11 @@ export function getSchedulePortBySlug(slug: string): ShipSchedulePort | undefine
 }
 
 function enrichScheduleEntry(entry: ScheduleEntry): ScheduleEntry {
-  if (entry.passengers && entry.passengers !== "-") return entry;
-  const passengers = getPassengerCapacityLabel(entry.ship);
-  return passengers ? { ...entry, passengers } : entry;
+  const cruiseLine = resolveCruiseLine(entry.ship, entry.cruiseLine);
+  const withLine = cruiseLine !== entry.cruiseLine ? { ...entry, cruiseLine } : entry;
+  if (withLine.passengers && withLine.passengers !== "-") return withLine;
+  const passengers = getPassengerCapacityLabel(withLine.ship);
+  return passengers ? { ...withLine, passengers } : withLine;
 }
 
 export function getScheduleForPort(slug: string): ScheduleEntry[] {
