@@ -279,9 +279,10 @@ async function fetchHtmlWithRetry(url, attempt = 1) {
   }
 }
 
-async function fetchAllPagesForMonth(url, config, cacheDir) {
+async function fetchAllPagesForMonth(url, config, cacheDir, { preferCache = false } = {}) {
   let firstHtml = readCachedPage(cacheDir, url);
   if (!firstHtml) {
+    if (preferCache || cacheOnly) return [];
     firstHtml = await fetchHtmlWithRetry(url);
     writeCachedPage(cacheDir, url, firstHtml);
   }
@@ -293,6 +294,7 @@ async function fetchAllPagesForMonth(url, config, cacheDir) {
   for (const pageUrl of pageUrls) {
     let html = pageUrl === url ? firstHtml : readCachedPage(cacheDir, pageUrl);
     if (!html) {
+      if (preferCache || cacheOnly) continue;
       html = await fetchHtmlWithRetry(pageUrl);
       writeCachedPage(cacheDir, pageUrl, html);
     }
@@ -313,7 +315,12 @@ async function fetchAllPagesForMonth(url, config, cacheDir) {
 
 const argv = process.argv.slice(2);
 const cacheOnly = argv.includes("--cache-only");
-const slug = argv.find((a) => !a.startsWith("--")) || "juneau";
+const preferCache = argv.includes("--prefer-cache") || cacheOnly;
+const fetchDelayMs = Number.parseInt(
+  argv.find((a) => a.startsWith("--delay-ms="))?.split("=")[1] ?? "2500",
+  10,
+);
+const slug = argv.find((a) => !a.startsWith("--") && !a.includes("=")) || "juneau";
 const config = PORT_CONFIG[slug];
 if (!config) {
   console.error(`Unknown port slug: ${slug}. Add config to PORT_CONFIG.`);
@@ -340,7 +347,12 @@ for (const { monthLabel, url } of monthUrls) {
   try {
     const cached = readCachedPage(cacheDir, url);
     if (cached) process.stdout.write("(cache) ");
-    const entries = await fetchAllPagesForMonth(url, config, cacheDir);
+    if (!cached && preferCache) {
+      console.log("skip (no cache)");
+      failedMonths.push(monthLabel);
+      continue;
+    }
+    const entries = await fetchAllPagesForMonth(url, config, cacheDir, { preferCache });
     let added = 0;
     for (const entry of entries) {
       const key = `${entry.date}|${entry.ship}|${entry.arrival}|${entry.departure}`;
@@ -355,8 +367,8 @@ for (const { monthLabel, url } of monthUrls) {
     failedMonths.push(monthLabel);
     console.log(`FAILED: ${err.message}`);
   }
-  if (!readCachedPage(cacheDir, url)) {
-    await new Promise((r) => setTimeout(r, 3500));
+  if (!preferCache && !readCachedPage(cacheDir, url)) {
+    await new Promise((r) => setTimeout(r, fetchDelayMs));
   }
 }
 

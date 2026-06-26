@@ -167,8 +167,8 @@ export default function HomePage() {
               <p className="section-eyebrow">Plan around your ship</p>
               <h2 className="section-title mt-1">Alaska Cruise Ship Schedules</h2>
               <p className="section-subtitle">
-                Juneau is the only port with live imported schedules today. Skagway, Ketchikan, and Seward hubs are
-                ready — verified monthly data is being imported for additional Alaska ports.
+                Juneau and Skagway have live imported schedules today. Ketchikan, Seward, and other hub ports update as
+                verified monthly data is imported.
               </p>
             </div>
             <Link href="/ship-schedules" className="btn-secondary shrink-0">

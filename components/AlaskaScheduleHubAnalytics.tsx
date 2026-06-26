@@ -9,7 +9,7 @@ import {
 } from "@/data/schedule-analytics";
 import { getAllVerifiedMonthPageParams } from "@/data/schedules";
 import { formatMonthLabel, portHubPath } from "@/lib/schedule-utils";
-import { LIVE_IMPORTED_SCHEDULE_PORTS } from "@/data/schedule-coverage";
+import { getLiveImportedSchedulePorts } from "@/data/schedule-coverage";
 import { NavCardCta } from "@/components/NavCardCta";
 
 export function AlaskaScheduleHubAnalytics() {
@@ -44,7 +44,7 @@ export function AlaskaScheduleHubAnalytics() {
           { label: "Verified calls 2027", value: total2027.toLocaleString() },
           {
             label: "Ports with live data",
-            value: `${portTotals.filter((p) => p.hasVerifiedData).length} (${LIVE_IMPORTED_SCHEDULE_PORTS.join(", ")})`,
+            value: `${portTotals.filter((p) => p.hasVerifiedData).length} (${getLiveImportedSchedulePorts().join(", ")})`,
           },
           { label: "Monthly pages", value: String(monthPages.length) },
         ].map((stat) => (

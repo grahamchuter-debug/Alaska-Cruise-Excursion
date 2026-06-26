@@ -15,8 +15,8 @@ function alaskaHub(
     tenderNote ??
     "Most Alaska Inside Passage ports dock at the pier; confirm tender ports (Sitka, Icy Strait) on your ship's daily program.";
   return {
-    intro: `This ${name} schedule hub is ready for 2026 and 2027 Alaska cruise ship call data. Verified monthly tables are not published yet — only Juneau has live imports on this site today. We do not show placeholder sailings.`,
-    heroSubtitle: `${name} Alaska cruise schedule hub — framework pages live while verified ship-call imports are in progress.`,
+    intro: `This ${name} schedule hub is ready for 2026 and 2027 Alaska cruise ship call data. Verified monthly tables publish as imports complete — we do not show placeholder sailings.`,
+    heroSubtitle: `${name} Alaska cruise schedule hub — browse year pages and monthly ship lists as verified imports land.`,
     whyPassengersUse: [
       `${name} is a key Alaska itinerary stop — this hub links to year pages with monthly ship lists as verified imports land.`,
       "Published arrival times frame how much time you have for signature excursions versus downtown exploration.",
@@ -90,7 +90,7 @@ export const scheduleHubContent = {
   "juneau-hub": {
     intro: JUNEAU_SCHEDULE_INTRO,
     heroSubtitle:
-      "Juneau cruise ship schedule hub — the only Alaska port with live imported data today. Compare 2026 and 2027 ship calls, then plan whale watching, Mendenhall Glacier, helicopter tours, and Tracy Arm trips around verified arrival windows.",
+      "Juneau cruise ship schedule hub — live imported ship calls for 2026 and 2027. Compare competing vessels on your pier day, then plan whale watching, Mendenhall Glacier, helicopter tours, and Tracy Arm trips around verified arrival windows.",
     whyPassengersUse: [
       "Juneau is Alaska's busiest cruise port — live imported schedules show how many ships share your downtown pier day.",
       "Morning whale-watching boats and helicopter glacier departures sell out fastest when multiple vessels call on the same date.",
@@ -102,7 +102,7 @@ export const scheduleHubContent = {
       {
         question: "Should I use the Juneau 2026 or 2027 schedule for excursion planning?",
         answer:
-          "Open the year that matches your sailing. Monthly tables list ship names, arrival and departure times, and competing vessels on your pier day — Juneau is the only Alaska port with live imported rows today.",
+          "Open the year that matches your sailing. Monthly tables list ship names, arrival and departure times, and competing vessels on your pier day.",
       },
       {
         question: "How do I plan whale watching around the Juneau schedule?",
@@ -192,12 +192,122 @@ export const scheduleHubContent = {
       ],
     },
   } satisfies SchedulePageContent,
-  "skagway-hub": alaskaHub(
-    "skagway",
-    "Skagway",
-    ["White Pass Railway summit run", "Downtown Gold Rush district", "Yukon bus tours"],
-    ["White Pass & Yukon Route railway", "Dog sledding on glacier", "Chilkoot Trail highlights"],
-  ),
+  "skagway-hub": {
+    intro:
+      "Skagway has live imported cruise ship schedules for 2026 and 2027 — use monthly tables to plan White Pass Railway, downtown Gold Rush walks, and Yukon tours around verified arrival and departure windows.",
+    heroSubtitle:
+      "Skagway cruise ship schedule hub — live imported ship calls for 2026 and 2027. Compare multi-ship days before booking railway seats and signature excursions.",
+    whyPassengersUse: [
+      "Skagway is a compact downtown port — live schedules show how many ships share your pier day on peak railway weeks.",
+      "White Pass & Yukon Route seats sell out fastest when multiple vessels call on the same date.",
+      "Short port days suit downtown walks; full days suit summit railway runs and Yukon bus tours.",
+      "Plan a 45–60 minute return buffer before all-aboard — gangway queues build on busy summer calls.",
+    ],
+    planningYourDay: {
+      summary:
+        "Start at this hub to pick 2026 or 2027, then match White Pass Railway or a downtown highlight to your verified in-port window.",
+      typicalActivities: [
+        "White Pass Railway summit run",
+        "Downtown Gold Rush district",
+        "Yukon bus tours",
+      ],
+      topAttractions: [
+        "White Pass Railway summit run",
+        "Downtown Gold Rush district",
+        "Yukon bus tours",
+      ],
+      recommendedExcursions: [
+        "White Pass & Yukon Route railway",
+        "Dog sledding on glacier",
+        "Chilkoot Trail highlights",
+      ],
+      timingConsiderations: [
+        "Open your year page first, then the month that matches your sailing",
+        "Book railway and dog-sledding early on peak June and July weeks",
+        "Afternoon departures suit shorter downtown stops on tight schedules",
+      ],
+      returnGuidance:
+        "Plan to be back at the gangway at least 45–60 minutes before published departure. Weather and pier assignments can shift — confirm times on your ship each morning.",
+    },
+    faqs: [
+      {
+        question: "Should I use the Skagway 2026 or 2027 schedule for excursion planning?",
+        answer:
+          "Open the year that matches your sailing. Monthly tables list ship names, arrival and departure times, and competing vessels on your pier day.",
+      },
+      {
+        question: "When should I book White Pass Railway around the Skagway schedule?",
+        answer:
+          "As early as possible when multiple ships call on your date. Morning summit runs suit full port days; shorter calls may suit downtown walks instead.",
+      },
+      {
+        question: "Are Skagway arrival and departure times guaranteed?",
+        answer:
+          "No — published schedules are planning guides from verified imports. Weather, pier assignments, and cruise line changes can shift times. Confirm the daily program on your ship.",
+      },
+    ],
+    internalLinks: [
+      {
+        label: "Skagway 2026 Schedule",
+        href: "/ship-schedules/skagway/2026",
+        description: "Verified monthly ship calls for the 2026 Alaska season.",
+      },
+      {
+        label: "Skagway 2027 Schedule",
+        href: "/ship-schedules/skagway/2027",
+        description: "Verified monthly ship calls for the 2027 Alaska season.",
+      },
+      {
+        label: "Skagway port guide",
+        href: "/ports/skagway",
+        description: "White Pass Railway, downtown walks, and Gold Rush history.",
+      },
+      {
+        label: "Skagway Shore Excursions",
+        href: "https://skagwayshoreexcursions.com",
+        description: "Live tour listings, pier pickup, and operator pricing.",
+        external: true,
+      },
+      {
+        label: "Railway excursions",
+        href: "/excursion-types/railway-tours",
+        description: "How to book and time scenic railway tours from cruise ships.",
+      },
+      {
+        label: "Alaska Excursion Planner",
+        href: "/alaska-cruise-excursion-planner",
+        description: "Match excursions to your ports and interests.",
+      },
+    ],
+    hubDetails: {
+      popularExcursions: [
+        {
+          name: "White Pass & Yukon Route railway",
+          description: "Summit run to the pass — book early on multi-ship days.",
+          duration: "3–4 hours",
+        },
+        {
+          name: "Downtown Gold Rush walk",
+          description: "Broadway shops and historic district from the cruise pier.",
+          duration: "1–2 hours",
+        },
+        {
+          name: "Dog sledding on glacier",
+          description: "Summer glacier camp experiences with transport from downtown.",
+          duration: "2–3 hours",
+        },
+      ],
+      terminalInfo:
+        "Broadway cruise docks — most ships berth within walking distance of downtown Skagway.",
+      tenderVsDock: "Skagway uses downtown docks; no tender boats on standard cruise calls.",
+      typicalTimeInPort: "Usually 6–9 hours — see monthly tables for verified averages on your sailing date.",
+      bestExcursionTiming: [
+        "Morning: White Pass summit departures before peak crowds",
+        "Midday: shorter downtown walks and museum visits",
+        "Full port day only: Yukon bus tours beyond the pass",
+      ],
+    },
+  } satisfies SchedulePageContent,
   "ketchikan-hub": alaskaHub(
     "ketchikan",
     "Ketchikan",

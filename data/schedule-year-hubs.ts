@@ -19,7 +19,7 @@ export const scheduleYearHubContent: Record<ScheduleYear, ScheduleYearHubContent
     heroSubtitle:
       "Master 2026 Alaska schedule hub — compare port call patterns and plan shore excursions around arrival and departure windows.",
     intro:
-      "This is the master 2026 Alaska cruise ship schedule hub. Juneau is the only port with live imported ship calls today — other hub ports show framework pages until verified monthly data is published. We never show placeholder sailings.",
+      "This is the master 2026 Alaska cruise ship schedule hub. Juneau and Skagway have live imported ship calls today — other hub ports show framework pages until verified monthly data is published. We never show placeholder sailings.",
     topPortsIntro:
       "Alaska ports ranked by verified 2026 ship calls once import data is available. Use this table to spot busy pier days before booking whale tours, White Pass Railway seats, or bear-viewing trips.",
   },
@@ -31,7 +31,7 @@ export const scheduleYearHubContent: Record<ScheduleYear, ScheduleYearHubContent
     heroSubtitle:
       "Master 2027 Alaska schedule hub — compare port call patterns and plan shore excursions around arrival and departure windows.",
     intro:
-      "This is the master 2027 Alaska cruise ship schedule hub. Juneau is the only port with live imported ship calls today — Skagway, Ketchikan, Seward, and other hubs will populate month by month as verified imports complete.",
+      "This is the master 2027 Alaska cruise ship schedule hub. Juneau and Skagway have live imported ship calls today — Ketchikan, Seward, and other hubs will populate month by month as verified imports complete.",
     topPortsIntro:
       "Alaska ports ranked by verified 2027 ship calls once import data is available. Juneau, Skagway, and Ketchikan typically lead Inside Passage volume — use this hub to compare busy pier days before booking excursions.",
   },

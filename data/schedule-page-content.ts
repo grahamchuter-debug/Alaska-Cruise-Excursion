@@ -46,9 +46,9 @@ const schedulePageContent: Record<SchedulePageContentKey, SchedulePageContent> =
   ...scheduleHubContent,
   home: {
     intro:
-      "This is the starting point for Alaska cruise ship schedules. Juneau is the only port with live imported ship calls today — browse monthly tables there first. Hub pages for Skagway, Ketchikan, Seward, and other ports are ready while additional monthly data is imported and verified. We never show placeholder sailings.",
+      "This is the starting point for Alaska cruise ship schedules. Juneau and Skagway have live imported ship calls today — browse monthly tables there first. Hub pages for Ketchikan, Seward, and other ports are ready while additional monthly data is imported and verified. We never show placeholder sailings.",
     heroSubtitle:
-      "Alaska cruise ship schedules — Juneau has live imported data today. Additional ports are added as monthly imports are verified.",
+      "Alaska cruise ship schedules — Juneau and Skagway have live imported data today. Additional ports are added as monthly imports are verified.",
     whyPassengersUse: [
       "Match shore excursions to your actual in-port window before you enquire — whale tours, White Pass Railway, and bear viewing all need enough time ashore.",
       "Spot busy pier days when multiple ships share Juneau or Ketchikan so you can book early or choose less crowded alternatives.",
@@ -60,7 +60,7 @@ const schedulePageContent: Record<SchedulePageContentKey, SchedulePageContent> =
       {
         question: "Which Alaska ports have live schedule data?",
         answer:
-          "Juneau is the only port with live imported ship schedules on this site today. Other hub ports (Skagway, Ketchikan, Seward, Whittier, Haines, Sitka, Icy Strait, Ward Cove) show framework pages until verified monthly imports are published.",
+          "Juneau and Skagway have live imported ship schedules on this site today. Ketchikan, Seward, Whittier, Haines, Sitka, Icy Strait, and Ward Cove show framework pages until verified monthly imports are published.",
       },
       {
         question: "Why check the schedule before booking shore excursions?",

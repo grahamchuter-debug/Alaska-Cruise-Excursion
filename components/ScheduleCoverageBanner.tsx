@@ -1,8 +1,8 @@
 import Link from "next/link";
 import {
   getScheduleCoverageStatus,
-  isLiveImportedSchedulePort,
-  SCHEDULE_COVERAGE_SUMMARY,
+  getLiveImportedSchedulePorts,
+  getScheduleCoverageSummary,
   SCHEDULE_IMPORT_QUEUE,
 } from "@/data/schedule-coverage";
 import { getShipCallCountForPortYear } from "@/data/schedules";
@@ -18,10 +18,15 @@ export function ScheduleCoverageBanner({
 }) {
   const status = getScheduleCoverageStatus(portSlug);
 
-  if (status === "live" && isLiveImportedSchedulePort(portSlug)) {
+  if (status === "live") {
     const calls2026 = getShipCallCountForPortYear(portSlug, 2026);
     const calls2027 = getShipCallCountForPortYear(portSlug, 2027);
     const total = calls2026 + calls2027;
+    const livePorts = getLiveImportedSchedulePorts();
+    const liveNote =
+      livePorts.length === 1
+        ? `${portName} has verified imported ship calls on this site`
+        : `${portName} has verified imported ship calls (${livePorts.length} Alaska ports live)`;
 
     return (
       <div
@@ -31,7 +36,7 @@ export function ScheduleCoverageBanner({
       >
         <p className="text-xs font-semibold uppercase tracking-wide text-emerald-800">Live imported schedule</p>
         <p className={`mt-1 text-emerald-950 ${variant === "compact" ? "text-sm" : "text-sm sm:text-base"}`}>
-          {portName} is the only Alaska port with verified imported ship calls on this site
+          {liveNote}
           {total > 0 ? ` — ${total.toLocaleString()} calls listed across 2026 and 2027` : ""}. Monthly tables
           show real arrival and departure times.
         </p>
@@ -53,7 +58,7 @@ export function ScheduleCoverageBanner({
         </p>
         {variant === "homepage" && (
           <p className="mt-2 text-sm text-amber-900/90">
-            Next in queue after Juneau: {SCHEDULE_IMPORT_QUEUE.slice(0, 4).join(", ").replace(/-/g, " ")}.
+            Next in import queue: {SCHEDULE_IMPORT_QUEUE.slice(0, 4).join(", ").replace(/-/g, " ")}.
           </p>
         )}
         {variant !== "compact" && (
@@ -64,7 +69,7 @@ export function ScheduleCoverageBanner({
             </Link>{" "}
             and{" "}
             <Link href="/ship-schedules/juneau" className="font-medium underline hover:text-amber-950">
-              Juneau&apos;s live schedule
+              live Juneau and Skagway schedules
             </Link>{" "}
             while {portName} imports complete.
           </p>
@@ -80,7 +85,7 @@ export function HomepageScheduleCoverageNote() {
   return (
     <div className="mb-6 rounded-xl border border-caribbean-200 bg-caribbean-50/60 p-5 sm:p-6">
       <p className="text-sm font-semibold text-caribbean-900">Schedule import status</p>
-      <p className="mt-2 text-sm text-gray-700 leading-relaxed">{SCHEDULE_COVERAGE_SUMMARY}</p>
+      <p className="mt-2 text-sm text-gray-700 leading-relaxed">{getScheduleCoverageSummary()}</p>
       <p className="mt-3 text-sm text-gray-600">
         Additional Inside Passage and Gulf ports — including{" "}
         {SCHEDULE_IMPORT_QUEUE.slice(0, 5).join(", ").replace(/-/g, " ")} — are being imported and verified.
