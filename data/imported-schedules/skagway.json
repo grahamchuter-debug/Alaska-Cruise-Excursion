@@ -2,7 +2,7 @@
   {
     "date": "2026-06-04",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -24,7 +24,7 @@
   {
     "date": "2026-06-10",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -90,7 +90,7 @@
   {
     "date": "2026-06-11",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -155,7 +155,7 @@
   {
     "date": "2026-06-13",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -177,7 +177,7 @@
   {
     "date": "2026-06-13",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "10:00",
     "departure": "18:00",
     "timeInPort": "8h",
@@ -276,7 +276,7 @@
   {
     "date": "2026-06-16",
     "ship": "Brilliant Lady",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Virgin Voyages",
     "arrival": "05:00",
     "departure": "21:00",
     "timeInPort": "16h",
@@ -353,7 +353,7 @@
   {
     "date": "2026-06-17",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -364,7 +364,7 @@
   {
     "date": "2026-06-18",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -452,7 +452,7 @@
   {
     "date": "2026-06-20",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -496,7 +496,7 @@
   {
     "date": "2026-06-21",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -606,7 +606,7 @@
   {
     "date": "2026-06-24",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -672,7 +672,7 @@
   {
     "date": "2026-06-25",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -737,7 +737,7 @@
   {
     "date": "2026-06-27",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -770,7 +770,7 @@
   {
     "date": "2026-06-27",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "10:00",
     "departure": "18:00",
     "timeInPort": "8h",
@@ -924,7 +924,7 @@
   {
     "date": "2026-07-01",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -935,7 +935,7 @@
   {
     "date": "2026-07-02",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -1012,7 +1012,7 @@
   {
     "date": "2026-07-04",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -1067,7 +1067,7 @@
   {
     "date": "2026-07-05",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -1177,7 +1177,7 @@
   {
     "date": "2026-07-08",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -1254,7 +1254,7 @@
   {
     "date": "2026-07-09",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -1319,7 +1319,7 @@
   {
     "date": "2026-07-11",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -1341,7 +1341,7 @@
   {
     "date": "2026-07-11",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "10:00",
     "departure": "18:00",
     "timeInPort": "8h",
@@ -1506,7 +1506,7 @@
   {
     "date": "2026-07-15",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -1517,7 +1517,7 @@
   {
     "date": "2026-07-16",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -1605,7 +1605,7 @@
   {
     "date": "2026-07-18",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -1649,7 +1649,7 @@
   {
     "date": "2026-07-19",
     "ship": "Vancouver To Whittier Ship Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -1759,7 +1759,7 @@
   {
     "date": "2026-07-22",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -1825,7 +1825,7 @@
   {
     "date": "2026-07-23",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -1890,7 +1890,7 @@
   {
     "date": "2026-07-25",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -1912,7 +1912,7 @@
   {
     "date": "2026-07-25",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "10:00",
     "departure": "18:00",
     "timeInPort": "8h",
@@ -2077,7 +2077,7 @@
   {
     "date": "2026-07-29",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -2088,7 +2088,7 @@
   {
     "date": "2026-07-30",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -2165,7 +2165,7 @@
   {
     "date": "2026-08-01",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -2220,7 +2220,7 @@
   {
     "date": "2026-08-02",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -2319,7 +2319,7 @@
   {
     "date": "2026-08-05",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -2396,7 +2396,7 @@
   {
     "date": "2026-08-06",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -2472,7 +2472,7 @@
   {
     "date": "2026-08-08",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -2494,7 +2494,7 @@
   {
     "date": "2026-08-08",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "10:00",
     "departure": "18:00",
     "timeInPort": "8h",
@@ -2648,7 +2648,7 @@
   {
     "date": "2026-08-12",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -2659,7 +2659,7 @@
   {
     "date": "2026-08-13",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -2747,7 +2747,7 @@
   {
     "date": "2026-08-15",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -2791,7 +2791,7 @@
   {
     "date": "2026-08-16",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -2901,7 +2901,7 @@
   {
     "date": "2026-08-19",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -2967,7 +2967,7 @@
   {
     "date": "2026-08-20",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -3021,7 +3021,7 @@
   {
     "date": "2026-08-22",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -3186,7 +3186,7 @@
   {
     "date": "2026-08-26",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -3197,7 +3197,7 @@
   {
     "date": "2026-08-27",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -3274,7 +3274,7 @@
   {
     "date": "2026-08-29",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:00",
     "departure": "21:00",
     "timeInPort": "15h",
@@ -3329,7 +3329,7 @@
   {
     "date": "2026-08-30",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -3428,7 +3428,7 @@
   {
     "date": "2026-09-02",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -3494,7 +3494,7 @@
   {
     "date": "2026-09-03",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -3559,7 +3559,7 @@
   {
     "date": "2026-09-05",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -3581,7 +3581,7 @@
   {
     "date": "2026-09-05",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "10:00",
     "departure": "18:00",
     "timeInPort": "8h",
@@ -3636,7 +3636,7 @@
   {
     "date": "2026-09-07",
     "ship": "Brilliant Lady",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Virgin Voyages",
     "arrival": "07:00",
     "departure": "19:00",
     "timeInPort": "12h",
@@ -3746,7 +3746,7 @@
   {
     "date": "2026-09-09",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -3757,7 +3757,7 @@
   {
     "date": "2026-09-10",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -3823,7 +3823,7 @@
   {
     "date": "2026-09-12",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -3878,7 +3878,7 @@
   {
     "date": "2026-09-13",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "08:00",
     "departure": "17:00",
     "timeInPort": "9h",
@@ -3965,7 +3965,7 @@
   {
     "date": "2026-09-16",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -4141,7 +4141,7 @@
   {
     "date": "2026-09-23",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "20:00",
     "timeInPort": "14h 30m",
@@ -4174,7 +4174,7 @@
   {
     "date": "2026-09-23",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "08:00",
     "departure": "17:00",
     "timeInPort": "9h",
@@ -4536,7 +4536,7 @@
   {
     "date": "2027-05-11",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -4602,7 +4602,7 @@
   {
     "date": "2027-05-13",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -4624,7 +4624,7 @@
   {
     "date": "2027-05-14",
     "ship": "Brilliant Lady",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Virgin Voyages",
     "arrival": "07:00",
     "departure": "18:00",
     "timeInPort": "11h",
@@ -4657,7 +4657,7 @@
   {
     "date": "2027-05-15",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -4668,7 +4668,7 @@
   {
     "date": "2027-05-15",
     "ship": "Explora III",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Explora Journeys",
     "arrival": "08:00",
     "departure": "17:00",
     "timeInPort": "9h",
@@ -4822,7 +4822,7 @@
   {
     "date": "2027-05-19",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -4833,7 +4833,7 @@
   {
     "date": "2027-05-20",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -4931,7 +4931,7 @@
   {
     "date": "2027-05-22",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -4942,7 +4942,7 @@
   {
     "date": "2027-05-22",
     "ship": "Crystal Serenity",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Crystal Cruises",
     "arrival": "09:00",
     "departure": "20:00",
     "timeInPort": "11h",
@@ -5063,7 +5063,7 @@
   {
     "date": "2027-05-26",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -5129,7 +5129,7 @@
   {
     "date": "2027-05-27",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -5195,7 +5195,7 @@
   {
     "date": "2027-05-29",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -5228,7 +5228,7 @@
   {
     "date": "2027-05-30",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -5371,7 +5371,7 @@
   {
     "date": "2027-06-02",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -5382,7 +5382,7 @@
   {
     "date": "2027-06-03",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -5480,7 +5480,7 @@
   {
     "date": "2027-06-05",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -5491,7 +5491,7 @@
   {
     "date": "2027-06-05",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "10:00",
     "departure": "18:00",
     "timeInPort": "8h",
@@ -5623,7 +5623,7 @@
   {
     "date": "2027-06-09",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -5689,7 +5689,7 @@
   {
     "date": "2027-06-10",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -5733,7 +5733,7 @@
   {
     "date": "2027-06-11",
     "ship": "Crystal Serenity",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Crystal Cruises",
     "arrival": "07:00",
     "departure": "17:00",
     "timeInPort": "10h",
@@ -5766,7 +5766,7 @@
   {
     "date": "2027-06-12",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -5810,7 +5810,7 @@
   {
     "date": "2027-06-13",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -5942,7 +5942,7 @@
   {
     "date": "2027-06-16",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -5953,7 +5953,7 @@
   {
     "date": "2027-06-17",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -6062,7 +6062,7 @@
   {
     "date": "2027-06-19",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -6073,7 +6073,7 @@
   {
     "date": "2027-06-19",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "10:00",
     "departure": "18:00",
     "timeInPort": "8h",
@@ -6205,7 +6205,7 @@
   {
     "date": "2027-06-23",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -6271,7 +6271,7 @@
   {
     "date": "2027-06-24",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -6315,7 +6315,7 @@
   {
     "date": "2027-06-25",
     "ship": "Crystal Serenity",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Crystal Cruises",
     "arrival": "07:00",
     "departure": "18:00",
     "timeInPort": "11h",
@@ -6348,7 +6348,7 @@
   {
     "date": "2027-06-26",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -6381,7 +6381,7 @@
   {
     "date": "2027-06-27",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -6513,7 +6513,7 @@
   {
     "date": "2027-06-30",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -6524,7 +6524,7 @@
   {
     "date": "2027-07-01",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -6622,7 +6622,7 @@
   {
     "date": "2027-07-03",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -6633,7 +6633,7 @@
   {
     "date": "2027-07-03",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "10:00",
     "departure": "18:00",
     "timeInPort": "8h",
@@ -6732,7 +6732,7 @@
   {
     "date": "2027-07-06",
     "ship": "Crystal Serenity",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Crystal Cruises",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -6776,7 +6776,7 @@
   {
     "date": "2027-07-07",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -6842,7 +6842,7 @@
   {
     "date": "2027-07-08",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -6908,7 +6908,7 @@
   {
     "date": "2027-07-10",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -6952,7 +6952,7 @@
   {
     "date": "2027-07-11",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -6996,7 +6996,7 @@
   {
     "date": "2027-07-12",
     "ship": "Explora III",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Explora Journeys",
     "arrival": "07:00",
     "departure": "20:30",
     "timeInPort": "13h 30m",
@@ -7095,7 +7095,7 @@
   {
     "date": "2027-07-14",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -7106,7 +7106,7 @@
   {
     "date": "2027-07-15",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -7204,7 +7204,7 @@
   {
     "date": "2027-07-17",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -7215,7 +7215,7 @@
   {
     "date": "2027-07-17",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "10:00",
     "departure": "18:00",
     "timeInPort": "8h",
@@ -7336,7 +7336,7 @@
   {
     "date": "2027-07-21",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -7402,7 +7402,7 @@
   {
     "date": "2027-07-22",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -7468,7 +7468,7 @@
   {
     "date": "2027-07-24",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -7512,7 +7512,7 @@
   {
     "date": "2027-07-25",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -7545,7 +7545,7 @@
   {
     "date": "2027-07-26",
     "ship": "Explora III",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Explora Journeys",
     "arrival": "07:00",
     "departure": "20:30",
     "timeInPort": "13h 30m",
@@ -7644,7 +7644,7 @@
   {
     "date": "2027-07-28",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -7655,7 +7655,7 @@
   {
     "date": "2027-07-29",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -7764,7 +7764,7 @@
   {
     "date": "2027-07-31",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -7775,7 +7775,7 @@
   {
     "date": "2027-07-31",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "10:00",
     "departure": "18:00",
     "timeInPort": "8h",
@@ -7896,7 +7896,7 @@
   {
     "date": "2027-08-04",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -7962,7 +7962,7 @@
   {
     "date": "2027-08-05",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -8028,7 +8028,7 @@
   {
     "date": "2027-08-07",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -8061,7 +8061,7 @@
   {
     "date": "2027-08-08",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -8105,7 +8105,7 @@
   {
     "date": "2027-08-09",
     "ship": "Explora III",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Explora Journeys",
     "arrival": "07:00",
     "departure": "20:30",
     "timeInPort": "13h 30m",
@@ -8193,7 +8193,7 @@
   {
     "date": "2027-08-11",
     "ship": "Westerdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "07:00",
     "departure": "21:00",
     "timeInPort": "14h",
@@ -8204,7 +8204,7 @@
   {
     "date": "2027-08-12",
     "ship": "Nieuw Amsterdam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "05:30",
     "departure": "21:00",
     "timeInPort": "15h 30m",
@@ -8280,7 +8280,7 @@
   {
     "date": "2027-08-14",
     "ship": "Zaandam",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Holland America Line",
     "arrival": "06:30",
     "departure": "21:00",
     "timeInPort": "14h 30m",
@@ -8291,7 +8291,7 @@
   {
     "date": "2027-08-14",
     "ship": "Seven Seas Explorer",
-    "cruiseLine": "Verify with cruise line",
+    "cruiseLine": "Regent Seven Seas",
     "arrival": "10:00",
     "departure": "18:00",
     "timeInPort": "8h",
@@ -8309,6 +8309,17 @@
     "verified": true,
     "source": "cruisetimetables",
     "passengers": "2,000 to 2,400"
+  },
+  {
+    "date": "2027-08-15",
+    "ship": "Silver Moon",
+    "cruiseLine": "Silversea",
+    "arrival": "06:30",
+    "departure": "16:00",
+    "timeInPort": "9h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "576 to 691"
   },
   {
     "date": "2027-08-15",
@@ -8331,5 +8342,1542 @@
     "verified": true,
     "source": "cruisetimetables",
     "passengers": "1,754 to 2,456"
+  },
+  {
+    "date": "2027-08-16",
+    "ship": "Silver Whisper",
+    "cruiseLine": "Silversea",
+    "arrival": "06:30",
+    "departure": "16:00",
+    "timeInPort": "9h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "388 to 466"
+  },
+  {
+    "date": "2027-08-16",
+    "ship": "Anthem Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,168 to 4,825"
+  },
+  {
+    "date": "2027-08-16",
+    "ship": "Voyager Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "08:00",
+    "departure": "20:00",
+    "timeInPort": "12h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,282 to 3,938"
+  },
+  {
+    "date": "2027-08-17",
+    "ship": "Brilliant Lady",
+    "cruiseLine": "Virgin Voyages",
+    "arrival": "05:30",
+    "departure": "21:00",
+    "timeInPort": "15h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,770 to 2,860"
+  },
+  {
+    "date": "2027-08-17",
+    "ship": "Royal Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "20:30",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,560 to 4,272"
+  },
+  {
+    "date": "2027-08-17",
+    "ship": "Celebrity Edge",
+    "cruiseLine": "Celebrity Cruises",
+    "arrival": "06:30",
+    "departure": "18:00",
+    "timeInPort": "11h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,918 to 3,521"
+  },
+  {
+    "date": "2027-08-17",
+    "ship": "Koningsdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,650 to 3,194"
+  },
+  {
+    "date": "2027-08-17",
+    "ship": "Oceania Riviera",
+    "cruiseLine": "Oceania Cruises",
+    "arrival": "08:00",
+    "departure": "18:00",
+    "timeInPort": "10h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,258 to 1,447"
+  },
+  {
+    "date": "2027-08-18",
+    "ship": "Nieuw Amsterdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "05:30",
+    "departure": "21:00",
+    "timeInPort": "15h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,106 to 2,527"
+  },
+  {
+    "date": "2027-08-18",
+    "ship": "Crown Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "20:30",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,062 to 3,674"
+  },
+  {
+    "date": "2027-08-18",
+    "ship": "Norwegian Encore",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "06:00",
+    "departure": "20:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,266 to 5,218"
+  },
+  {
+    "date": "2027-08-18",
+    "ship": "Celebrity Summit",
+    "cruiseLine": "Celebrity Cruises",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,158 to 2,590"
+  },
+  {
+    "date": "2027-08-19",
+    "ship": "Star Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "17:00",
+    "timeInPort": "11h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "928"
+  },
+  {
+    "date": "2027-08-19",
+    "ship": "Quantum Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,162 to 4,819"
+  },
+  {
+    "date": "2027-08-19",
+    "ship": "Westerdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "07:00",
+    "departure": "21:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,968 to 2,362"
+  },
+  {
+    "date": "2027-08-19",
+    "ship": "Disney Wonder",
+    "cruiseLine": "Disney Cruise Line",
+    "arrival": "07:15",
+    "departure": "20:00",
+    "timeInPort": "12h 45m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,754 to 2,456"
+  },
+  {
+    "date": "2027-08-20",
+    "ship": "Emerald Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:30",
+    "departure": "20:30",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,066 to 3,679"
+  },
+  {
+    "date": "2027-08-20",
+    "ship": "Carnival Legend",
+    "cruiseLine": "Carnival Cruise Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,124 to 2,549"
+  },
+  {
+    "date": "2027-08-20",
+    "ship": "Explora III",
+    "cruiseLine": "Explora Journeys",
+    "arrival": "07:00",
+    "departure": "20:30",
+    "timeInPort": "13h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "922 to 1,473"
+  },
+  {
+    "date": "2027-08-20",
+    "ship": "Norwegian Jade",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,402 to 2,882"
+  },
+  {
+    "date": "2027-08-21",
+    "ship": "Coral Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "20:30",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,000 to 2,400"
+  },
+  {
+    "date": "2027-08-21",
+    "ship": "Zaandam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "06:30",
+    "departure": "21:00",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,432 to 1,718"
+  },
+  {
+    "date": "2027-08-22",
+    "ship": "Island Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:30",
+    "departure": "20:30",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,214 to 2,657"
+  },
+  {
+    "date": "2027-08-22",
+    "ship": "Carnival Spirit",
+    "cruiseLine": "Carnival Cruise Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,124 to 2,549"
+  },
+  {
+    "date": "2027-08-22",
+    "ship": "Seven Seas Explorer",
+    "cruiseLine": "Regent Seven Seas",
+    "arrival": "07:00",
+    "departure": "21:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "754 to 829"
+  },
+  {
+    "date": "2027-08-22",
+    "ship": "Disney Magic",
+    "cruiseLine": "Disney Cruise Line",
+    "arrival": "07:15",
+    "departure": "20:30",
+    "timeInPort": "13h 15m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,754 to 2,456"
+  },
+  {
+    "date": "2027-08-23",
+    "ship": "Norwegian Joy",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "06:30",
+    "departure": "20:00",
+    "timeInPort": "13h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,850 to 4,620"
+  },
+  {
+    "date": "2027-08-23",
+    "ship": "Silver Moon",
+    "cruiseLine": "Silversea",
+    "arrival": "06:30",
+    "departure": "16:00",
+    "timeInPort": "9h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "576 to 691"
+  },
+  {
+    "date": "2027-08-23",
+    "ship": "Celebrity Solstice",
+    "cruiseLine": "Celebrity Cruises",
+    "arrival": "07:00",
+    "departure": "19:30",
+    "timeInPort": "12h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,850 to 3,420"
+  },
+  {
+    "date": "2027-08-23",
+    "ship": "Ruby Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "07:00",
+    "departure": "20:30",
+    "timeInPort": "13h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,060 to 3,672"
+  },
+  {
+    "date": "2027-08-23",
+    "ship": "Voyager Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "08:00",
+    "departure": "20:00",
+    "timeInPort": "12h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,282 to 3,938"
+  },
+  {
+    "date": "2027-08-24",
+    "ship": "Crown Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "05:30",
+    "departure": "20:45",
+    "timeInPort": "15h 15m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,062 to 3,674"
+  },
+  {
+    "date": "2027-08-24",
+    "ship": "Royal Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "20:30",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,560 to 4,272"
+  },
+  {
+    "date": "2027-08-24",
+    "ship": "Celebrity Edge",
+    "cruiseLine": "Celebrity Cruises",
+    "arrival": "06:30",
+    "departure": "18:00",
+    "timeInPort": "11h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,918 to 3,521"
+  },
+  {
+    "date": "2027-08-24",
+    "ship": "Koningsdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,650 to 3,194"
+  },
+  {
+    "date": "2027-08-25",
+    "ship": "Norwegian Encore",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "06:00",
+    "departure": "20:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,266 to 5,218"
+  },
+  {
+    "date": "2027-08-25",
+    "ship": "Anthem Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "07:00",
+    "departure": "16:00",
+    "timeInPort": "9h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,168 to 4,825"
+  },
+  {
+    "date": "2027-08-25",
+    "ship": "Discovery Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "07:00",
+    "departure": "20:30",
+    "timeInPort": "13h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,668 to 4,402"
+  },
+  {
+    "date": "2027-08-25",
+    "ship": "Westerdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "07:00",
+    "departure": "21:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,968 to 2,362"
+  },
+  {
+    "date": "2027-08-26",
+    "ship": "Nieuw Amsterdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "05:30",
+    "departure": "21:00",
+    "timeInPort": "15h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,106 to 2,527"
+  },
+  {
+    "date": "2027-08-26",
+    "ship": "Star Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "17:00",
+    "timeInPort": "11h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "928"
+  },
+  {
+    "date": "2027-08-26",
+    "ship": "Quantum Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,162 to 4,819"
+  },
+  {
+    "date": "2027-08-26",
+    "ship": "Disney Wonder",
+    "cruiseLine": "Disney Cruise Line",
+    "arrival": "07:15",
+    "departure": "20:00",
+    "timeInPort": "12h 45m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,754 to 2,456"
+  },
+  {
+    "date": "2027-08-27",
+    "ship": "Norwegian Jade",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "06:00",
+    "departure": "16:00",
+    "timeInPort": "10h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,402 to 2,882"
+  },
+  {
+    "date": "2027-08-27",
+    "ship": "Emerald Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:30",
+    "departure": "20:30",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,066 to 3,679"
+  },
+  {
+    "date": "2027-08-27",
+    "ship": "Carnival Legend",
+    "cruiseLine": "Carnival Cruise Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,124 to 2,549"
+  },
+  {
+    "date": "2027-08-27",
+    "ship": "Carnival Luminosa",
+    "cruiseLine": "Carnival Cruise Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables"
+  },
+  {
+    "date": "2027-08-28",
+    "ship": "Island Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "20:30",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,214 to 2,657"
+  },
+  {
+    "date": "2027-08-28",
+    "ship": "Zaandam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "06:30",
+    "departure": "21:00",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,432 to 1,718"
+  },
+  {
+    "date": "2027-08-28",
+    "ship": "Oceania Riviera",
+    "cruiseLine": "Oceania Cruises",
+    "arrival": "08:00",
+    "departure": "18:00",
+    "timeInPort": "10h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,258 to 1,447"
+  },
+  {
+    "date": "2027-08-28",
+    "ship": "Seven Seas Explorer",
+    "cruiseLine": "Regent Seven Seas",
+    "arrival": "10:00",
+    "departure": "18:00",
+    "timeInPort": "8h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "754 to 829"
+  },
+  {
+    "date": "2027-08-29",
+    "ship": "Coral Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:30",
+    "departure": "20:30",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,000 to 2,400"
+  },
+  {
+    "date": "2027-08-29",
+    "ship": "Carnival Spirit",
+    "cruiseLine": "Carnival Cruise Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,124 to 2,549"
+  },
+  {
+    "date": "2027-08-29",
+    "ship": "Disney Magic",
+    "cruiseLine": "Disney Cruise Line",
+    "arrival": "07:15",
+    "departure": "20:30",
+    "timeInPort": "13h 15m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,754 to 2,456"
+  },
+  {
+    "date": "2027-08-29",
+    "ship": "Silver Moon",
+    "cruiseLine": "Silversea",
+    "arrival": "08:00",
+    "departure": "16:00",
+    "timeInPort": "8h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "576 to 691"
+  },
+  {
+    "date": "2027-08-30",
+    "ship": "Silver Whisper",
+    "cruiseLine": "Silversea",
+    "arrival": "06:30",
+    "departure": "16:00",
+    "timeInPort": "9h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "388 to 466"
+  },
+  {
+    "date": "2027-08-30",
+    "ship": "Anthem Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,168 to 4,825"
+  },
+  {
+    "date": "2027-08-30",
+    "ship": "Voyager Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "08:00",
+    "departure": "20:00",
+    "timeInPort": "12h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,282 to 3,938"
+  },
+  {
+    "date": "2027-08-31",
+    "ship": "Royal Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "20:30",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,560 to 4,272"
+  },
+  {
+    "date": "2027-08-31",
+    "ship": "Celebrity Edge",
+    "cruiseLine": "Celebrity Cruises",
+    "arrival": "06:30",
+    "departure": "18:00",
+    "timeInPort": "11h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,918 to 3,521"
+  },
+  {
+    "date": "2027-08-31",
+    "ship": "Koningsdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,650 to 3,194"
+  },
+  {
+    "date": "2027-09-01",
+    "ship": "Nieuw Amsterdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "05:30",
+    "departure": "21:00",
+    "timeInPort": "15h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,106 to 2,527"
+  },
+  {
+    "date": "2027-09-01",
+    "ship": "Crown Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "20:30",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,062 to 3,674"
+  },
+  {
+    "date": "2027-09-01",
+    "ship": "Norwegian Encore",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "06:00",
+    "departure": "20:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,266 to 5,218"
+  },
+  {
+    "date": "2027-09-01",
+    "ship": "Celebrity Summit",
+    "cruiseLine": "Celebrity Cruises",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,158 to 2,590"
+  },
+  {
+    "date": "2027-09-02",
+    "ship": "Star Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "17:00",
+    "timeInPort": "11h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "928"
+  },
+  {
+    "date": "2027-09-02",
+    "ship": "Quantum Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,162 to 4,819"
+  },
+  {
+    "date": "2027-09-02",
+    "ship": "Westerdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "07:00",
+    "departure": "21:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,968 to 2,362"
+  },
+  {
+    "date": "2027-09-02",
+    "ship": "Disney Wonder",
+    "cruiseLine": "Disney Cruise Line",
+    "arrival": "07:15",
+    "departure": "20:00",
+    "timeInPort": "12h 45m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,754 to 2,456"
+  },
+  {
+    "date": "2027-09-03",
+    "ship": "Emerald Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:30",
+    "departure": "20:30",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,066 to 3,679"
+  },
+  {
+    "date": "2027-09-03",
+    "ship": "Carnival Legend",
+    "cruiseLine": "Carnival Cruise Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,124 to 2,549"
+  },
+  {
+    "date": "2027-09-03",
+    "ship": "Norwegian Jade",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,402 to 2,882"
+  },
+  {
+    "date": "2027-09-03",
+    "ship": "Norwegian Joy",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "08:00",
+    "departure": "20:00",
+    "timeInPort": "12h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,850 to 4,620"
+  },
+  {
+    "date": "2027-09-04",
+    "ship": "Coral Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "20:30",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,000 to 2,400"
+  },
+  {
+    "date": "2027-09-04",
+    "ship": "Zaandam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "06:30",
+    "departure": "21:00",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,432 to 1,718"
+  },
+  {
+    "date": "2027-09-05",
+    "ship": "Island Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:30",
+    "departure": "20:30",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,214 to 2,657"
+  },
+  {
+    "date": "2027-09-05",
+    "ship": "Carnival Spirit",
+    "cruiseLine": "Carnival Cruise Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,124 to 2,549"
+  },
+  {
+    "date": "2027-09-05",
+    "ship": "Seven Seas Explorer",
+    "cruiseLine": "Regent Seven Seas",
+    "arrival": "07:00",
+    "departure": "21:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "754 to 829"
+  },
+  {
+    "date": "2027-09-05",
+    "ship": "Disney Magic",
+    "cruiseLine": "Disney Cruise Line",
+    "arrival": "07:15",
+    "departure": "20:30",
+    "timeInPort": "13h 15m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,754 to 2,456"
+  },
+  {
+    "date": "2027-09-06",
+    "ship": "Brilliant Lady",
+    "cruiseLine": "Virgin Voyages",
+    "arrival": "06:30",
+    "departure": "TBC",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,770 to 2,860"
+  },
+  {
+    "date": "2027-09-06",
+    "ship": "Celebrity Solstice",
+    "cruiseLine": "Celebrity Cruises",
+    "arrival": "07:00",
+    "departure": "19:30",
+    "timeInPort": "12h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,850 to 3,420"
+  },
+  {
+    "date": "2027-09-06",
+    "ship": "Voyager Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "08:00",
+    "departure": "20:00",
+    "timeInPort": "12h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,282 to 3,938"
+  },
+  {
+    "date": "2027-09-07",
+    "ship": "Crown Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "05:30",
+    "departure": "20:45",
+    "timeInPort": "15h 15m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,062 to 3,674"
+  },
+  {
+    "date": "2027-09-07",
+    "ship": "Royal Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "20:30",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,560 to 4,272"
+  },
+  {
+    "date": "2027-09-07",
+    "ship": "Celebrity Edge",
+    "cruiseLine": "Celebrity Cruises",
+    "arrival": "06:30",
+    "departure": "18:00",
+    "timeInPort": "11h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,918 to 3,521"
+  },
+  {
+    "date": "2027-09-07",
+    "ship": "Koningsdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,650 to 3,194"
+  },
+  {
+    "date": "2027-09-07",
+    "ship": "Oceania Riviera",
+    "cruiseLine": "Oceania Cruises",
+    "arrival": "08:00",
+    "departure": "18:00",
+    "timeInPort": "10h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,258 to 1,447"
+  },
+  {
+    "date": "2027-09-08",
+    "ship": "Norwegian Encore",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "06:00",
+    "departure": "20:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,266 to 5,218"
+  },
+  {
+    "date": "2027-09-08",
+    "ship": "Anthem Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "07:00",
+    "departure": "16:00",
+    "timeInPort": "9h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,168 to 4,825"
+  },
+  {
+    "date": "2027-09-08",
+    "ship": "Discovery Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "07:00",
+    "departure": "20:30",
+    "timeInPort": "13h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,668 to 4,402"
+  },
+  {
+    "date": "2027-09-08",
+    "ship": "Westerdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "07:00",
+    "departure": "21:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,968 to 2,362"
+  },
+  {
+    "date": "2027-09-09",
+    "ship": "Nieuw Amsterdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "05:30",
+    "departure": "21:00",
+    "timeInPort": "15h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,106 to 2,527"
+  },
+  {
+    "date": "2027-09-09",
+    "ship": "Star Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "17:00",
+    "timeInPort": "11h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "928"
+  },
+  {
+    "date": "2027-09-09",
+    "ship": "Quantum Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,162 to 4,819"
+  },
+  {
+    "date": "2027-09-09",
+    "ship": "Disney Wonder",
+    "cruiseLine": "Disney Cruise Line",
+    "arrival": "07:15",
+    "departure": "20:00",
+    "timeInPort": "12h 45m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,754 to 2,456"
+  },
+  {
+    "date": "2027-09-10",
+    "ship": "Norwegian Jade",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "06:00",
+    "departure": "16:00",
+    "timeInPort": "10h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,402 to 2,882"
+  },
+  {
+    "date": "2027-09-10",
+    "ship": "Emerald Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:30",
+    "departure": "20:30",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,066 to 3,679"
+  },
+  {
+    "date": "2027-09-10",
+    "ship": "Carnival Legend",
+    "cruiseLine": "Carnival Cruise Line",
+    "arrival": "07:00",
+    "departure": "21:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,124 to 2,549"
+  },
+  {
+    "date": "2027-09-10",
+    "ship": "Carnival Luminosa",
+    "cruiseLine": "Carnival Cruise Line",
+    "arrival": "08:00",
+    "departure": "20:30",
+    "timeInPort": "12h 30m",
+    "verified": true,
+    "source": "cruisetimetables"
+  },
+  {
+    "date": "2027-09-11",
+    "ship": "Island Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "20:30",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,214 to 2,657"
+  },
+  {
+    "date": "2027-09-11",
+    "ship": "Zaandam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "06:30",
+    "departure": "21:00",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,432 to 1,718"
+  },
+  {
+    "date": "2027-09-11",
+    "ship": "Seabourn Encore",
+    "cruiseLine": "Seabourn",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "532 to 638"
+  },
+  {
+    "date": "2027-09-11",
+    "ship": "Seven Seas Explorer",
+    "cruiseLine": "Regent Seven Seas",
+    "arrival": "10:00",
+    "departure": "18:00",
+    "timeInPort": "8h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "754 to 829"
+  },
+  {
+    "date": "2027-09-12",
+    "ship": "Norwegian Joy",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "06:00",
+    "departure": "20:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,850 to 4,620"
+  },
+  {
+    "date": "2027-09-12",
+    "ship": "Carnival Spirit",
+    "cruiseLine": "Carnival Cruise Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,124 to 2,549"
+  },
+  {
+    "date": "2027-09-12",
+    "ship": "Coral Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "07:00",
+    "departure": "20:30",
+    "timeInPort": "13h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,000 to 2,400"
+  },
+  {
+    "date": "2027-09-12",
+    "ship": "Disney Magic",
+    "cruiseLine": "Disney Cruise Line",
+    "arrival": "07:00",
+    "departure": "20:30",
+    "timeInPort": "13h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,754 to 2,456"
+  },
+  {
+    "date": "2027-09-13",
+    "ship": "Ruby Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:30",
+    "departure": "20:30",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,060 to 3,672"
+  },
+  {
+    "date": "2027-09-13",
+    "ship": "Anthem Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,168 to 4,825"
+  },
+  {
+    "date": "2027-09-13",
+    "ship": "Voyager Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "08:00",
+    "departure": "18:00",
+    "timeInPort": "10h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,282 to 3,938"
+  },
+  {
+    "date": "2027-09-14",
+    "ship": "Celebrity Edge",
+    "cruiseLine": "Celebrity Cruises",
+    "arrival": "06:30",
+    "departure": "18:00",
+    "timeInPort": "11h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,918 to 3,521"
+  },
+  {
+    "date": "2027-09-14",
+    "ship": "Crown Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:30",
+    "departure": "20:30",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,062 to 3,674"
+  },
+  {
+    "date": "2027-09-14",
+    "ship": "Koningsdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,650 to 3,194"
+  },
+  {
+    "date": "2027-09-15",
+    "ship": "Nieuw Amsterdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "05:30",
+    "departure": "21:00",
+    "timeInPort": "15h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,106 to 2,527"
+  },
+  {
+    "date": "2027-09-15",
+    "ship": "Norwegian Encore",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "06:00",
+    "departure": "20:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,266 to 5,218"
+  },
+  {
+    "date": "2027-09-15",
+    "ship": "Westerdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,968 to 2,362"
+  },
+  {
+    "date": "2027-09-15",
+    "ship": "Royal Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "08:00",
+    "departure": "20:30",
+    "timeInPort": "12h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,560 to 4,272"
+  },
+  {
+    "date": "2027-09-16",
+    "ship": "Star Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "17:00",
+    "timeInPort": "11h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "928"
+  },
+  {
+    "date": "2027-09-16",
+    "ship": "Quantum Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,162 to 4,819"
+  },
+  {
+    "date": "2027-09-16",
+    "ship": "Disney Wonder",
+    "cruiseLine": "Disney Cruise Line",
+    "arrival": "07:15",
+    "departure": "20:00",
+    "timeInPort": "12h 45m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "1,754 to 2,456"
+  },
+  {
+    "date": "2027-09-17",
+    "ship": "Carnival Legend",
+    "cruiseLine": "Carnival Cruise Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,124 to 2,549"
+  },
+  {
+    "date": "2027-09-19",
+    "ship": "Coral Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "07:00",
+    "departure": "20:30",
+    "timeInPort": "13h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,000 to 2,400"
+  },
+  {
+    "date": "2027-09-19",
+    "ship": "Seven Seas Explorer",
+    "cruiseLine": "Regent Seven Seas",
+    "arrival": "07:00",
+    "departure": "16:00",
+    "timeInPort": "9h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "754 to 829"
+  },
+  {
+    "date": "2027-09-20",
+    "ship": "Carnival Spirit",
+    "cruiseLine": "Carnival Cruise Line",
+    "arrival": "07:00",
+    "departure": "19:00",
+    "timeInPort": "12h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,124 to 2,549"
+  },
+  {
+    "date": "2027-09-20",
+    "ship": "Norwegian Joy",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "07:00",
+    "departure": "18:00",
+    "timeInPort": "11h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,850 to 4,620"
+  },
+  {
+    "date": "2027-09-20",
+    "ship": "Voyager Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "08:00",
+    "departure": "18:00",
+    "timeInPort": "10h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,282 to 3,938"
+  },
+  {
+    "date": "2027-09-21",
+    "ship": "Celebrity Edge",
+    "cruiseLine": "Celebrity Cruises",
+    "arrival": "06:30",
+    "departure": "18:00",
+    "timeInPort": "11h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,918 to 3,521"
+  },
+  {
+    "date": "2027-09-21",
+    "ship": "Koningsdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,650 to 3,194"
+  },
+  {
+    "date": "2027-09-22",
+    "ship": "Norwegian Encore",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "06:00",
+    "departure": "20:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,266 to 5,218"
+  },
+  {
+    "date": "2027-09-22",
+    "ship": "Nieuw Amsterdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "06:30",
+    "departure": "21:00",
+    "timeInPort": "14h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,106 to 2,527"
+  },
+  {
+    "date": "2027-09-22",
+    "ship": "Discovery Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "07:00",
+    "departure": "20:30",
+    "timeInPort": "13h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,668 to 4,402"
+  },
+  {
+    "date": "2027-09-23",
+    "ship": "Star Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "06:00",
+    "departure": "17:00",
+    "timeInPort": "11h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "928"
+  },
+  {
+    "date": "2027-09-23",
+    "ship": "Quantum Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,162 to 4,819"
+  },
+  {
+    "date": "2027-09-24",
+    "ship": "Emerald Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "07:00",
+    "departure": "20:30",
+    "timeInPort": "13h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,066 to 3,679"
+  },
+  {
+    "date": "2027-09-27",
+    "ship": "Voyager Of The Seas",
+    "cruiseLine": "Royal Caribbean",
+    "arrival": "08:00",
+    "departure": "18:00",
+    "timeInPort": "10h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "3,282 to 3,938"
+  },
+  {
+    "date": "2027-09-28",
+    "ship": "Celebrity Edge",
+    "cruiseLine": "Celebrity Cruises",
+    "arrival": "06:30",
+    "departure": "18:00",
+    "timeInPort": "11h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,918 to 3,521"
+  },
+  {
+    "date": "2027-09-28",
+    "ship": "Koningsdam",
+    "cruiseLine": "Holland America Line",
+    "arrival": "07:00",
+    "departure": "20:00",
+    "timeInPort": "13h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "2,650 to 3,194"
+  },
+  {
+    "date": "2027-09-29",
+    "ship": "Norwegian Encore",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "06:00",
+    "departure": "20:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,266 to 5,218"
+  },
+  {
+    "date": "2027-09-30",
+    "ship": "Star Princess",
+    "cruiseLine": "Princess Cruises",
+    "arrival": "07:30",
+    "departure": "20:00",
+    "timeInPort": "12h 30m",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "928"
+  },
+  {
+    "date": "2027-10-06",
+    "ship": "Norwegian Encore",
+    "cruiseLine": "Norwegian Cruise Line",
+    "arrival": "06:00",
+    "departure": "20:00",
+    "timeInPort": "14h",
+    "verified": true,
+    "source": "cruisetimetables",
+    "passengers": "4,266 to 5,218"
   }
 ]
